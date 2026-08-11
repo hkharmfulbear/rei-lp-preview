@@ -64,12 +64,46 @@ figure.plate figcaption b{color:var(--ink);font-weight:600;margin-right:.6em}
 .header-contact .tel{margin-right:1.4em;color:var(--ink-thin)}
 .header-contact .tel b{color:var(--ink);font-weight:600;letter-spacing:.08em}
 
-/* ── FV：バナー画像 ── */
-.fv-img{width:100%;display:block}
-.fv-bar{max-width:1040px;margin:0 auto;padding:24px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--border)}
-.fv-bar p{font-size:11px;color:var(--ink-thin);max-width:36em;line-height:1.8}
+/* ── FV（コーポレートトーンのコーディング実装） ── */
 .btn{display:inline-block;text-decoration:none;text-align:center;font-weight:500;letter-spacing:.14em;background:var(--green);color:#fff;padding:16px 40px;font-size:14.5px;border:1px solid var(--green);transition:background .15s ease}
 .btn:hover{background:#2e4a3a}
+.fv{position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg,#132d40 0%,#1e3650 100%)}
+.fv-wrap{display:grid;grid-template-columns:minmax(0,13fr) minmax(0,11fr);align-items:stretch}
+.fv-panel{position:relative;z-index:5;padding:68px 52px 60px max(24px,calc((100vw - 1040px)/2))}
+.fv-glow{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 70% 100% at 78% 46%,rgba(45,97,137,.38),transparent 65%)}
+.fv-gridtex{position:absolute;left:0;right:0;bottom:0;height:70%;z-index:1;opacity:.12;pointer-events:none;
+  background-image:linear-gradient(rgba(122,184,212,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(122,184,212,.12) 1px,transparent 1px);
+  background-size:52px 52px;transform:perspective(600px) rotateX(55deg) scale(2.2);transform-origin:bottom;
+  -webkit-mask-image:linear-gradient(to top,#000 0%,transparent 70%);mask-image:linear-gradient(to top,#000 0%,transparent 70%)}
+.fv-ghost{position:absolute;left:24px;bottom:-.14em;z-index:2;font-family:var(--eng);font-style:italic;font-weight:400;font-size:clamp(70px,10vw,150px);line-height:1;color:rgba(122,184,212,.07);white-space:nowrap;pointer-events:none}
+.fv-eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.fv-eyebrow::before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.fv-eyebrow span{font-family:var(--eng);font-size:13.5px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--blue-light)}
+.fv-eyebrow b{font-weight:300;font-size:11.5px;letter-spacing:.12em;color:rgba(255,255,255,.55)}
+.fv-catch{font-family:'Shippori Mincho',"Hiragino Mincho ProN",serif;font-size:clamp(29px,3.9vw,52px);font-weight:500;line-height:1.5;letter-spacing:.03em}
+.fv-catch .num{font-family:var(--eng);font-weight:500;font-size:1.3em;letter-spacing:0;color:var(--blue-light);padding:0 .04em}
+.fv-catch .hl{position:relative}
+.fv-catch .hl::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:.22em;background:rgba(122,184,212,.2);z-index:-1}
+.fv-sub{margin-top:22px;font-size:clamp(13px,1.5vw,14.5px);font-weight:300;color:rgba(255,255,255,.78);line-height:2;letter-spacing:.03em;padding-left:18px;border-left:2px solid var(--gold);max-width:36em}
+.fv-note{margin-top:10px;font-size:10.5px;color:rgba(255,255,255,.42);letter-spacing:.03em}
+.fv-name{margin-top:26px;display:inline-flex;align-items:baseline;gap:14px;border:0.5px solid rgba(255,255,255,.35);padding:10px 22px}
+.fv-name .jp{font-family:'Shippori Mincho',"Hiragino Mincho ProN",serif;font-size:clamp(16px,1.8vw,19px);font-weight:600;letter-spacing:.14em}
+.fv-name .en{font-family:var(--eng);font-size:11px;letter-spacing:.24em;color:var(--blue-light);text-transform:uppercase}
+.fv-price{margin-top:26px;max-width:560px;background:rgba(255,255,255,.97);color:var(--ink);box-shadow:0 26px 50px -20px rgba(0,0,0,.5)}
+.fv-price .row{display:flex;align-items:baseline;justify-content:space-between;gap:8px 16px;padding:14px 22px;border-bottom:0.5px solid var(--border);flex-wrap:wrap}
+.fv-price .row:last-child{border-bottom:none}
+.fv-price .l{font-size:13px;font-weight:500;color:var(--navy);letter-spacing:.04em}
+.fv-price .l small{display:block;font-size:10.5px;font-weight:300;color:var(--ink-thin)}
+.fv-price .v{font-family:var(--eng);font-size:29px;font-weight:500;line-height:1;white-space:nowrap}
+.fv-price .v i{font-style:normal;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:400;margin-left:2px}
+.fv-price .v small{font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:300;color:var(--ink-thin);margin-left:8px;white-space:normal}
+.fv-cta{margin-top:28px}
+.fv-media{position:relative;z-index:3;min-height:480px}
+.fv-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.fv-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#132d40 0%,rgba(19,45,64,.4) 16%,transparent 42%)}
+.fv-media .cap{position:absolute;right:22px;bottom:18px;z-index:2;display:flex;align-items:center;gap:12px;font-family:var(--eng);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.fv-media .cap::before{content:"";width:34px;height:1px;background:rgba(255,255,255,.6)}
+.fv-media .cap b{font-family:'Noto Sans JP',sans-serif;font-weight:300;font-size:11px;letter-spacing:.1em;text-transform:none}
 
 /* ── 章見出し（帳票の二重罫） ── */
 .chap{margin-bottom:42px}
@@ -197,9 +231,11 @@ figure.plate figcaption b{color:var(--ink);font-weight:600;margin-right:.6em}
 .footer .inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 @media (max-width:900px){
-  .fv-in{grid-template-columns:1fr;gap:36px}
-  .fv-copy{min-height:0;gap:24px}
-  .fv-photo .main img{height:auto;aspect-ratio:4/3}
+  .fv-wrap{grid-template-columns:1fr}
+  .fv-media{order:-1;min-height:0;aspect-ratio:16/10}
+  .fv-media::after{background:linear-gradient(180deg,rgba(19,45,64,.15) 0%,transparent 35%,#132d40 100%)}
+  .fv-media .cap{bottom:auto;top:16px}
+  .fv-panel{padding:16px 24px 52px}
   .sol{grid-template-columns:1fr}
   .spec-grid{grid-template-columns:1fr}
 }
@@ -212,15 +248,16 @@ figure.plate figcaption b{color:var(--ink);font-weight:600;margin-right:.6em}
   .kanlist>div{grid-template-columns:4.6em 1fr;grid-template-rows:auto auto;gap:8px 16px}
   .kanlist .kn{font-size:18px}
   .kanlist p{grid-column:2}
-  .fv-price th,.fv-price td{display:block;width:auto}
-  .fv-price th{border-bottom:none;padding-bottom:0}
-  .fv-price td{padding-top:2px}
+  .fv-name{gap:10px;padding:9px 16px}
+  .fv-name .jp{white-space:nowrap;letter-spacing:.1em}
+  .fv-name .en{display:none}
+  .fv-price .v{font-size:25px}
+  .fv-price .v small{display:block;margin-left:0;margin-top:4px;text-align:right}
   .plans{grid-template-columns:1fr;gap:36px}
   .plates{grid-template-columns:1fr 1fr}
   .herbs{grid-template-columns:1fr}
   .herb+.herb{border-left:none;border-top:1px solid var(--rule)}
   .ba{grid-template-columns:1fr}
-  .fv-catch{font-size:29px}
 }
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
@@ -241,15 +278,28 @@ figure.plate figcaption b{color:var(--ink);font-weight:600;margin-right:.6em}
 </header>
 
 <section class="fv">
-  <h1 class="sr-only">らくらく草止めネット──太陽光発電所の雑草対策費用を1/3に。草止めネット＋除草剤散布のハイブリッド対策</h1>
-  <picture>
-    <source media="(max-width:680px)" srcset="images/fv-sp.jpg">
-    <img class="fv-img" src="images/fv-pc.jpg" fetchpriority="high"
-      alt="雑草対策の費用を、1/3に。らくらく草止めネット──草止めネット施工 材工込み350,000円〜（税込385,000円）＋除草剤散布 年2回60,000円/年〜（税込66,000円）。パネル間への草止めネット施工の実例写真">
-  </picture>
-  <div class="fv-bar">
-    <a class="btn" href="https://re-innovations.co.jp/contact/">無料見積りを依頼する</a>
-    <p>※費用1/3は発電所全体に防草シート施工のみで対策した場合との比較（当社比）。除草剤散布は一般的な低圧太陽光発電所（1,000㎡程度）を想定しています。</p>
+  <div class="fv-wrap">
+    <div class="fv-panel">
+      <div class="fv-glow" aria-hidden="true"></div>
+      <div class="fv-gridtex" aria-hidden="true"></div>
+      <div class="fv-ghost" aria-hidden="true">Weed Control</div>
+      <div style="position:relative;z-index:5">
+        <div class="fv-eyebrow"><span>Weed Control</span><b>低圧太陽光発電所の雑草対策</b></div>
+        <h1 class="fv-catch">雑草対策の費用を、<br><span class="hl"><span class="num">1/3</span>に。</span></h1>
+        <p class="fv-sub">パネル周囲は「草止めネット」で押さえ、それ以外は除草剤散布で。防草シート全面施工に代わる、いいとこ取りのハイブリッド対策。</p>
+        <p class="fv-note">※発電所全体に防草シート施工のみで対策した場合との比較（当社比）</p>
+        <div class="fv-name"><span class="jp">らくらく草止めネット</span><span class="en">Kusadome Net</span></div>
+        <div class="fv-price">
+          <div class="row"><span class="l">草止めネット施工<small>材工込み</small></span><span class="v">350,000<i>円〜</i><small>税込 385,000円</small></span></div>
+          <div class="row"><span class="l">除草剤散布 年2回<small>1,000㎡程度想定</small></span><span class="v">60,000<i>円/年〜</i><small>税込 66,000円</small></span></div>
+        </div>
+        <div class="fv-cta"><a class="btn" href="https://re-innovations.co.jp/contact/">無料見積りを依頼する</a></div>
+      </div>
+    </div>
+    <div class="fv-media">
+      <img src="images/hero.jpg" alt="太陽光パネルの列間に施工された草止めネット" fetchpriority="high">
+      <span class="cap">Installation<b>パネル間への草止めネット施工（実例）</b></span>
+    </div>
   </div>
 </section>
 

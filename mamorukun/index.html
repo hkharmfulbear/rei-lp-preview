@@ -59,13 +59,55 @@ figure.plate figcaption b{color:var(--ink);font-weight:600;margin-right:.6em}
 .header-contact .tel{margin-right:1.4em;color:var(--ink-thin)}
 .header-contact .tel b{color:var(--ink);font-weight:600;letter-spacing:.08em}
 
-/* ── FV：バナー画像 ── */
-.fv-img{width:100%;display:block}
-.fv-bar{max-width:1040px;margin:0 auto;padding:24px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--border)}
-.fv-bar p{font-size:11px;color:var(--ink-thin);max-width:36em;line-height:1.8}
+/* ── FV（コーポレートトーンのコーディング実装） ── */
 .stamp-new{position:absolute;top:0;right:0;border:2px solid var(--shu);color:var(--shu);font-family:'Shippori Mincho',"Hiragino Mincho ProN",serif;font-weight:600;font-size:15px;letter-spacing:.3em;padding:8px 10px 8px 13px;transform:rotate(5deg);writing-mode:vertical-rl;background:rgba(255,255,255,.85)}
 .btn{display:inline-block;text-decoration:none;text-align:center;font-weight:500;letter-spacing:.14em;background:var(--navy);color:#fff;padding:16px 40px;font-size:14.5px;border:1px solid var(--navy);transition:background .15s ease}
 .btn:hover{background:var(--blue-main)}
+.btn-inv{background:#fff;color:var(--navy);border-color:#fff}
+.btn-inv:hover{background:#dce6ed;border-color:#dce6ed;color:var(--navy)}
+.fv{position:relative;overflow:hidden;color:#fff;
+  background:radial-gradient(ellipse 60% 90% at 82% 26%,rgba(45,97,137,.35),transparent 60%),linear-gradient(135deg,#081826 0%,#132d40 55%,#1e3650 100%)}
+.fv-gridtex{position:absolute;left:0;right:0;bottom:0;height:60%;opacity:.1;pointer-events:none;
+  background-image:linear-gradient(rgba(122,184,212,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(122,184,212,.12) 1px,transparent 1px);
+  background-size:52px 52px;transform:perspective(600px) rotateX(55deg) scale(2.2);transform-origin:bottom;
+  -webkit-mask-image:linear-gradient(to top,#000 0%,transparent 65%);mask-image:linear-gradient(to top,#000 0%,transparent 65%)}
+.fv-ghost{position:absolute;right:30px;bottom:-.14em;font-family:var(--eng);font-style:italic;font-weight:400;font-size:clamp(80px,11vw,170px);line-height:1;color:rgba(122,184,212,.06);white-space:nowrap;pointer-events:none}
+.fv-in{position:relative;max-width:1040px;margin:0 auto;padding:64px 24px 60px}
+.fv-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:48px;align-items:start}
+.fv-copy{position:relative;padding-right:76px}
+.fv-hanko{position:absolute;right:0;top:4px;border:2px solid var(--shu);color:#e05545;font-family:'Shippori Mincho',"Hiragino Mincho ProN",serif;font-weight:600;font-size:17px;letter-spacing:.3em;padding:12px 8px 12px 12px;writing-mode:vertical-rl;transform:rotate(5deg);background:rgba(8,24,38,.25)}
+.fv-eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+.fv-eyebrow::before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.fv-eyebrow span{font-family:var(--eng);font-size:13.5px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--blue-light)}
+.fv-kicker{font-size:12.5px;font-weight:300;color:rgba(255,255,255,.6);letter-spacing:.12em;margin-bottom:16px}
+.fv-catch{font-family:'Shippori Mincho',"Hiragino Mincho ProN",serif;font-size:clamp(30px,4vw,54px);font-weight:500;line-height:1.5;letter-spacing:.04em}
+.fv-catch .hl{position:relative;color:var(--blue-light)}
+.fv-catch .hl::after{content:"";position:absolute;left:0;right:0;bottom:5px;height:.22em;background:rgba(122,184,212,.16);z-index:-1}
+.fv-name{margin-top:18px;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.fv-name .jp{font-family:'Shippori Mincho',"Hiragino Mincho ProN",serif;font-size:clamp(19px,2.4vw,24px);font-weight:600;letter-spacing:.12em}
+.fv-name .en{font-family:var(--eng);font-size:11px;letter-spacing:.24em;color:var(--blue-light);text-transform:uppercase}
+.fv-sub{margin-top:18px;font-size:clamp(13px,1.5vw,14.5px);font-weight:300;color:rgba(255,255,255,.75);line-height:2;letter-spacing:.03em;padding-left:18px;border-left:2px solid var(--gold);max-width:36em}
+.fv-shots{display:grid;grid-template-columns:1fr 1fr;gap:20px 18px}
+.fv-shot{margin:0;background:#fff;padding:8px 8px 30px;box-shadow:0 24px 48px -16px rgba(0,0,0,.55);position:relative}
+.fv-shot img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.fv-shot figcaption{position:absolute;left:0;right:0;bottom:7px;text-align:center;font-size:10.5px;font-weight:400;color:var(--ink);letter-spacing:.12em}
+.fv-shot.a{transform:rotate(-2.2deg)}
+.fv-shot.b{transform:rotate(1.6deg)}
+.fv-shot.c{grid-column:1/-1;transform:rotate(-0.6deg)}
+.fv-shot.c img{aspect-ratio:16/8}
+.fv-sheet{margin-top:44px;display:flex;align-items:stretch;background:rgba(255,255,255,.97);color:var(--ink);box-shadow:0 26px 50px -20px rgba(0,0,0,.5)}
+.fv-sheet .items{flex:1;border-right:0.5px solid var(--border)}
+.fv-sheet .item{display:flex;align-items:baseline;justify-content:space-between;gap:8px 14px;padding:12px 26px;border-bottom:0.5px solid var(--border);flex-wrap:wrap}
+.fv-sheet .item:last-child{border-bottom:none}
+.fv-sheet .item .l{font-size:13.5px;font-weight:500;color:var(--navy);letter-spacing:.04em}
+.fv-sheet .item .r{font-size:11px;font-weight:300;color:var(--ink-thin);letter-spacing:.03em}
+.fv-sheet .total{flex:0 0 340px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:18px 24px;background:var(--mist);text-align:center}
+.fv-sheet .total .t{font-size:11.5px;font-weight:500;color:var(--blue-main);letter-spacing:.12em;margin-bottom:4px}
+.fv-sheet .total .v{font-family:var(--eng);font-size:46px;font-weight:500;line-height:1}
+.fv-sheet .total .v i{font-style:normal;font-family:'Noto Sans JP',sans-serif;font-size:15px;font-weight:400}
+.fv-sheet .total .v small{font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:300;color:var(--ink-thin);margin-left:6px}
+.fv-foot{margin-top:28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.fv-foot p{font-size:10.5px;color:rgba(255,255,255,.45);max-width:34em;line-height:1.8}
 
 /* ── 章見出し ── */
 .chap{margin-bottom:42px}
@@ -216,7 +258,12 @@ figure.plate figcaption b{color:var(--ink);font-weight:600;margin-right:.6em}
 .footer .inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 @media (max-width:900px){
-  .fv-in{grid-template-columns:1fr;gap:36px}
+  .fv-grid{grid-template-columns:1fr;gap:40px}
+  .fv-copy{padding-right:64px}
+  .fv-sheet{flex-direction:column}
+  .fv-sheet .items{border-right:none;border-bottom:0.5px solid var(--border)}
+  .fv-sheet .total{flex:none;flex-direction:row;justify-content:space-between;text-align:left}
+  .fv-sheet .total .t{margin-bottom:0}
   .mamoru{grid-template-columns:1fr}
   .cover-detail{grid-template-columns:1fr;gap:28px}
   .flow-wrap{overflow-x:auto}
@@ -236,7 +283,9 @@ figure.plate figcaption b{color:var(--ink);font-weight:600;margin-right:.6em}
   .checksheet-row{grid-template-columns:44px 1fr}
   .checksheet-row p{grid-column:1/-1;padding:0 18px 14px}
   .stamp-new{font-size:13px;letter-spacing:.2em}
-  .fv-kicker{padding-right:64px}
+  .fv-hanko{font-size:14px;letter-spacing:.24em;padding:10px 7px 10px 10px}
+  .fv-sheet .total .v{font-size:36px}
+  .fv-foot{gap:12px}
 }
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
@@ -257,15 +306,36 @@ figure.plate figcaption b{color:var(--ink);font-weight:600;margin-right:.6em}
 </header>
 
 <section class="fv">
-  <h1 class="sr-only">盗難対策まもるくんセット──その発電所、守れていますか。防犯施工＋簡易目視点検＋盗難・災害補償特典で総額450,000円（税別）</h1>
-  <picture>
-    <source media="(max-width:680px)" srcset="images/fv-sp.jpg">
-    <img class="fv-img" src="images/fv-pc.jpg" fetchpriority="high"
-      alt="新登場・低圧太陽光発電所向け盗難対策の決定版「盗難対策まもるくんセット」──盗難対策まもる君（防犯施工）＋簡易目視点検（年1回/5年間）＋盗難・災害補償特典（1年間）で総額450,000円（税別）。構内柱・交流盤の施工例と点検作業の写真">
-  </picture>
-  <div class="fv-bar">
-    <a class="btn" href="https://re-innovations.co.jp/contact/">WEBお申込み・ご相談はこちら</a>
-    <p>※補償特典は1年ごとの更新／最長5年。ご提供条件は下部記載の詳細をご確認ください。</p>
+  <div class="fv-gridtex" aria-hidden="true"></div>
+  <div class="fv-ghost" aria-hidden="true">Security</div>
+  <div class="fv-in">
+    <div class="fv-grid">
+      <div class="fv-copy">
+        <span class="fv-hanko" aria-label="新登場">新登場</span>
+        <div class="fv-eyebrow"><span>Security &amp; Inspection</span></div>
+        <p class="fv-kicker">低圧太陽光発電所向け　盗難対策の決定版</p>
+        <h1 class="fv-catch">その発電所、<br><span class="hl">守れて</span>いますか。</h1>
+        <div class="fv-name"><span class="jp">盗難対策まもるくんセット</span><span class="en">Mamoru-kun Set</span></div>
+        <p class="fv-sub">「盗ませない」防犯施工に、簡易目視点検と盗難・災害補償特典を付帯。防犯・補償・点検をワンストップでご提供します。</p>
+      </div>
+      <div class="fv-shots">
+        <figure class="fv-shot a"><img src="images/pole.jpg" alt="まもる君による構内柱の防護施工" fetchpriority="high"><figcaption>施工例｜構内柱</figcaption></figure>
+        <figure class="fv-shot b"><img src="images/ac-panel.jpg" alt="まもる君による交流盤の防護施工"><figcaption>施工例｜交流盤</figcaption></figure>
+        <figure class="fv-shot c"><img src="images/inspect2.jpg" alt="専門スタッフによる発電所の点検作業"><figcaption>簡易目視点検（年1回／5年間）</figcaption></figure>
+      </div>
+    </div>
+    <div class="fv-sheet">
+      <div class="items">
+        <div class="item"><span class="l">盗難対策まもる君</span><span class="r">防犯施工</span></div>
+        <div class="item"><span class="l">簡易目視点検</span><span class="r">年1回／5年間</span></div>
+        <div class="item"><span class="l">盗難＋災害補償特典</span><span class="r">1年間 ※1年ごとの更新／最長5年</span></div>
+      </div>
+      <div class="total"><span class="t">総額（施工費・点検・特典含む）</span><span class="v">450,000<i>円</i><small>税別</small></span></div>
+    </div>
+    <div class="fv-foot">
+      <a class="btn btn-inv" href="https://re-innovations.co.jp/contact/">WEBお申込み・ご相談はこちら</a>
+      <p>※補償特典は1年ごとの更新／最長5年。ご提供条件は下部記載の詳細をご確認ください。</p>
+    </div>
   </div>
 </section>
 
