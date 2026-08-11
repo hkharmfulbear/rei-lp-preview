@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>盗難対策まもるくんセット｜盗難・災害補償特典付き発電所点検プラン｜RE-INNOVATIONS</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="低圧太陽光発電所向け盗難対策の決定版。盗難対策施工＋簡易目視点検（年1回/5年）＋盗難・災害補償特典（1年）で総額450,000円（税別）。株式会社RE-INNOVATIONS">
+<style>
+:root{
+  --navy:#0e2440;        /* 夜間警備の紺 */
+  --navy2:#16355c;
+  --steel:#3d5573;
+  --alert:#ffc400;       /* 警戒色イエロー */
+  --alert-dk:#c79700;
+  --paper:#ffffff;
+  --mist:#eef2f6;        /* 薄い青灰の地 */
+  --ink:#1a2433;
+  --red:#c92a2a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic",YuGothic,"Noto Sans JP",sans-serif;
+  color:var(--ink);background:var(--paper);
+  line-height:1.85;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.4}
+.inner{max-width:1080px;margin:0 auto;padding:0 24px}
+.section{padding:88px 0}
+.section.tint{background:var(--mist)}
+
+/* ── 警戒ストライプ（シグネチャ） ── */
+.hazard{height:12px;background:repeating-linear-gradient(-45deg, var(--alert) 0 16px, var(--navy) 16px 32px)}
+
+/* ── header ── */
+.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid #dde4ec}
+.header-in{max-width:1080px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:800;letter-spacing:.04em;font-size:15px;line-height:1.3}
+.brand small{display:block;font-size:10px;font-weight:600;color:#5b6b80;letter-spacing:.08em}
+.header-cta{display:flex;align-items:center;gap:14px}
+.header-tel{text-align:right;line-height:1.3;font-size:11px;color:#44536a}
+.header-tel strong{display:block;font-size:17px;letter-spacing:.02em;color:var(--ink)}
+.btn{display:inline-block;text-decoration:none;font-weight:800;text-align:center;border-radius:4px;transition:transform .15s ease, box-shadow .15s ease}
+.btn:focus-visible{outline:3px solid var(--alert);outline-offset:2px}
+.btn-alert{background:var(--alert);color:var(--navy);padding:12px 22px;font-size:14px;box-shadow:0 3px 0 var(--alert-dk)}
+.btn-alert:hover{transform:translateY(-2px);box-shadow:0 5px 0 var(--alert-dk)}
+.btn-hero{background:var(--alert);color:var(--navy);padding:18px 44px;font-size:17px;border-radius:6px;box-shadow:0 4px 0 var(--alert-dk)}
+.btn-hero:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--alert-dk)}
+
+/* ── hero ── */
+.hero{position:relative;color:#fff;overflow:hidden;background:var(--navy)}
+.hero-bg{position:absolute;inset:0;background:url(images/hero.jpg) center / cover no-repeat}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg, rgba(10,25,45,.94) 0%, rgba(10,25,45,.82) 48%, rgba(10,25,45,.45) 100%)}
+.hero-in{position:relative;max-width:1080px;margin:0 auto;padding:88px 24px 72px}
+.hero-new{display:inline-flex;align-items:center;gap:10px;margin-bottom:20px}
+.hero-new .badge{background:var(--red);color:#fff;font-weight:800;font-size:13px;letter-spacing:.14em;padding:5px 14px;border-radius:3px}
+.hero-new .cat{font-size:13px;font-weight:700;color:#c8d4e4;letter-spacing:.06em}
+.hero h1{font-size:clamp(30px,5vw,52px);font-weight:800;letter-spacing:.02em;line-height:1.35;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.hero h1 em{font-style:normal;color:var(--alert)}
+.hero-lede{margin-top:18px;font-size:clamp(15px,2vw,18px);font-weight:600;max-width:34em;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.hero-set{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.set-item{background:rgba(255,255,255,.96);color:var(--ink);border-radius:6px;padding:13px 18px;min-width:170px}
+.set-item .t{font-weight:800;font-size:15px;line-height:1.4}
+.set-item .d{font-size:11px;color:#5b6b80;font-weight:600}
+.set-plus{font-size:26px;font-weight:800;color:var(--alert)}
+.hero-total{margin-top:22px;display:inline-block;background:#fff;color:var(--ink);border-radius:8px;padding:18px 28px;border-left:8px solid var(--alert)}
+.hero-total .lbl{font-size:12.5px;font-weight:800;color:var(--navy2);letter-spacing:.06em}
+.hero-total .num{font-size:clamp(34px,5vw,46px);font-weight:800;line-height:1.15}
+.hero-total .num small{font-size:16px;font-weight:700}
+.hero-total .note{font-size:11px;color:#5b6b80}
+.hero-actions{margin-top:30px}
+.hero-fine{margin-top:12px;font-size:11px;color:#b9c6d8}
+
+/* ── 見出し ── */
+.sec-head{margin-bottom:44px}
+.sec-eyebrow{display:inline-block;color:var(--navy2);font-weight:800;font-size:12px;letter-spacing:.22em;border-left:4px solid var(--alert);padding-left:10px;margin-bottom:12px}
+.sec-title{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:.03em}
+.sec-lede{margin-top:14px;color:#44536a;max-width:44em}
+
+/* ── 脅威 ── */
+.threats{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.threat{background:#fff;border:1px solid #dde4ec;border-top:4px solid var(--red);padding:26px 24px}
+.threat .cat{font-size:11.5px;font-weight:800;color:var(--red);letter-spacing:.14em;margin-bottom:8px}
+.threat h3{font-size:17px;font-weight:800;margin-bottom:10px}
+.threat p{font-size:14px;color:#44536a}
+.threat ul{list-style:none;margin-top:10px}
+.threat li{font-size:13.5px;padding:5px 0 5px 1.3em;text-indent:-1.3em;color:#44536a}
+.threat li::before{content:"▲";color:var(--red);font-size:10px;margin-right:.55em}
+.double-loss{margin-top:36px;background:var(--navy);color:#fff;border-radius:8px;padding:34px 32px}
+.double-loss h3{font-size:19px;font-weight:800;margin-bottom:20px}
+.double-loss h3 em{font-style:normal;color:var(--alert)}
+.loss-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.loss{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:22px}
+.loss .no{font-size:11px;font-weight:800;color:var(--alert);letter-spacing:.16em}
+.loss h4{font-size:17px;font-weight:800;margin:4px 0 8px}
+.loss p{font-size:13.5px;color:#ccd7e5}
+.loss strong{color:#fff;font-size:15px}
+
+/* ── 写真バンド ── */
+.photo-band{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.photo-band figure{margin:0;position:relative}
+.photo-band img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.photo-band figcaption{position:absolute;left:0;bottom:0;background:rgba(10,25,45,.82);color:#fff;font-size:12px;font-weight:700;padding:6px 12px}
+
+/* ── 三位一体 ── */
+.trinity{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.tri{background:#fff;border:1px solid #dde4ec;border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.tri-head{background:var(--navy2);color:#fff;padding:16px 22px}
+.tri-head .no{font-size:11px;font-weight:800;color:var(--alert);letter-spacing:.16em}
+.tri-head h3{font-size:18px;font-weight:800;margin-top:2px}
+.tri-body{padding:22px;font-size:14px;color:#44536a;flex:1}
+.tri-body strong{color:var(--ink)}
+
+/* ── まもる君 ── */
+.mamoru{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:start}
+.point{background:#fff;border:1px solid #dde4ec;border-radius:6px;padding:22px 24px;margin-bottom:16px}
+.point .pt{display:inline-block;background:var(--alert);color:var(--navy);font-size:11.5px;font-weight:800;letter-spacing:.1em;padding:3px 12px;border-radius:3px;margin-bottom:8px}
+.point h3{font-size:17px;font-weight:800;margin-bottom:6px}
+.point p{font-size:14px;color:#44536a}
+.mamoru-note{font-size:12px;color:#5b6b80;margin-top:10px;line-height:1.7}
+.mamoru-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mamoru-photos figure{margin:0;background:#fff;border:1px solid #dde4ec;border-radius:6px;overflow:hidden}
+.mamoru-photos img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.mamoru-photos figcaption{font-size:12.5px;font-weight:700;padding:8px 12px;color:#2c3a50}
+.mamoru-photos figure.wide{grid-column:1/-1}
+.mamoru-photos figure.wide img{aspect-ratio:16/7}
+
+/* ── 補償 ── */
+.cover-flags{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.flag{background:var(--navy);color:#fff;font-weight:800;font-size:15.5px;padding:12px 22px;border-radius:6px;border-bottom:4px solid var(--alert)}
+.flag em{font-style:normal;color:var(--alert)}
+.cover-detail{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.cover-card{background:#fff;border:1px solid #dde4ec;border-radius:6px;padding:26px}
+.cover-card h3{font-size:16px;font-weight:800;color:var(--navy2);margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--alert)}
+.cover-card ul{list-style:none}
+.cover-card li{font-size:14px;padding:6px 0 6px 1.5em;text-indent:-1.5em}
+.cover-card li::before{content:"✔";color:#1d7a3e;font-weight:800;margin-right:.55em}
+.cover-card p{font-size:13.5px;color:#44536a}
+.cover-fine{margin-top:20px;font-size:11.5px;color:#5b6b80;line-height:1.8}
+
+/* ── 加入条件 ── */
+.conds{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.cond{background:#fff;border:1px solid #dde4ec;border-radius:6px;padding:24px 22px;text-align:left}
+.cond .no{display:inline-flex;width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--alert);font-weight:800;align-items:center;justify-content:center;font-size:15px;margin-bottom:12px}
+.cond h3{font-size:15.5px;font-weight:800;margin-bottom:6px}
+.cond p{font-size:13px;color:#44536a}
+.hazard-box{margin-top:36px;background:#fff;border:2px solid var(--navy);border-radius:8px;padding:30px}
+.hazard-box h3{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:14px}
+.hazard-box ol{margin-left:1.4em}
+.hazard-box li{font-size:14px;padding:5px 0;color:#2c3a50}
+.hazard-box .sub{font-size:12.5px;color:#5b6b80;margin-top:10px}
+
+/* ── フロー ── */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:step}
+.step{position:relative;background:#fff;border:1px solid #dde4ec;padding:22px 16px 18px;text-align:center}
+.step:not(:last-child)::after{content:"";position:absolute;right:-9px;top:50%;transform:translateY(-50%);border-left:9px solid var(--alert);border-top:9px solid transparent;border-bottom:9px solid transparent;z-index:2}
+.step .no{font-size:11px;font-weight:800;color:var(--navy2);letter-spacing:.14em}
+.step h4{font-size:15.5px;font-weight:800;margin:4px 0 6px}
+.step p{font-size:12px;color:#44536a;line-height:1.6}
+.flow-merit{margin-top:28px;background:var(--navy);color:#fff;border-radius:6px;padding:24px 28px;font-size:15px;font-weight:700}
+.flow-merit em{font-style:normal;color:var(--alert)}
+.flow-note{margin-top:10px;font-size:11.5px;color:#5b6b80}
+
+/* ── メリット ── */
+.merits{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.merit{background:#fff;border:1px solid #dde4ec;border-top:4px solid var(--navy2);padding:26px 24px}
+.merit .cat{font-size:11.5px;font-weight:800;color:var(--navy2);letter-spacing:.16em;margin-bottom:8px}
+.merit h3{font-size:17px;font-weight:800;margin-bottom:8px}
+.merit p{font-size:14px;color:#44536a}
+
+/* ── 価格 ── */
+.price-box{background:#fff;border:3px solid var(--navy);border-radius:10px;overflow:hidden;max-width:820px;margin:0 auto}
+.price-head{background:var(--navy);color:#fff;padding:20px 30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.price-head .badge{background:var(--red);color:#fff;font-size:12px;font-weight:800;letter-spacing:.12em;padding:4px 12px;border-radius:3px}
+.price-head h3{font-size:20px;font-weight:800}
+.price-body{padding:34px 30px}
+.price-parts{display:flex;flex-wrap:wrap;align-items:center;gap:10px;justify-content:center}
+.part{background:var(--mist);border:1px solid #d4dde8;border-radius:6px;padding:12px 18px;text-align:center}
+.part .t{font-weight:800;font-size:14.5px}
+.part .d{font-size:11px;color:#5b6b80}
+.part-plus{font-size:22px;font-weight:800;color:var(--navy2)}
+.price-total{margin-top:26px;text-align:center}
+.price-total .lbl{font-size:13px;font-weight:800;color:var(--navy2)}
+.price-total .num{font-size:clamp(40px,6vw,56px);font-weight:800;line-height:1.15}
+.price-total .num small{font-size:18px;font-weight:700}
+.price-total .note{font-size:12px;color:#5b6b80}
+.price-extra{margin-top:22px;background:#fff8e1;border:1px solid #eed48a;border-radius:6px;padding:16px 20px;font-size:13.5px}
+
+/* ── 注意事項 ── */
+.terms{background:#fff;border:1px solid #dde4ec;border-radius:6px;padding:28px;font-size:12.5px;color:#44536a;line-height:1.9}
+.terms h3{font-size:14.5px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.terms ul{list-style:none}
+.terms li{padding:3px 0 3px 1.2em;text-indent:-1.2em}
+.terms li::before{content:"・"}
+
+/* ── CTA ── */
+.cta{position:relative;color:#fff;text-align:center;background:var(--navy)}
+.cta::before{content:"";position:absolute;inset:0;background:url(images/plant-wide.jpg) center / cover no-repeat;opacity:.18}
+.cta-in{position:relative;max-width:760px;margin:0 auto;padding:80px 24px}
+.cta h2{font-size:clamp(22px,3.4vw,32px);font-weight:800;letter-spacing:.03em}
+.cta p{margin-top:14px;font-size:14.5px;color:#ccd7e5}
+.cta .btn-hero{margin-top:30px}
+.cta-tel{margin-top:26px;font-size:13px;color:#b9c6d8}
+.cta-tel strong{display:block;font-size:26px;color:#fff;letter-spacing:.04em}
+
+/* ── 会社概要 ── */
+.company-table{width:100%;max-width:720px;border-collapse:collapse}
+.company-table th,.company-table td{border-bottom:1px solid #dde4ec;padding:13px 10px;font-size:14px;text-align:left;vertical-align:top}
+.company-table th{width:8em;font-weight:800;color:var(--navy2)}
+
+/* ── footer ── */
+.footer{background:var(--navy);color:#9fb0c6;font-size:12px;padding:28px 0}
+.footer .inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .flow{grid-template-columns:1fr;gap:14px}
+  .step:not(:last-child)::after{right:50%;top:auto;bottom:-12px;transform:translateX(50%) rotate(90deg)}
+}
+@media (max-width:820px){
+  .section{padding:60px 0}
+  .mamoru,.cover-detail{grid-template-columns:1fr}
+  .loss-grid{grid-template-columns:1fr}
+  .photo-band{grid-template-columns:1fr}
+  .header-tel{display:none}
+  .hero-in{padding:68px 24px 56px}
+}
+@media (max-width:560px){
+  .set-plus{width:100%;text-align:center;line-height:.6}
+  .header-in{padding:8px 14px;gap:10px}
+  .brand{font-size:12.5px}
+  .brand small{font-size:8.5px;letter-spacing:.04em}
+  .btn-alert{padding:10px 14px;font-size:12.5px;white-space:nowrap}
+  body{overflow-x:clip}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .btn,.btn:hover{transition:none;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-in">
+    <div class="brand">RE-INNOVATIONS<small>株式会社アール・イー・イノベーションズ</small></div>
+    <div class="header-cta">
+      <div class="header-tel">お電話でのご相談<strong>03-5244-5436</strong></div>
+      <a class="btn btn-alert" href="https://re-innovations.co.jp/contact/">WEBお申込み・ご相談</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg" role="img" aria-label="太陽光発電所でタブレットを手に点検作業を行うスタッフ"></div>
+  <div class="hero-in">
+    <div class="hero-new"><span class="badge">新登場</span><span class="cat">低圧太陽光発電所向け 盗難対策の決定版</span></div>
+    <h1>あなたの大切な資産、<br>しっかり<em>守れて</em>いますか？<br>盗難対策まもるくんセット</h1>
+    <p class="hero-lede">「盗ませない」防犯施工に、簡易目視点検と盗難・災害補償特典をワンパッケージ。防犯・補償・点検をワンストップでご提供します。</p>
+    <div class="hero-set">
+      <div class="set-item"><div class="t">盗難対策まもる君</div><div class="d">防犯施工</div></div>
+      <span class="set-plus" aria-hidden="true">＋</span>
+      <div class="set-item"><div class="t">簡易目視点検</div><div class="d">年1回／5年間</div></div>
+      <span class="set-plus" aria-hidden="true">＋</span>
+      <div class="set-item"><div class="t">盗難＋災害補償特典</div><div class="d">1年間※1年ごとの更新／最長5年</div></div>
+    </div>
+    <div class="hero-total">
+      <div class="lbl">総額（施工費・点検・特典含む）</div>
+      <div class="num">450,000<small>円（税別）</small></div>
+      <div class="note">※ご提供条件は下部記載の詳細をご確認ください。</div>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-hero" href="https://re-innovations.co.jp/contact/">WEBお申込み・ご相談はこちら</a>
+    </div>
+  </div>
+</section>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<section class="section tint">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="sec-eyebrow">THREAT</span>
+      <h2 class="sec-title">盗難対策はどこでも、もう当たり前に。</h2>
+      <p class="sec-lede">盗難・災害・保険の三方向から、発電所を取り巻くリスクは急速に高まっています。</p>
+    </div>
+    <div class="threats">
+      <div class="threat">
+        <div class="cat">盗難被害の拡大</div>
+        <h3>関東・中部から西日本各地へ</h3>
+        <p>特定のホットスポットだけでなく、広域的にターゲット化されています。</p>
+        <ul>
+          <li>住宅至近の発電所でも、白昼堂々と作業員を装う大胆な犯行が急増</li>
+          <li>銅価格の高騰と人件費上昇で、修復費用は数年前の20〜30%増</li>
+        </ul>
+      </div>
+      <div class="threat">
+        <div class="cat">自然災害の激甚化</div>
+        <h3>「想定」を上回る事象が頻発</h3>
+        <p>気候変動に伴い、従来の想定を上回る気象事象が全国各地で発生しています。</p>
+        <ul>
+          <li>線状降水帯による浸水・土砂災害リスクの急増</li>
+          <li>落雷サージによるパワコン破壊、竜巻・突風によるパネル飛散</li>
+        </ul>
+      </div>
+      <div class="threat">
+        <div class="cat">保険市場の変化</div>
+        <h3>入りたくても保険に入れない？！</h3>
+        <p>太陽光発電所を巡る損害保険スキームは、今まさに崩壊の危機にあります。</p>
+        <ul>
+          <li>【引受難】損保各社が盗難リスクの引き受けを停止</li>
+          <li>【免責高騰】1事故あたり数十万〜百万円単位の自己負担</li>
+          <li>【補償縮小】標準補償から落雷被害が除外されるケースが多発</li>
+        </ul>
+      </div>
+    </div>
+    <div class="double-loss">
+      <h3>被害は<em>「二重の損失」</em>をもたらします</h3>
+      <div class="loss-grid">
+        <div class="loss">
+          <span class="no">損失 01</span>
+          <h4>高額な復旧コスト</h4>
+          <p>ケーブル再購入、緊急施工工賃。一度の盗難で<strong>200万〜500万円単位</strong>の想定外支出が発生します。</p>
+        </div>
+        <div class="loss">
+          <span class="no">損失 02</span>
+          <h4>長期的な売電停止</h4>
+          <p>復旧まで<strong>平均3〜6ヶ月</strong>。売電収入がゼロの期間も融資返済は止まらず、収支計画が破綻します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="photo-band">
+  <figure><img src="images/disaster.jpg" alt="土砂災害で破損した太陽光パネル" loading="lazy"><figcaption>激甚化する自然災害</figcaption></figure>
+  <figure><img src="images/cable.jpg" alt="保護管から露出したケーブル" loading="lazy"><figcaption>狙われるケーブルの露出箇所</figcaption></figure>
+  <figure><img src="images/pole2.jpg" alt="フェンス際の構内柱" loading="lazy"><figcaption>盗難の起点となる構内柱まわり</figcaption></figure>
+</div>
+
+<section class="section">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="sec-eyebrow">SOLUTION</span>
+      <h2 class="sec-title">防犯・補償・点検の三位一体プラン</h2>
+      <p class="sec-lede">「盗ませない」「万一の際も免責なし」「常に正常稼働」をワンパッケージにしました。</p>
+    </div>
+    <div class="trinity">
+      <div class="tri">
+        <div class="tri-head"><span class="no">01 ── 防犯</span><h3>物理防護「まもる君」</h3></div>
+        <div class="tri-body">犯行に<strong>「手間と時間」を強要</strong>し、犯行を断念させる強固な防犯対策を実施します。</div>
+      </div>
+      <div class="tri">
+        <div class="tri-head"><span class="no">02 ── 補償</span><h3>盗難＋災害補償特典</h3></div>
+        <div class="tri-body">被害時も<strong>免責（自己負担）なし</strong>で復旧を支援。盗難だけでなく落雷・風災もカバーします。</div>
+      </div>
+      <div class="tri">
+        <div class="tri-head"><span class="no">03 ── 点検</span><h3>専門家による継続点検</h3></div>
+        <div class="tri-body"><strong>5年間の簡易目視点検（年1回）</strong>。不具合や盗難による異常を早期発見・対処します。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="sec-eyebrow">MAMORU-KUN</span>
+      <h2 class="sec-title">「盗ませない」環境作りが、対策の大前提。</h2>
+      <p class="sec-lede">まもる君は、窃盗犯に対する物理的な遮断を担う盗難対策部材です。</p>
+    </div>
+    <div class="mamoru">
+      <div>
+        <div class="point">
+          <span class="pt">POINT 1</span>
+          <h3>重要箇所の集中防護</h3>
+          <p>立ち上げ部や集電箱周辺など、盗難の起点となる箇所を強固にガードします。</p>
+        </div>
+        <div class="point">
+          <span class="pt">POINT 2</span>
+          <h3>露出箇所の徹底排除</h3>
+          <p>ケーブル全線を保護カバー等で覆い、物理的に接触できない状態を構築します。</p>
+        </div>
+        <div class="point">
+          <span class="pt">POINT 3</span>
+          <h3>証跡写真で補償につなぐ</h3>
+          <p>補償認定には対策完了を示す証跡写真の提出が必須。施工から証跡まで一貫して対応します。</p>
+        </div>
+        <p class="mamoru-note">※イメージは一般的な発電設備の場合です。設備状況により施工内容やお見積金額は異なります。埋設以外のケーブル施工の場合は、別途対策を要します。</p>
+      </div>
+      <div class="mamoru-photos">
+        <figure><img src="images/pole.jpg" alt="まもる君による構内柱の防護施工" loading="lazy"><figcaption>構内柱</figcaption></figure>
+        <figure><img src="images/ac-panel.jpg" alt="まもる君による交流盤の防護施工" loading="lazy"><figcaption>交流盤</figcaption></figure>
+        <figure class="wide"><img src="images/inspect2.jpg" alt="専門スタッフによる発電所の点検作業" loading="lazy"><figcaption>簡易目視点検（年1回／5年間）</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="sec-eyebrow">COVERAGE</span>
+      <h2 class="sec-title">補償の優位性──免責なし、落雷も対象。</h2>
+    </div>
+    <div class="cover-flags">
+      <div class="flag">免責金額<em>なし</em></div>
+      <div class="flag">落雷も<em>補償対象内</em></div>
+      <div class="flag">補償限度額 初年度<em>1,500万円</em></div>
+    </div>
+    <div class="cover-detail">
+      <div class="cover-card">
+        <h3>適用事由</h3>
+        <ul>
+          <li>火災・落雷・破裂または爆発</li>
+          <li>風災（台風、旋風、暴風、暴風雨等）</li>
+          <li>雹災・雪災（豪雪、雪崩等。融雪洪水を除く）</li>
+          <li>水災</li>
+          <li>建物の外部からの物体の落下・飛来・衝突</li>
+          <li>盗難</li>
+        </ul>
+      </div>
+      <div class="cover-card">
+        <h3>特典の内容</h3>
+        <p>盗難補償（1年）＋災害補償（1年）。万が一の被害発生時にも自己負担なく迅速な復旧をサポートします。1年ごとの更新で、最長5年までご継続いただけます。</p>
+        <p style="margin-top:10px">補償申請の窓口・修繕見積り・復旧工事まで、RE-INNOVATIONSが一貫して対応します。</p>
+      </div>
+    </div>
+    <p class="cover-fine">※お客様が加入している火災保険等で補償される場合は火災保険等が優先されます。※ハザードリスク評価の結果、水災害免除基準に該当する場合、水災は対象外となります。※補償範囲や対象機器等の詳しい条件は、ご契約書またはご契約時のご案内文書にてご確認ください。</p>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="sec-eyebrow">CONDITIONS</span>
+      <h2 class="sec-title">プラン加入の4つの要件</h2>
+      <p class="sec-lede">確実な補償をご提供するため、以下の加入要件を全て満たすことが条件となります。</p>
+    </div>
+    <div class="conds">
+      <div class="cond"><span class="no">1</span><h3>認定盗難防止部材の設置</h3><p>指定の防護資材「まもる君」を適切に配置していること。</p></div>
+      <div class="cond"><span class="no">2</span><h3>RE-Iによる定期点検</h3><p>最低年1回以上、現地で行う設備の簡易点検を実施すること。</p></div>
+      <div class="cond"><span class="no">3</span><h3>ハザードリスク評価への合格</h3><p>水災害ハザードリスクの評価に応じて補償条件が決定されます。</p></div>
+      <div class="cond"><span class="no">4</span><h3>低圧発電設備（50kW未満）</h3><p>低圧案件を対象とした専用の補償スキームです。</p></div>
+    </div>
+    <div class="hazard-box">
+      <h3>ハザードリスク規定（必須要件）</h3>
+      <ol>
+        <li>ハザードマップの浸水深について、「洪水・高潮：0.5m超」「洪水・高潮：0.0〜0.5m」のいずれにも当たらないこと。または「0.0〜0.5m」に当たる場合、パワコンの設置高さが0.5m以上であること。</li>
+        <li>土砂災害警戒区域・特別警戒区域に該当していないこと。</li>
+        <li>ケーブル配線が、埋設または不燃フレキシブルパイプ・コンクリート基礎保護材等で全線保護されていること。</li>
+      </ol>
+      <p class="sub">※設置場所・状況により「通常パターン」「水災害免責パターン」のいずれで加入可能かを判定します。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="sec-eyebrow">FLOW</span>
+      <h2 class="sec-title">事故発生から復旧までの流れ</h2>
+      <p class="sec-lede">「手続き代行」と「直接支払い」により、発電所オーナー様の負担を極限まで低減します。</p>
+    </div>
+    <div class="flow">
+      <div class="step"><span class="no">STEP 1</span><h4>被害報告</h4><p>発電所オーナー様からRE-Iへご連絡</p></div>
+      <div class="step"><span class="no">STEP 2</span><h4>書類準備</h4><p>委任状・見積・写真をRE-Iがサポート</p></div>
+      <div class="step"><span class="no">STEP 3</span><h4>審査・認定</h4><p>事務局（Solvvy）が審査・認定</p></div>
+      <div class="step"><span class="no">STEP 4</span><h4>復旧修理</h4><p>RE-I手配による復旧工事</p></div>
+      <div class="step"><span class="no">STEP 5</span><h4>完了</h4><p>保険金はRE-Iへ直接支払い</p></div>
+    </div>
+    <div class="flow-merit">委任状スキームにより、多額の復旧費用をオーナー様が一時的に<em>「立て替える」必要がありません。</em></div>
+    <p class="flow-note">※上記スキーム実現のために、オーナー様に保険金支払先をRE-Iとご指定いただく必要がございます。</p>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="sec-eyebrow">MERIT</span>
+      <h2 class="sec-title">導入メリット──事業の安定と資産価値の最大化</h2>
+    </div>
+    <div class="merits">
+      <div class="merit">
+        <div class="cat">経済的メリット</div>
+        <h3>突発支出リスクの排除</h3>
+        <p>免責なしのため突発的な支出リスクを排除。被害時のキャッシュフロー悪化を防ぎ、融資返済計画を保護します。</p>
+      </div>
+      <div class="merit">
+        <div class="cat">運用的メリット</div>
+        <h3>窓口の一元化</h3>
+        <p>防犯・補償・保守をRE-Iに一元化。窓口を一つにすることで、トラブル発生時の迅速な復旧を実現します。</p>
+      </div>
+      <div class="merit">
+        <div class="cat">資産的メリット</div>
+        <h3>売却時の資産価値向上</h3>
+        <p>盗難対策・高度管理済み物件はセカンダリー市場で「優良物件」と評価され、将来の高値売却を支えます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="price">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="sec-eyebrow">PRICE</span>
+      <h2 class="sec-title">セット価格</h2>
+    </div>
+    <div class="price-box">
+      <div class="price-head"><span class="badge">新登場</span><h3>盗難対策まもるくんセット</h3></div>
+      <div class="price-body">
+        <div class="price-parts">
+          <div class="part"><div class="t">盗難対策まもる君</div><div class="d">防犯施工</div></div>
+          <span class="part-plus" aria-hidden="true">＋</span>
+          <div class="part"><div class="t">簡易目視点検</div><div class="d">年1回／5年間</div></div>
+          <span class="part-plus" aria-hidden="true">＋</span>
+          <div class="part"><div class="t">盗難＋災害補償特典</div><div class="d">1年間※更新最長5年</div></div>
+        </div>
+        <div class="price-total">
+          <div class="lbl">総額（施工費・点検・特典含む）</div>
+          <div class="num">450,000<small>円（税別）</small></div>
+          <div class="note">※ご提供条件は下部記載の詳細をご確認ください。</div>
+        </div>
+        <div class="price-extra">雑草対策やオンライン化対応付きのセットプランもご用意しています。詳しくはお問合せください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="sec-eyebrow">TERMS</span>
+      <h2 class="sec-title">お引き受け条件・ご注意事項</h2>
+    </div>
+    <div class="terms">
+      <h3>お引き受け条件</h3>
+      <ul>
+        <li>補償申請は株式会社RE-INNOVATIONSを窓口として対応させて頂きます。また修繕のお見積り・作業も原則株式会社RE-INNOVATIONSへご依頼頂きます。</li>
+        <li>日常管理は行いません。（日々の発電量確認・遠隔監視上のパワコン稼働状況確認は行いません。所有者様ご自身にて管理をお願い致します。）</li>
+        <li>弊社への遠隔監視情報の共有は不要です。（但し修繕見積もり・工事の際は共有いただく場合がございます。）</li>
+        <li>修理の見積もりおよび工事が必要な場合は、図面・遠隔監視情報等の発電所情報の共有必須でお願い致します。</li>
+        <li>年度更新の2か月前に特典（内容・価格）の見直しを行います。見直しの結果、特典内容及びサービス加入料が変更となる場合があります。見直しがあった場合、特典は途中解約することができます。</li>
+        <li>特典見直しによる特典変更有無を問わず、また特典を途中解約した場合であっても、ご契約期間中にプラン解除はできません。</li>
+      </ul>
+      <h3 style="margin-top:22px">補償の申請について</h3>
+      <ul>
+        <li>補償限度額は原則、取得時価格での設定です。お申込み時に取得時価格が確認できる資料をご提出ください。</li>
+        <li>補償は原則、対象物の修理費用のみが対象となります。付帯費用は補償対象外です。</li>
+        <li>原因が特定できない場合は無責となります。小動物（ネズミ等）・昆虫などに起因する事故や故障は、補償対象外となる可能性が高いです。</li>
+        <li>パワコン・パネル等は原則、性能アップした分が支払われることはありません。</li>
+        <li>補償申請額が一定の規模を超える場合、第三者機関の鑑定人が査定を行います。</li>
+        <li>曖昧（内容が不明確）な申請には補償は適用されません。適切なエビデンスを元に初動で適切な申請を行うことが重要です。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-in">
+    <h2>まずは発電所の状況をお聞かせください。</h2>
+    <p>ハザードリスク評価・お見積りは無料です。発電所の所在地と設備状況が分かれば、加入可否の目安をご案内できます。</p>
+    <a class="btn btn-hero" href="https://re-innovations.co.jp/contact/">WEBお申込み・ご相談はこちら</a>
+    <div class="cta-tel">お電話でのご相談<strong>03-5244-5436</strong></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="sec-eyebrow">COMPANY</span>
+      <h2 class="sec-title">会社概要</h2>
+    </div>
+    <table class="company-table">
+      <tr><th>商号</th><td>株式会社RE-INNOVATIONS（アール・イー・イノベーションズ）</td></tr>
+      <tr><th>代表者</th><td>代表取締役　岸田 隼人</td></tr>
+      <tr><th>設立</th><td>2019年3月1日</td></tr>
+      <tr><th>所在地</th><td>〒101-0041 東京都千代田区神田須田町1丁目24-3 FORECAST神田須田町 6階</td></tr>
+      <tr><th>電話</th><td>03-5244-5436（FAX：03-5244-5437）</td></tr>
+      <tr><th>事業内容</th><td>Solar Edge販売代理店／商材コンサルティング事業／付加価値商材の共同購買事業／イベント・セミナー事業／O＆M・リノベーション事業</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="inner">
+    <div>© 株式会社RE-INNOVATIONS</div>
+    <div>※補償範囲・対象機器等の詳細条件は、ご契約書またはご契約時のご案内文書にてご確認ください。</div>
+  </div>
+</footer>
+
+</body>
+</html>
