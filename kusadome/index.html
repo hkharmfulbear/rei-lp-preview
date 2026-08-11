@@ -3,233 +3,234 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>らくらく草止めネット｜太陽光発電所の雑草対策費用を1/3に｜RE-INNOVATIONS</title>
 <meta name="robots" content="noindex, nofollow">
+<title>らくらく草止めネット｜太陽光発電所の雑草対策費用を1/3に｜RE-INNOVATIONS</title>
 <meta name="description" content="太陽光発電所の雑草対策費用を1/3に圧縮。草止めネット＋除草剤散布のハイブリッド対策。材工込み350,000円〜。株式会社RE-INNOVATIONS">
 <style>
 :root{
-  --ink:#182418;          /* 草陰の黒 */
-  --green:#1b5e20;        /* 深緑 */
-  --leaf:#2e7d32;         /* 葉緑 */
-  --lime:#8bc34a;         /* 若草 */
-  --sun:#f5c518;          /* チラシの黄 */
-  --paper:#ffffff;
-  --field:#f0f4ec;        /* 薄緑の地 */
-  --net:#26292b;          /* ネットの黒 */
-  --red:#c62828;
+  --paper:#fbfaf6;        /* 上質紙 */
+  --ink:#262b21;          /* 緑がかった墨 */
+  --ink-thin:#6b7264;
+  --green:#2c5234;        /* 印刷インキの深緑 */
+  --marker:#f4e33d;       /* 蛍光マーカー */
+  --shu:#c94f2e;          /* 朱 */
+  --net:#26292b;
+  --rule:#3a4033;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic",YuGothic,"Noto Sans JP",sans-serif;
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic",YuGothic,sans-serif;
   color:var(--ink);background:var(--paper);
-  line-height:1.85;font-size:16px;
+  line-height:1.9;font-size:15px;
   -webkit-font-smoothing:antialiased;
 }
+.mincho{font-family:"Hiragino Mincho ProN","Hiragino Mincho Pro","Yu Mincho",YuMincho,"BIZ UDMincho",serif}
 img{max-width:100%;display:block}
-h1,h2,h3{line-height:1.4}
-.inner{max-width:1080px;margin:0 auto;padding:0 24px}
-.section{padding:88px 0}
-.section.tint{background:var(--field)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--shu);outline-offset:3px}
+.inner{max-width:1040px;margin:0 auto;padding:0 24px}
+.section{padding:72px 0}
 
-/* ── ネットのメッシュ質感（シグネチャ） ── */
-.mesh{
-  background-color:var(--net);
-  background-image:
-    repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0 1px, transparent 1px 6px),
-    repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0 1px, transparent 1px 6px);
-}
-.mesh-divider{height:14px;background-color:var(--net);
-  background-image:
-    repeating-linear-gradient(0deg, rgba(255,255,255,.12) 0 1px, transparent 1px 5px),
-    repeating-linear-gradient(90deg, rgba(255,255,255,.12) 0 1px, transparent 1px 5px);}
+/* ── 図版（カタログの写真扱い） ── */
+figure.plate{margin:0}
+figure.plate img{border:1px solid var(--rule)}
+figure.plate figcaption{font-size:11.5px;color:var(--ink-thin);padding-top:7px;letter-spacing:.04em}
+figure.plate figcaption b{color:var(--ink);font-weight:600;margin-right:.6em}
+
+/* ── マーカー ── */
+.mk{background:linear-gradient(transparent 58%, var(--marker) 58%, var(--marker) 92%, transparent 92%)}
 
 /* ── header ── */
-.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid #e2e7dd}
-.header-in{max-width:1080px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{font-weight:800;letter-spacing:.04em;font-size:15px;line-height:1.3}
-.brand small{display:block;font-size:10px;font-weight:600;color:#5a6b58;letter-spacing:.08em}
-.header-cta{display:flex;align-items:center;gap:14px}
-.header-tel{text-align:right;line-height:1.3;font-size:11px;color:#43503f}
-.header-tel strong{display:block;font-size:17px;letter-spacing:.02em;color:var(--ink)}
-.btn{display:inline-block;text-decoration:none;font-weight:800;text-align:center;border-radius:4px;transition:transform .15s ease, box-shadow .15s ease}
-.btn:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
-.btn-sun{background:var(--sun);color:var(--ink);padding:12px 22px;font-size:14px;box-shadow:0 3px 0 #c99e00}
-.btn-sun:hover{transform:translateY(-2px);box-shadow:0 5px 0 #c99e00}
+.header{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100}
+.header::after{content:"";display:block;height:3px;background:var(--green)}
+.header-in{max-width:1040px;margin:0 auto;padding:12px 24px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{font-size:13px;font-weight:600;letter-spacing:.1em}
+.brand small{font-weight:400;color:var(--ink-thin);margin-left:1em;letter-spacing:.06em}
+.header-contact{font-size:12.5px;letter-spacing:.05em}
+.header-contact a{text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:1px}
+.header-contact a:hover{color:var(--green);border-color:var(--green)}
+.header-contact .tel{margin-right:1.4em;color:var(--ink-thin)}
+.header-contact .tel b{color:var(--ink);font-weight:600;letter-spacing:.08em}
 
-/* ── hero ── */
-.hero{position:relative;color:#fff;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url(images/hero.jpg) center 38% / cover no-repeat}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg, rgba(15,26,15,.88) 0%, rgba(15,26,15,.72) 45%, rgba(15,26,15,.28) 100%)}
-.hero-in{position:relative;max-width:1080px;margin:0 auto;padding:96px 24px 72px}
-.hero-eyebrow{display:inline-block;background:var(--sun);color:var(--ink);font-weight:800;font-size:13px;letter-spacing:.1em;padding:5px 14px;margin-bottom:22px}
-.hero h1{font-size:clamp(30px,5.2vw,54px);font-weight:800;letter-spacing:.02em;line-height:1.35;text-shadow:0 2px 14px rgba(0,0,0,.45)}
-.hero h1 .frac{color:var(--sun);font-size:1.35em;padding:0 .06em}
-.hero-lede{margin-top:20px;font-size:clamp(15px,2vw,18px);font-weight:600;max-width:34em;text-shadow:0 1px 8px rgba(0,0,0,.5)}
-.hero-note{margin-top:10px;font-size:11px;color:#cfd8c9}
-.hero-price{margin-top:36px;display:flex;flex-wrap:wrap;align-items:stretch;gap:12px}
-.price-card{background:rgba(255,255,255,.96);color:var(--ink);border-radius:6px;padding:16px 22px;min-width:230px}
-.price-card .tag{display:inline-block;background:var(--green);color:#fff;font-size:11px;font-weight:800;padding:2px 10px;border-radius:3px;letter-spacing:.06em}
-.price-card .num{font-size:34px;font-weight:800;letter-spacing:.01em;line-height:1.2;margin-top:6px}
-.price-card .num small{font-size:14px;font-weight:700}
-.price-card .sub{font-size:11px;color:#5a6b58}
-.price-plus{align-self:center;font-size:34px;font-weight:800;color:var(--sun)}
-.hero-actions{margin-top:32px}
-.btn-hero{background:var(--sun);color:var(--ink);padding:18px 44px;font-size:17px;border-radius:6px;box-shadow:0 4px 0 #c99e00}
-.btn-hero:hover{transform:translateY(-2px);box-shadow:0 6px 0 #c99e00}
+/* ── FV：カタログ表紙 ── */
+.fv{border-bottom:1px solid var(--rule)}
+.fv-in{max-width:1040px;margin:0 auto;padding:56px 24px 64px;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:48px;align-items:stretch}
+.fv-copy{display:flex;gap:36px;min-height:520px}
+.fv-catch{writing-mode:vertical-rl;font-size:clamp(34px,4.6vw,50px);font-weight:600;letter-spacing:.14em;line-height:1.55;flex:0 0 auto}
+.fv-catch .small{font-size:.55em;letter-spacing:.2em;color:var(--green);margin-top:.8em}
+.fv-body{padding-top:8px;display:flex;flex-direction:column;justify-content:flex-start;min-width:0}
+.fv-label{font-size:11.5px;letter-spacing:.3em;color:var(--green);border:1px solid var(--green);display:inline-block;align-self:flex-start;padding:3px 12px;margin-bottom:22px}
+.fv-lede{font-size:14.5px;max-width:30em}
+.fv-note{font-size:11px;color:var(--ink-thin);margin-top:8px}
+.fv-price{margin-top:26px;border-top:1px solid var(--rule);width:100%;border-collapse:collapse}
+.fv-price th,.fv-price td{border-bottom:1px solid var(--rule);padding:11px 4px;text-align:left;vertical-align:baseline}
+.fv-price th{font-size:12.5px;font-weight:600;letter-spacing:.06em;width:11em}
+.fv-price td .yen{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:27px;font-weight:600;letter-spacing:.02em}
+.fv-price td small{font-size:11px;color:var(--ink-thin);display:block;margin-top:2px}
+.fv-cta{margin-top:30px}
+.btn{display:inline-block;text-decoration:none;text-align:center;font-weight:600;letter-spacing:.14em;background:var(--green);color:#fff;padding:16px 40px;font-size:15px;border:1px solid var(--green);transition:background .15s ease}
+.btn:hover{background:#1e3d26}
+.btn.shu{background:var(--shu);border-color:var(--shu)}
+.btn.shu:hover{background:#a83c20}
+.fv-photo{display:flex;flex-direction:column;gap:14px}
+.fv-photo .main img{height:430px;width:100%;object-fit:cover}
+.fv-photo .subrow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fv-photo .subrow img{aspect-ratio:4/3;object-fit:cover;width:100%}
 
-/* ── 見出し ── */
-.sec-head{margin-bottom:44px}
-.sec-eyebrow{display:inline-block;color:var(--leaf);font-weight:800;font-size:12px;letter-spacing:.22em;border-left:4px solid var(--sun);padding-left:10px;margin-bottom:12px}
-.sec-title{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:.03em}
-.sec-lede{margin-top:14px;color:#43503f;max-width:44em}
+/* ── 章見出し（帳票の二重罫） ── */
+.chap{border-top:3px double var(--rule);padding-top:18px;margin-bottom:40px}
+.chap .no{font-size:11.5px;letter-spacing:.3em;color:var(--green);font-weight:600}
+.chap h2{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:clamp(23px,3.2vw,31px);font-weight:600;letter-spacing:.06em;line-height:1.5;margin-top:6px}
+.chap .lede{margin-top:12px;font-size:14px;color:#454b3e;max-width:42em}
 
-/* ── 課題 ── */
-.problems{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.problem{background:#fff;border:1px solid #dde5d6;border-top:4px solid var(--leaf);padding:26px 24px}
-.problem h3{font-size:17px;font-weight:800;margin-bottom:10px}
-.problem p{font-size:14px;color:#43503f}
-.risk-list{margin-top:36px;background:#fff;border:1px solid #dde5d6;padding:28px}
-.risk-list h3{font-size:16px;font-weight:800;color:var(--red);margin-bottom:14px}
-.risk-list ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px 24px}
-.risk-list li{font-size:14px;padding-left:1.3em;text-indent:-1.3em}
-.risk-list li::before{content:"▲";color:var(--red);font-size:11px;margin-right:.5em}
+/* ── 課題：罫区切り3項 ── */
+.cols3{display:grid;grid-template-columns:repeat(3,1fr)}
+.cols3>div{padding:4px 26px 8px;border-left:1px solid var(--rule)}
+.cols3>div:first-child{border-left:none;padding-left:0}
+.cols3 h3{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:17.5px;font-weight:600;letter-spacing:.04em;margin-bottom:8px}
+.cols3 p{font-size:13.5px;color:#454b3e}
+.warn{margin-top:44px;border:1px solid var(--shu);padding:24px 28px}
+.warn h3{font-size:14px;font-weight:600;color:var(--shu);letter-spacing:.08em;margin-bottom:12px}
+.warn ul{list-style:none;columns:2;column-gap:40px}
+.warn li{font-size:13.5px;padding:4px 0 4px 1.2em;text-indent:-1.2em;break-inside:avoid}
+.warn li::before{content:"※";color:var(--shu);margin-right:.4em}
 
-/* ── 防草シートの懸念 ── */
-.sheet-cons{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.con{background:var(--field);padding:26px 24px;border-radius:4px}
-.con .no{font-weight:800;color:#8a9884;font-size:12px;letter-spacing:.15em}
-.con h3{font-size:17px;font-weight:800;margin:6px 0 8px}
-.con p{font-size:14px;color:#43503f}
-.sheet-conclusion{margin-top:32px;text-align:center;font-weight:800;font-size:clamp(16px,2.4vw,21px);background:var(--ink);color:#fff;padding:20px 24px;border-radius:4px}
-.sheet-conclusion em{color:var(--sun);font-style:normal}
+/* ── 懸念：漢数字 ── */
+.kanlist{border-top:1px solid var(--rule)}
+.kanlist>div{display:grid;grid-template-columns:5.5em 14em 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.kanlist .kn{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:22px;color:var(--green);letter-spacing:.1em}
+.kanlist h3{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:17px;font-weight:600;letter-spacing:.04em}
+.kanlist p{font-size:13.5px;color:#454b3e}
+.kanlist-close{margin-top:28px;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:clamp(16px,2.4vw,20px);font-weight:600;letter-spacing:.06em}
 
 /* ── 解決策 ── */
-.solution-hero{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
-.solution-hero img{border-radius:6px;border:1px solid #dde5d6}
-.formula{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:22px 0}
-.formula .box{background:var(--green);color:#fff;font-weight:800;padding:14px 20px;border-radius:6px;font-size:17px;line-height:1.4}
-.formula .box small{display:block;font-weight:600;font-size:11px;color:#cde6cd}
-.formula .box.alt small{color:#5a6b58}
-.formula .op{font-size:26px;font-weight:800;color:var(--leaf)}
-.formula .box.alt{background:#fff;color:var(--ink);border:2px solid var(--green)}
-.cut-points{margin-top:8px}
-.cut-points li{list-style:none;padding:14px 0;border-bottom:1px dashed #cdd8c5;font-size:15px}
-.cut-points li strong{color:var(--green)}
+.sol{display:grid;grid-template-columns:1fr 400px;gap:44px;align-items:start}
+.sol-formula{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:clamp(21px,3vw,27px);font-weight:600;letter-spacing:.06em;margin-bottom:8px}
+.sol-formula small{display:block;font-family:"Hiragino Kaku Gothic ProN",sans-serif;font-size:12px;font-weight:400;letter-spacing:.06em;color:var(--ink-thin);margin-top:6px}
+.sol-points{margin-top:22px;border-top:1px solid var(--rule)}
+.sol-points>div{padding:16px 0;border-bottom:1px solid var(--rule)}
+.sol-points b{font-weight:600;color:var(--green)}
+.sol-points p{font-size:13.5px;color:#454b3e;margin-top:2px}
 
-/* ── コスト比較バー ── */
-.costbar{margin-top:48px;background:#fff;border:1px solid #dde5d6;padding:32px 28px;border-radius:6px}
-.costbar h3{font-size:17px;font-weight:800;margin-bottom:24px}
-.bar-row{display:grid;grid-template-columns:11em 1fr;gap:14px;align-items:center;margin-bottom:18px}
-.bar-label{font-size:13px;font-weight:700;line-height:1.5}
-.bar-label small{display:block;font-weight:600;color:#7a8a74;font-size:11px}
-.bar-track{position:relative;height:44px}
-.bar-fill{height:100%;border-radius:3px;display:flex;align-items:center;padding:0 14px;font-weight:800;color:#fff;font-size:14px;white-space:nowrap}
-.bar-fill.sheet{width:100%;background:#9aa596}
-.bar-fill.ours{width:33.3%;min-width:7.5em;background-color:var(--net);
-  background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.09) 0 1px, transparent 1px 5px),repeating-linear-gradient(90deg, rgba(255,255,255,.09) 0 1px, transparent 1px 5px)}
-.bar-badge{position:absolute;left:calc(33.3% + 14px);top:50%;transform:translateY(-50%);background:var(--sun);color:var(--ink);font-weight:800;font-size:15px;padding:6px 14px;border-radius:4px;white-space:nowrap}
-.costbar .note{font-size:11px;color:#7a8a74;margin-top:6px}
+/* ── 寸法線コスト比較（シグネチャ） ── */
+.dim{margin-top:52px;border:1px solid var(--rule);padding:30px 32px 26px;background:#fff}
+.dim h3{font-size:14px;font-weight:600;letter-spacing:.1em;margin-bottom:26px}
+.dim h3 span{color:var(--ink-thin);font-weight:400;font-size:11.5px;margin-left:1em;letter-spacing:.05em}
+.dim-row{margin-bottom:30px}
+.dim-label{font-size:12.5px;font-weight:600;letter-spacing:.05em;margin-bottom:8px}
+.dim-label small{color:var(--ink-thin);font-weight:400;margin-left:1em}
+.dim-bar{position:relative;height:34px;border:1px solid var(--rule)}
+.dim-bar.full{background:repeating-linear-gradient(-45deg, transparent 0 6px, rgba(58,64,51,.14) 6px 8px)}
+.dim-bar.ours{width:33.3%;background-color:var(--net);background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.1) 0 1px, transparent 1px 5px),repeating-linear-gradient(90deg, rgba(255,255,255,.1) 0 1px, transparent 1px 5px)}
+.dim-line{position:relative;height:26px;margin-top:6px}
+.dim-line .l{position:absolute;top:0;height:100%;border-left:1px solid var(--ink);border-right:1px solid var(--ink)}
+.dim-line .l::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid var(--ink)}
+.dim-line .t{position:absolute;top:50%;transform:translate(-50%,-50%);background:#fff;padding:0 10px;font-size:12px;letter-spacing:.06em;white-space:nowrap}
+.dim-line .t b{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:16px;font-weight:600}
+.dim-note{font-size:11px;color:var(--ink-thin)}
 
-/* ── 相性の良い箇所 ── */
-.fits{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
-.fit{background:#fff;border:1px solid #dde5d6;padding:22px 22px;display:flex;gap:16px;align-items:flex-start}
-.fit .icon{flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:var(--field);border:2px solid var(--leaf);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--green);font-size:15px}
-.fit h3{font-size:15.5px;font-weight:800;margin-bottom:4px}
-.fit p{font-size:13.5px;color:#43503f}
+/* ── 相性表 ── */
+.fit-table{width:100%;border-collapse:collapse;border-top:1px solid var(--rule)}
+.fit-table td{border-bottom:1px solid var(--rule);padding:15px 4px;vertical-align:baseline}
+.fit-table td.n{width:2.4em;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:17px;color:var(--green)}
+.fit-table td b{font-weight:600;letter-spacing:.03em}
+.fit-table td p{font-size:13px;color:#454b3e;margin-top:1px}
 
 /* ── 事例 ── */
-.case-ba{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:6px;overflow:hidden;box-shadow:0 6px 24px rgba(24,36,24,.12)}
-.case-ba figure{position:relative;margin:0}
-.case-ba img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
-.case-ba figcaption{position:absolute;top:14px;left:14px;font-weight:800;font-size:14px;color:#fff;padding:6px 16px;border-radius:3px}
-.case-ba .before figcaption{background:#5f6b5a}
-.case-ba .after figcaption{background:var(--red)}
-.gallery{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.gallery figure{margin:0;background:#fff;border:1px solid #dde5d6;border-radius:6px;overflow:hidden}
-.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.gallery figcaption{font-size:13px;font-weight:700;padding:10px 14px;color:#33402f}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.ba figure.plate{position:relative}
+.ba .stamp{position:absolute;top:-9px;left:12px;font-size:12px;font-weight:600;letter-spacing:.2em;padding:3px 14px;color:#fff}
+.ba .stamp.gray{background:var(--ink-thin)}
+.ba .stamp.shu{background:var(--shu)}
+.ba img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.plates{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plates img{aspect-ratio:4/3;object-fit:cover;width:100%}
 
-/* ── 料金 ── */
-.plans{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
-.plan{background:#fff;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;border:1px solid #dde5d6}
-.plan.reco{border:3px solid var(--green);position:relative}
-.plan-head{padding:20px 26px;color:#fff;background:var(--green)}
-.plan.diy .plan-head{background:var(--net)}
-.plan-head .lbl{font-size:12px;font-weight:800;letter-spacing:.12em;opacity:.85}
-.plan-head h3{font-size:21px;font-weight:800;margin-top:2px}
-.plan-body{padding:26px;flex:1;display:flex;flex-direction:column}
-.plan-price{margin-bottom:6px}
-.plan-price .num{font-size:38px;font-weight:800;letter-spacing:.01em}
-.plan-price .num small{font-size:15px;font-weight:700}
-.plan-price .tax{font-size:12.5px;color:#5a6b58;font-weight:600}
-.plan-sub{background:var(--field);border-radius:4px;padding:12px 16px;margin:12px 0;font-size:13.5px}
-.plan-sub strong{color:var(--green)}
-.plan ul{list-style:none;margin-top:6px}
-.plan li{font-size:13.5px;padding:7px 0 7px 1.4em;text-indent:-1.4em;border-bottom:1px dashed #e2e7dd}
-.plan li::before{content:"✔";color:var(--leaf);font-weight:800;margin-right:.5em}
-.plan .fine{font-size:11px;color:#7a8a74;margin-top:auto;padding-top:14px;line-height:1.7}
-.reco-ribbon{position:absolute;top:-1px;right:18px;background:var(--sun);color:var(--ink);font-size:11.5px;font-weight:800;padding:8px 10px 10px;letter-spacing:.06em;clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%)}
+/* ── 価格票 ── */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.plan{border:1px solid var(--rule);background:#fff;position:relative}
+.plan-head{border-bottom:1px solid var(--rule);padding:14px 22px;display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.plan-head .t{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:18px;font-weight:600;letter-spacing:.05em}
+.plan-head .s{font-size:11px;letter-spacing:.14em;color:var(--green)}
+.plan table{width:100%;border-collapse:collapse}
+.plan th,.plan td{border-bottom:1px solid #d9dcd2;padding:12px 22px;font-size:13px;text-align:left;vertical-align:baseline}
+.plan th{font-weight:600;width:12em;letter-spacing:.03em;padding-right:8px}
+.plan td .yen{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:24px;font-weight:600}
+.plan td small{font-size:11px;color:var(--ink-thin)}
+.plan ul{list-style:none;padding:14px 22px 8px}
+.plan li{font-size:12.5px;color:#454b3e;padding:3px 0 3px 1.2em;text-indent:-1.2em}
+.plan li::before{content:"・"}
+.plan .fine{font-size:10.5px;color:var(--ink-thin);padding:0 22px 16px;line-height:1.7}
+.osusume{position:absolute;top:-16px;right:14px;width:58px;height:58px;border:2px solid var(--shu);border-radius:50%;color:var(--shu);font-size:12px;font-weight:600;letter-spacing:.1em;display:flex;align-items:center;justify-content:center;transform:rotate(8deg);background:rgba(251,250,246,.9);line-height:1.3;text-align:center}
 
-/* ── 仕様・要領 ── */
-.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.spec-table{width:100%;border-collapse:collapse;background:#fff}
-.spec-table th,.spec-table td{border:1px solid #dde5d6;padding:12px 16px;font-size:14px;text-align:left;vertical-align:top}
-.spec-table th{background:var(--field);font-weight:800;width:9em}
-.care{background:#fff;border:1px solid #dde5d6;padding:24px}
-.care h3{font-size:15px;font-weight:800;margin-bottom:10px;color:var(--green)}
-.care ul{list-style:none}
-.care li{font-size:13.5px;padding:6px 0 6px 1.3em;text-indent:-1.3em}
-.care li::before{content:"・";font-weight:800}
-.caution{margin-top:24px;border:2px solid var(--sun);background:#fffbe8;padding:18px 22px;border-radius:4px;font-size:13.5px}
-.caution strong{color:var(--red)}
+/* ── 仕様 ── */
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.spec-table{width:100%;border-collapse:collapse;border-top:1px solid var(--rule)}
+.spec-table th,.spec-table td{border-bottom:1px solid var(--rule);padding:12px 4px;font-size:13.5px;text-align:left;vertical-align:baseline}
+.spec-table th{font-weight:600;width:8em;letter-spacing:.04em}
+.caution{margin-top:22px;border:1px solid var(--shu);padding:14px 18px;font-size:13px}
+.caution b{color:var(--shu);font-weight:600;letter-spacing:.06em}
+.care h3{font-size:13.5px;font-weight:600;letter-spacing:.1em;color:var(--green);margin-bottom:10px}
+.care ul{list-style:none;border-top:1px solid var(--rule)}
+.care li{font-size:13px;padding:9px 0 9px 1.2em;text-indent:-1.2em;border-bottom:1px solid #d9dcd2;color:#454b3e}
+.care li::before{content:"・"}
 
 /* ── 除草剤 ── */
-.herbicides{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.herb{background:#fff;border:1px solid #dde5d6;border-radius:6px;padding:26px}
-.herb .when{display:inline-block;background:var(--leaf);color:#fff;font-size:12px;font-weight:800;padding:3px 12px;border-radius:3px;margin-bottom:8px}
-.herb h3{font-size:19px;font-weight:800}
-.herb p{font-size:13.5px;color:#43503f;margin-top:6px}
+.herbs{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.herb{padding:26px 30px}
+.herb+.herb{border-left:1px solid var(--rule)}
+.herb .when{font-size:11.5px;letter-spacing:.16em;color:var(--green);font-weight:600}
+.herb h3{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:21px;font-weight:600;letter-spacing:.1em;margin:4px 0 6px}
+.herb p{font-size:13px;color:#454b3e}
 
-/* ── CTA ── */
-.cta{position:relative;color:#fff;text-align:center}
-.cta-in{position:relative;max-width:760px;margin:0 auto;padding:80px 24px}
-.cta h2{font-size:clamp(22px,3.4vw,32px);font-weight:800;letter-spacing:.03em}
-.cta p{margin-top:14px;font-size:14.5px;color:#d8e0d2}
-.cta .btn-hero{margin-top:30px}
-.cta-tel{margin-top:26px;font-size:13px;color:#cfd8c9}
-.cta-tel strong{display:block;font-size:26px;color:#fff;letter-spacing:.04em}
+/* ── CTA：ネット地 ── */
+.cta{background-color:var(--net);background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 1px, transparent 1px 6px),repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 1px, transparent 1px 6px);color:#fff}
+.cta-in{max-width:720px;margin:0 auto;padding:76px 24px;text-align:center}
+.cta h2{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:clamp(21px,3.2vw,29px);font-weight:600;letter-spacing:.1em}
+.cta p{margin-top:14px;font-size:13.5px;color:#c9cec4}
+.cta .btn{margin-top:28px;background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.cta .btn:hover{background:var(--marker);border-color:var(--marker)}
+.cta-tel{margin-top:24px;font-size:12px;color:#a9afa2;letter-spacing:.06em}
+.cta-tel b{display:block;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:24px;color:#fff;font-weight:600;letter-spacing:.12em;margin-top:2px}
 
 /* ── 会社概要 ── */
-.company-table{width:100%;max-width:720px;border-collapse:collapse}
-.company-table th,.company-table td{border-bottom:1px solid #dde5d6;padding:13px 10px;font-size:14px;text-align:left;vertical-align:top}
-.company-table th{width:8em;font-weight:800;color:var(--green)}
+.company-table{width:100%;max-width:680px;border-collapse:collapse;border-top:1px solid var(--rule)}
+.company-table th,.company-table td{border-bottom:1px solid var(--rule);padding:12px 4px;font-size:13.5px;text-align:left;vertical-align:top}
+.company-table th{width:8em;font-weight:600;letter-spacing:.06em}
 
-/* ── footer ── */
-.footer{background:var(--ink);color:#aab6a4;font-size:12px;padding:28px 0}
+.footer{border-top:3px double var(--rule);padding:24px 0 40px;font-size:11.5px;color:var(--ink-thin)}
 .footer .inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
-@media (max-width:820px){
-  .section{padding:60px 0}
-  .solution-hero,.spec-grid,.herbicides,.plans{grid-template-columns:1fr}
-  .case-ba{grid-template-columns:1fr 1fr}
-  .bar-row{grid-template-columns:1fr;gap:6px}
-  .bar-badge{font-size:12px;padding:4px 8px}
-  .header-tel{display:none}
-  .hero-in{padding:72px 24px 56px}
+@media (max-width:900px){
+  .fv-in{grid-template-columns:1fr;gap:36px}
+  .fv-copy{min-height:0;gap:24px}
+  .fv-photo .main img{height:auto;aspect-ratio:4/3}
+  .sol{grid-template-columns:1fr}
+  .spec-grid{grid-template-columns:1fr}
 }
-@media (max-width:560px){
-  .case-ba{grid-template-columns:1fr}
-  .price-plus{width:100%;text-align:center;line-height:.6}
-  .header-in{padding:8px 14px;gap:10px}
-  .brand{font-size:12.5px}
-  .brand small{font-size:8.5px;letter-spacing:.04em}
-  .btn-sun{padding:10px 14px;font-size:12.5px;white-space:nowrap}
-  body{overflow-x:clip}
+@media (max-width:680px){
+  .section{padding:56px 0}
+  .cols3{grid-template-columns:1fr}
+  .cols3>div{border-left:none;padding:14px 0;border-top:1px solid var(--rule)}
+  .cols3>div:first-child{border-top:none;padding-top:0}
+  .warn ul{columns:1}
+  .kanlist>div{grid-template-columns:4.6em 1fr;grid-template-rows:auto auto;gap:8px 16px}
+  .kanlist .kn{font-size:18px}
+  .kanlist p{grid-column:2}
+  .fv-price th,.fv-price td{display:block;width:auto}
+  .fv-price th{border-bottom:none;padding-bottom:0}
+  .fv-price td{padding-top:2px}
+  .plans{grid-template-columns:1fr;gap:36px}
+  .plates{grid-template-columns:1fr 1fr}
+  .herbs{grid-template-columns:1fr}
+  .herb+.herb{border-left:none;border-top:1px solid var(--rule)}
+  .ba{grid-template-columns:1fr}
+  .fv-catch{font-size:29px}
 }
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
-  .btn,.btn:hover{transition:none;transform:none}
+  .btn{transition:none}
 }
 </style>
 </head>
@@ -237,64 +238,64 @@ h1,h2,h3{line-height:1.4}
 
 <header class="header">
   <div class="header-in">
-    <div class="brand">RE-INNOVATIONS<small>株式会社アール・イー・イノベーションズ</small></div>
-    <div class="header-cta">
-      <div class="header-tel">お電話でのご相談<strong>03-5244-5436</strong></div>
-      <a class="btn btn-sun" href="https://re-innovations.co.jp/contact/">無料でお見積り</a>
+    <div class="brand">株式会社RE-INNOVATIONS<small>太陽光発電所の雑草対策</small></div>
+    <div class="header-contact">
+      <span class="tel">電話 <b>03-5244-5436</b></span>
+      <a href="https://re-innovations.co.jp/contact/">お見積り・お問合せ</a>
     </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-bg" role="img" aria-label="太陽光パネルの列間に施工された草止めネット"></div>
-  <div class="hero-in">
-    <span class="hero-eyebrow">低圧太陽光発電所の雑草対策</span>
-    <h1>雑草対策費用を、<br><span class="frac">1/3</span>に圧縮する。<br>らくらく草止めネット</h1>
-    <p class="hero-lede">パネル周囲は「草止めネット」で押さえ、それ以外は除草剤散布で。防草シート全面施工に代わる、いいとこ取りのハイブリッド雑草対策です。</p>
-    <p class="hero-note">※発電所全体に防草シート施工のみで対策した場合との比較（当社比）</p>
-    <div class="hero-price">
-      <div class="price-card">
-        <span class="tag">草止めネット施工</span>
-        <div class="num">350,000<small>円〜</small></div>
-        <div class="sub">材工込み（税込 385,000円）</div>
-      </div>
-      <div class="price-plus" aria-hidden="true">＋</div>
-      <div class="price-card">
-        <span class="tag">除草剤散布 年2回</span>
-        <div class="num">60,000<small>円/年〜</small></div>
-        <div class="sub">税込 66,000円（1,000㎡程度想定）</div>
+<section class="fv">
+  <div class="fv-in">
+    <div class="fv-copy">
+      <h1 class="fv-catch mincho">雑草対策の費用を、<br><span class="mk">三分の一</span>に。<span class="small">らくらく草止めネット</span></h1>
+      <div class="fv-body">
+        <span class="fv-label">低圧太陽光発電所向け</span>
+        <p class="fv-lede">パネル周囲は「草止めネット」で押さえ、それ以外は除草剤散布で。防草シート全面施工に代わる、いいとこ取りのハイブリッド雑草対策です。</p>
+        <p class="fv-note">※発電所全体に防草シート施工のみで対策した場合との比較（当社比）</p>
+        <table class="fv-price">
+          <tr><th>草止めネット施工<br><small style="font-weight:400;color:var(--ink-thin)">材工込み</small></th>
+              <td><span class="yen">350,000</span>円〜<small>税込 385,000円</small></td></tr>
+          <tr><th>除草剤散布 年2回</th>
+              <td><span class="yen">60,000</span>円/年〜<small>税込 66,000円・1,000㎡程度想定</small></td></tr>
+        </table>
+        <div class="fv-cta"><a class="btn" href="https://re-innovations.co.jp/contact/">無料見積りを依頼する</a></div>
       </div>
     </div>
-    <div class="hero-actions">
-      <a class="btn btn-hero" href="https://re-innovations.co.jp/contact/">無料見積りを依頼する</a>
+    <div class="fv-photo">
+      <figure class="plate main"><img src="images/hero.jpg" alt="太陽光パネルの列間に施工された草止めネット" fetchpriority="high">
+        <figcaption><b>施工実例</b>パネル間への草止めネット施工</figcaption></figure>
+      <div class="subrow">
+        <figure class="plate"><img src="images/case-before.jpg" alt="施工前：雑草が生い茂った発電所" loading="lazy"><figcaption><b>施工前</b></figcaption></figure>
+        <figure class="plate"><img src="images/case-after.jpg" alt="施工後：ネットで雑草が押さえられた発電所" loading="lazy"><figcaption><b>施工後</b></figcaption></figure>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="mesh-divider" aria-hidden="true"></div>
-
-<section class="section tint">
+<section class="section">
   <div class="inner">
-    <div class="sec-head">
-      <span class="sec-eyebrow">PROBLEM</span>
-      <h2 class="sec-title">草刈りだけでは、もう追いつかない。</h2>
-      <p class="sec-lede">温暖化に伴い、従来の草刈り・年1〜2回の除草剤散布では追いつかない発電所が急増しています。</p>
+    <div class="chap">
+      <span class="no">一、現状</span>
+      <h2>草刈りだけでは、もう追いつかない。</h2>
+      <p class="lede">温暖化に伴い、従来の草刈り・年1〜2回の除草剤散布では追いつかない発電所が急増しています。</p>
     </div>
-    <div class="problems">
-      <div class="problem">
+    <div class="cols3">
+      <div>
         <h3>草の期間が長期化</h3>
         <p>冬の短縮と温暖化により、雑草の年間成長可能期間が大幅に延長。刈っても短期間で再成長します。</p>
       </div>
-      <div class="problem">
+      <div>
         <h3>雑草が強くなった</h3>
         <p>成長力が凄まじく、茎が太く頑強な外来種や手強い雑草が主流に。作業の負担が増しています。</p>
       </div>
-      <div class="problem">
+      <div>
         <h3>費用の悪循環</h3>
         <p>人件費・燃料・資材価格の高騰に作業頻度の増加が重なり、維持費用の負担が著しく増大しています。</p>
       </div>
     </div>
-    <div class="risk-list">
+    <div class="warn">
       <h3>草を放置すると──後から何倍もの大出費に直結します</h3>
       <ul>
         <li>パネルにかかる影・汚れの堆積による売電損失</li>
@@ -309,170 +310,150 @@ h1,h2,h3{line-height:1.4}
 
 <section class="section">
   <div class="inner">
-    <div class="sec-head">
-      <span class="sec-eyebrow">CONCERN</span>
-      <h2 class="sec-title">では防草シート全面施工なら安心か。</h2>
-      <p class="sec-lede">確実に見える防草シートにも、実態としてこんな懸念があります。</p>
+    <div class="chap">
+      <span class="no">二、防草シートの実情</span>
+      <h2>では、防草シート全面施工なら安心か。</h2>
+      <p class="lede">確実に見える防草シートにも、実態としてこんな懸念があります。</p>
     </div>
-    <div class="sheet-cons">
-      <div class="con">
-        <span class="no">CONCERN 01</span>
+    <div class="kanlist">
+      <div>
+        <span class="kn">其の一</span>
         <h3>高額な施工費用</h3>
         <p>FIT売電の残年数を考慮すると、初期の大きな投資改修コストが全く合わない事態に。</p>
       </div>
-      <div class="con">
-        <span class="no">CONCERN 02</span>
+      <div>
+        <span class="kn">其の二</span>
         <h3>短期間での再改修</h3>
         <p>破れ・捲れ・急速な経年劣化。シート上に堆積したわずかな土壌から草が突き抜けることも。</p>
       </div>
-      <div class="con">
-        <span class="no">CONCERN 03</span>
+      <div>
+        <span class="kn">其の三</span>
         <h3>水と強風への脆弱性</h3>
         <p>設置できる環境が限定的。劣化した状態で台風クラスの強風を受けると一気に捲れ上がり、破損範囲が拡大します。</p>
       </div>
     </div>
-    <p class="sheet-conclusion">条件が悪いと、防草シートは<em>設計寿命を全うできない</em>のが実情です。</p>
+    <p class="kanlist-close">条件が悪いと、防草シートは<span class="mk">設計寿命を全うできない</span>のが実情です。</p>
   </div>
 </section>
 
-<div class="mesh-divider" aria-hidden="true"></div>
-
-<section class="section tint" id="solution">
+<section class="section" id="solution">
   <div class="inner">
-    <div class="sec-head">
-      <span class="sec-eyebrow">SOLUTION</span>
-      <h2 class="sec-title">「草止めネット＋除草剤」という画期案</h2>
-      <p class="sec-lede">雑草の影響を受けやすいパネル（架台）周囲に限定してネットを施工し、それ以外の場所は除草剤散布で対策。全面シート施工と比べてコストを徹底圧縮するスキームです。</p>
+    <div class="chap">
+      <span class="no">三、ご提案</span>
+      <h2>「草止めネット＋除草剤」という画期案</h2>
+      <p class="lede">雑草の影響を受けやすいパネル（架台）周囲に限定してネットを施工し、それ以外の場所は除草剤散布で対策。全面シート施工と比べてコストを徹底圧縮するスキームです。</p>
     </div>
-    <div class="solution-hero">
+    <div class="sol">
       <div>
-        <div class="formula">
-          <div class="box">草止めネット<small>パネル周囲に限定施工</small></div>
-          <span class="op">＋</span>
-          <div class="box alt">除草剤散布<small>ネット施工箇所以外</small></div>
-        </div>
-        <ul class="cut-points">
-          <li><strong>① 材料費の劇的なコスト削減</strong>──防草シートと比較して資材部材費用そのものが圧倒的に割安。</li>
-          <li><strong>② 施工プロセスの超簡素化</strong>──初回の大掛かりな除草・草回収作業が不要。ピン打設本数も少なく、特別な専門技術も要りません。</li>
-          <li><strong>③ 管理運用コストの大幅削減</strong>──ネット未施工箇所に限定した散布や効率的草刈で、作業ピークを平準化。点検時の安全な導線も確保できます。</li>
-        </ul>
-      </div>
-      <div>
-        <img src="images/layout.jpg" alt="施工イメージ図：パネル周囲に草止めネットを施工し、その他は除草剤散布で対策" loading="lazy">
-      </div>
-    </div>
-    <div class="costbar">
-      <h3>費用イメージの比較</h3>
-      <div class="bar-row">
-        <div class="bar-label">防草シート全面施工<small>発電所全体をシートで被覆</small></div>
-        <div class="bar-track"><div class="bar-fill sheet">100%</div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-label">草止めネット＋除草剤<small>パネル周囲ネット＋残り散布</small></div>
-        <div class="bar-track">
-          <div class="bar-fill ours">約1/3</div>
-          <div class="bar-badge">費用を1/3に圧縮</div>
+        <p class="sol-formula">草止めネット <span style="color:var(--green)">＋</span> 除草剤散布<small>ネットはパネル周囲に限定施工／除草剤はそれ以外の場所に散布</small></p>
+        <div class="sol-points">
+          <div><b>材料費の劇的なコスト削減</b><p>防草シートと比較して資材部材費用そのものが圧倒的に割安。</p></div>
+          <div><b>施工プロセスの超簡素化</b><p>初回の大掛かりな除草・草回収作業が不要。ピン打設本数も少なく、特別な専門技術も要りません。</p></div>
+          <div><b>管理運用コストの大幅削減</b><p>ネット未施工箇所に限定した散布や効率的草刈で、作業ピークを平準化。点検時の安全な導線も確保できます。</p></div>
         </div>
       </div>
-      <p class="note">※発電所全体に防草シート施工のみで対策した場合との比較（当社比）。発電所の面積・状態により価格は異なります。</p>
+      <figure class="plate"><img src="images/layout.jpg" alt="施工イメージ図：パネル周囲に草止めネットを施工し、その他は除草剤散布で対策" loading="lazy">
+        <figcaption><b>施工範囲図</b>パネル周囲にネット施工、その他は除草剤散布（架台下は施工範囲外）</figcaption></figure>
+    </div>
+    <div class="dim">
+      <h3>費用比較図<span>発電所全体に防草シート施工のみで対策した場合との比較（当社比）</span></h3>
+      <div class="dim-row">
+        <div class="dim-label">防草シート全面施工<small>発電所全体をシートで被覆</small></div>
+        <div class="dim-bar full"></div>
+        <div class="dim-line"><div class="l" style="left:0;width:100%"><span class="t" style="left:50%"><b>100</b>%</span></div></div>
+      </div>
+      <div class="dim-row" style="margin-bottom:10px">
+        <div class="dim-label">草止めネット＋除草剤<small>パネル周囲ネット＋残り散布</small></div>
+        <div class="dim-bar ours"></div>
+        <div class="dim-line"><div class="l" style="left:0;width:33.3%"><span class="t" style="left:50%">約<b>1/3</b></span></div></div>
+      </div>
+      <p class="dim-note">※発電所の面積・状態により価格は異なります。</p>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="inner">
-    <div class="sec-head">
-      <span class="sec-eyebrow">BEST FIT</span>
-      <h2 class="sec-title">草止めネットが威力を発揮する発電所</h2>
+    <div class="chap">
+      <span class="no">四、適地</span>
+      <h2>草止めネットが威力を発揮する発電所</h2>
     </div>
-    <div class="fits">
-      <div class="fit"><div class="icon">01</div><div><h3>除草頻度が増え続けている発電所</h3><p>温暖化の影響で、年ごとに除草・草刈りの回数とコストが増え続けている環境。</p></div></div>
-      <div class="fit"><div class="icon">02</div><div><h3>法面（傾斜地）</h3><p>除草剤の流出で土が流れ落ち、法面そのものが崩壊しかねない箇所。</p></div></div>
-      <div class="fit"><div class="icon">03</div><div><h3>排水性の悪い湿地</h3><p>水捌けが悪く、防草シート貼付や除草剤の効果維持が難しい土地コンディション。</p></div></div>
-      <div class="fit"><div class="icon">04</div><div><h3>農地（田畑）周辺</h3><p>民家や近隣農園に接し、除草剤の飛散防止など環境的な配慮が必要なエリア。</p></div></div>
-      <div class="fit"><div class="icon">05</div><div><h3>短・中期保有予定の物件</h3><p>FIT残年数が短く、高価な防草シートでは費用対効果が見合わない物件。</p></div></div>
-      <div class="fit"><div class="icon">06</div><div><h3>多数の発電所を管理する会社様</h3><p>全物件の草刈が同時期に集中し、作業手配・人工確保が追いつかない管理会社様。</p></div></div>
-    </div>
+    <table class="fit-table">
+      <tr><td class="n">①</td><td><b>除草頻度が増え続けている発電所</b><p>温暖化の影響で、年ごとに除草・草刈りの回数とコストが増え続けている環境。</p></td></tr>
+      <tr><td class="n">②</td><td><b>法面（傾斜地）</b><p>除草剤の流出で土が流れ落ち、法面そのものが崩壊しかねない箇所。</p></td></tr>
+      <tr><td class="n">③</td><td><b>排水性の悪い湿地</b><p>水捌けが悪く、防草シート貼付や除草剤の効果維持が難しい土地コンディション。</p></td></tr>
+      <tr><td class="n">④</td><td><b>農地（田畑）周辺</b><p>民家や近隣農園に接し、除草剤の飛散防止など環境的な配慮が必要なエリア。</p></td></tr>
+      <tr><td class="n">⑤</td><td><b>短・中期保有予定の物件</b><p>FIT残年数が短く、高価な防草シートでは費用対効果が見合わない物件。</p></td></tr>
+      <tr><td class="n">⑥</td><td><b>多数の発電所を管理する会社様</b><p>全物件の草刈が同時期に集中し、作業手配・人工確保が追いつかない管理会社様。</p></td></tr>
+    </table>
   </div>
 </section>
 
-<section class="section tint">
+<section class="section">
   <div class="inner">
-    <div class="sec-head">
-      <span class="sec-eyebrow">CASE</span>
-      <h2 class="sec-title">施工事例</h2>
+    <div class="chap">
+      <span class="no">五、施工事例</span>
+      <h2>現場の記録</h2>
     </div>
-    <div class="case-ba">
-      <figure class="before"><img src="images/case-before.jpg" alt="施工前：パネル間に雑草が生い茂った状態" loading="lazy"><figcaption>施工前</figcaption></figure>
-      <figure class="after"><img src="images/case-after.jpg" alt="施工後：パネル間が草止めネットで覆われた状態" loading="lazy"><figcaption>施工後</figcaption></figure>
+    <div class="ba">
+      <figure class="plate"><span class="stamp gray">施工前</span><img src="images/case-before.jpg" alt="施工前：パネル間に雑草が生い茂った状態" loading="lazy"><figcaption><b>施工前</b>雑草が繁茂しパネル下端に到達</figcaption></figure>
+      <figure class="plate"><span class="stamp shu">施工後</span><img src="images/case-after.jpg" alt="施工後：パネル間が草止めネットで覆われた状態" loading="lazy"><figcaption><b>施工後</b>同地点。ネットで雑草を抑制</figcaption></figure>
     </div>
-    <div class="gallery">
-      <figure><img src="images/net-wide.jpg" alt="パネル間に施工された草止めネットの全景" loading="lazy"><figcaption>標準的な施工（パネル架台前）</figcaption></figure>
-      <figure><img src="images/slope.jpg" alt="法面への草止めネット施工" loading="lazy"><figcaption>法面（傾斜地）への施工</figcaption></figure>
-      <figure><img src="images/fence.jpg" alt="フェンス前への草止めネット施工" loading="lazy"><figcaption>フェンス前への施工</figcaption></figure>
-      <figure><img src="images/net-under.jpg" alt="ネットの下で押さえ込まれた雑草" loading="lazy"><figcaption>生えてきた雑草をネットがガード</figcaption></figure>
-      <figure><img src="images/net-withered.jpg" alt="ネット下で自然に枯れた雑草の様子" loading="lazy"><figcaption>ネット下の草は自然に枯れる</figcaption></figure>
-      <figure><img src="images/spray.jpg" alt="ネット施工箇所以外への除草剤散布作業" loading="lazy"><figcaption>ネット施工以外の場所は除草剤散布</figcaption></figure>
+    <div class="plates">
+      <figure class="plate"><img src="images/net-wide.jpg" alt="パネル間に施工された草止めネットの全景" loading="lazy"><figcaption><b>施工例1</b>標準的な施工（パネル架台前）</figcaption></figure>
+      <figure class="plate"><img src="images/slope.jpg" alt="法面への草止めネット施工" loading="lazy"><figcaption><b>施工例2</b>法面（傾斜地）への施工</figcaption></figure>
+      <figure class="plate"><img src="images/fence.jpg" alt="フェンス前への草止めネット施工" loading="lazy"><figcaption><b>施工例3</b>フェンス前への施工</figcaption></figure>
+      <figure class="plate"><img src="images/net-under.jpg" alt="ネットの下で押さえ込まれた雑草" loading="lazy"><figcaption><b>拡大1</b>生えてきた雑草をネットがガード</figcaption></figure>
+      <figure class="plate"><img src="images/net-withered.jpg" alt="ネット下で自然に枯れた雑草の様子" loading="lazy"><figcaption><b>拡大2</b>ネット下の草は自然に枯れる</figcaption></figure>
+      <figure class="plate"><img src="images/spray.jpg" alt="ネット施工箇所以外への除草剤散布作業" loading="lazy"><figcaption><b>散布</b>ネット施工以外の場所は除草剤散布</figcaption></figure>
     </div>
   </div>
 </section>
 
 <section class="section" id="price">
   <div class="inner">
-    <div class="sec-head">
-      <span class="sec-eyebrow">PRICE</span>
-      <h2 class="sec-title">料金プラン</h2>
-      <p class="sec-lede">施工までおまかせいただくプランと、資材のみご購入いただきご自身で施工されるプランをご用意しています。</p>
+    <div class="chap">
+      <span class="no">六、価格</span>
+      <h2>料金のご案内</h2>
+      <p class="lede">施工までおまかせいただくプランと、資材のみご購入いただきご自身で施工されるプランをご用意しています。</p>
     </div>
     <div class="plans">
-      <div class="plan reco">
-        <span class="reco-ribbon">おすすめ</span>
-        <div class="plan-head">
-          <span class="lbl">施工おまかせ</span>
-          <h3>草止めネット施工＋除草剤散布</h3>
-        </div>
-        <div class="plan-body">
-          <div class="plan-price">
-            <div class="num">350,000<small>円</small></div>
-            <div class="tax">材工込み／税込 385,000円</div>
-          </div>
-          <div class="plan-sub">＋ 除草剤散布 年2回 <strong>60,000円/年</strong>（税込 66,000円）</div>
-          <ul>
-            <li>一般的な低圧太陽光発電所で、2m×50m幅ネット5本をパネル周囲に施工した場合のお見積りです</li>
-            <li>除草剤はネット施工箇所以外（架台下・フェンス周り・門扉前・パワコン周り等）に散布します</li>
-            <li>2種類の除草剤（ザクサ・クサトローゼ）を状態にあわせて効果的に散布します</li>
-          </ul>
-          <p class="fine">※散布は一般的な低圧太陽光発電所（1,000㎡程度）を想定。発電所の面積や状態によりご提供価格は異なります。</p>
-        </div>
+      <div class="plan">
+        <span class="osusume mincho">おすすめ</span>
+        <div class="plan-head"><span class="t">施工おまかせ</span><span class="s">材工込み＋散布</span></div>
+        <table>
+          <tr><th>草止めネット施工</th><td><span class="yen">350,000</span>円<br><small>材工込み／税込 385,000円</small></td></tr>
+          <tr><th>除草剤散布 年2回</th><td><span class="yen">60,000</span>円/年<br><small>税込 66,000円</small></td></tr>
+        </table>
+        <ul>
+          <li>一般的な低圧太陽光発電所で、2m×50m幅ネット5本をパネル周囲に施工した場合のお見積りです</li>
+          <li>除草剤はネット施工箇所以外（架台下・フェンス周り・門扉前・パワコン周り等）に散布します</li>
+          <li>2種類の除草剤（ザクサ・クサトローゼ）を状態にあわせて効果的に散布します</li>
+        </ul>
+        <p class="fine">※散布は一般的な低圧太陽光発電所（1,000㎡程度）を想定。発電所の面積や状態によりご提供価格は異なります。</p>
       </div>
-      <div class="plan diy">
-        <div class="plan-head">
-          <span class="lbl">資材販売（ご自身で施工）</span>
-          <h3>草止めネット 単品販売</h3>
-        </div>
-        <div class="plan-body">
-          <div class="plan-price">
-            <div class="num">25,000<small>円/本</small></div>
-            <div class="tax">2m×50m／税込 27,500円／単価 250円/㎡</div>
-          </div>
-          <div class="plan-sub">専用杭ピン（BRO-PIN L250）<strong>20,000円/箱</strong>（200本入・税込 22,000円）※別途送料</div>
-          <ul>
-            <li>5本以上のご注文で送料無料</li>
-            <li>誰でも簡単施工可能（施工前の除草不要）</li>
-            <li>返しが付いて鉄芯入りだから抜けにくい専用ピン。ネット1本に対して100本使用が目安です</li>
-          </ul>
-          <p class="fine">※製品の仕様は、改良のため予告なく変更することがあります。</p>
-        </div>
+      <div class="plan">
+        <div class="plan-head"><span class="t">資材販売</span><span class="s">ご自身で施工</span></div>
+        <table>
+          <tr><th>草止めネット<br><small style="font-weight:400;color:var(--ink-thin)">2m×50m</small></th><td><span class="yen">25,000</span>円/本<br><small>税込 27,500円／単価 250円/㎡</small></td></tr>
+          <tr><th>専用杭ピン<br><small style="font-weight:400;color:var(--ink-thin)">BRO-PIN L250・200本入</small></th><td><span class="yen">20,000</span>円/箱<br><small>税込 22,000円 ※別途送料</small></td></tr>
+        </table>
+        <ul>
+          <li>ネット5本以上のご注文で送料無料</li>
+          <li>誰でも簡単施工可能（施工前の除草不要）</li>
+          <li>返しが付いて鉄芯入りだから抜けにくい専用ピン。ネット1本に対して100本使用が目安です</li>
+        </ul>
+        <p class="fine">※製品の仕様は、改良のため予告なく変更することがあります。</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section tint">
+<section class="section">
   <div class="inner">
-    <div class="sec-head">
-      <span class="sec-eyebrow">SPEC</span>
-      <h2 class="sec-title">製品仕様と施工のポイント</h2>
+    <div class="chap">
+      <span class="no">七、仕様</span>
+      <h2>製品仕様と施工のポイント</h2>
     </div>
     <div class="spec-grid">
       <div>
@@ -482,9 +463,7 @@ h1,h2,h3{line-height:1.4}
           <tr><th>規格</th><td>1m巾×50m長／1.5m巾×50m長／2m巾×50m長</td></tr>
           <tr><th>専用ピン</th><td>杭ピン BRO-PIN L250（返し付き・鉄芯入り）</td></tr>
         </table>
-        <div class="caution">
-          <strong>仕様上の注意：</strong>稀にネットの目から草がはみ出す事がありますが、自然に枯れます。
-        </div>
+        <div class="caution"><b>仕様上の注意</b>　稀にネットの目から草がはみ出す事がありますが、自然に枯れます。</div>
       </div>
       <div class="care">
         <h3>施工要領・注意点</h3>
@@ -503,12 +482,12 @@ h1,h2,h3{line-height:1.4}
 
 <section class="section">
   <div class="inner">
-    <div class="sec-head">
-      <span class="sec-eyebrow">HERBICIDE</span>
-      <h2 class="sec-title">ネット施工と相性が良い除草剤</h2>
-      <p class="sec-lede">2種類の除草剤を、発電所の状態にあわせて効果的に散布します。</p>
+    <div class="chap">
+      <span class="no">八、除草剤</span>
+      <h2>ネット施工と相性が良い除草剤</h2>
+      <p class="lede">2種類の除草剤を、発電所の状態にあわせて効果的に散布します。</p>
     </div>
-    <div class="herbicides">
+    <div class="herbs">
       <div class="herb">
         <span class="when">施工前に相性が良い</span>
         <h3>ザクサ</h3>
@@ -523,20 +502,20 @@ h1,h2,h3{line-height:1.4}
   </div>
 </section>
 
-<section class="cta mesh">
+<section class="cta">
   <div class="cta-in">
     <h2>発電所の雑草は、ワシにおまかせ！</h2>
     <p>発電所の面積や状態にあわせてお見積りします。現地の写真や図面があれば、より正確なご提案が可能です。</p>
-    <a class="btn btn-hero" href="https://re-innovations.co.jp/contact/">お問合せフォームへ</a>
-    <div class="cta-tel">お電話でのご相談<strong>03-5244-5436</strong></div>
+    <a class="btn" href="https://re-innovations.co.jp/contact/">お問合せフォームへ</a>
+    <div class="cta-tel">お電話でのご相談<b>03-5244-5436</b></div>
   </div>
 </section>
 
 <section class="section">
   <div class="inner">
-    <div class="sec-head">
-      <span class="sec-eyebrow">COMPANY</span>
-      <h2 class="sec-title">会社概要</h2>
+    <div class="chap">
+      <span class="no">九、会社概要</span>
+      <h2>株式会社RE-INNOVATIONS</h2>
     </div>
     <table class="company-table">
       <tr><th>商号</th><td>株式会社RE-INNOVATIONS（アール・イー・イノベーションズ）</td></tr>
