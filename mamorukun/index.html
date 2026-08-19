@@ -13,10 +13,12 @@
 :root{
   --navy:#1c3d6e;
   --navy-dk:#122a4e;
+  --navy-bk:#0d1f3c;
   --blue:#2e6db4;
   --sky:#eef4fb;
   --yellow:#ffc107;
-  --yellow-dk:#d69e00;
+  --yellow-lt:#ffd95e;
+  --yellow-dk:#c79400;
   --red:#e23a2e;
   --ink:#1c2733;
   --sub:#556377;
@@ -30,22 +32,25 @@ a{color:inherit}
 a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .bdx{word-break:keep-all;overflow-wrap:anywhere}
 .inner{max-width:1060px;margin:0 auto;padding:0 24px}
-.section{padding:76px 0}
+.section{padding:88px 0}
 .section.tint{background:var(--sky)}
+/* 紺フチ文字（紺背景用） */
+.fuchi-n{text-shadow:2px 2px 0 var(--navy-bk),-2px 2px 0 var(--navy-bk),2px -2px 0 var(--navy-bk),-2px -2px 0 var(--navy-bk),2.5px 0 0 var(--navy-bk),-2.5px 0 0 var(--navy-bk),0 2.5px 0 var(--navy-bk),0 -2.5px 0 var(--navy-bk),0 2px 5px rgba(0,0,0,.28)}
 
-/* ── ボタン ── */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:900;letter-spacing:.05em;border-radius:999px;transition:transform .15s ease,box-shadow .15s ease}
-.btn-y{background:var(--yellow);color:var(--ink);font-size:17px;padding:16px 38px;box-shadow:0 5px 0 var(--yellow-dk)}
-.btn-y::after{content:"→";font-weight:900}
-.btn-y:hover{transform:translateY(-2px);box-shadow:0 7px 0 var(--yellow-dk)}
-.btn-y.small{font-size:13px;padding:10px 20px;box-shadow:0 3px 0 var(--yellow-dk)}
-.btn-w{background:#fff;color:var(--navy);font-size:15px;padding:15px 32px;border:3px solid #fff;box-shadow:0 5px 0 rgba(0,0,0,.25)}
+/* ── ボタン（質感） ── */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;font-weight:900;letter-spacing:.05em;border-radius:999px;transition:transform .15s ease,box-shadow .15s ease}
+.btn-y{background:linear-gradient(180deg,var(--yellow-lt) 0%,var(--yellow) 55%,#eeae00 100%);color:var(--ink);font-size:17px;padding:17px 28px 17px 40px;box-shadow:inset 0 2px 0 rgba(255,255,255,.6),0 3px 0 var(--yellow-dk),0 7px 14px rgba(0,0,0,.2)}
+.btn-y .ar{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:#fff;color:var(--yellow-dk);display:flex;align-items:center;justify-content:center;font-size:14px}
+.btn-y:hover{transform:translateY(-2px);box-shadow:inset 0 2px 0 rgba(255,255,255,.6),0 5px 0 var(--yellow-dk),0 9px 16px rgba(0,0,0,.24)}
+.btn-y.small{font-size:13px;padding:10px 16px 10px 22px}
+.btn-y.small .ar{width:20px;height:20px;font-size:11px}
+.btn-w{background:linear-gradient(180deg,#ffffff,#eef2f8);color:var(--navy);font-size:15px;padding:15px 30px;box-shadow:inset 0 2px 0 #fff,0 3px 0 #b9c6da,0 7px 14px rgba(0,0,0,.18)}
 .btn-w::after{content:"→";font-weight:900}
 .btn-w:hover{transform:translateY(-2px)}
 
 /* ── header ── */
 .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:2px solid var(--navy)}
-.header-in{max-width:1160px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.header-in{max-width:1160px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
 .brand{line-height:1.3}
 .brand b{font-size:15px;font-weight:900}
 .brand small{display:block;font-size:10px;color:var(--sub);letter-spacing:.06em}
@@ -53,163 +58,195 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .header-tel{text-align:right;line-height:1.25;font-size:10.5px;color:var(--sub)}
 .header-tel b{display:block;font-size:17px;color:var(--ink);letter-spacing:.03em}
 
-/* ── FV：1画面完結 ── */
-.fv{position:relative;overflow:hidden;color:#fff;background:radial-gradient(ellipse 70% 90% at 80% 10%,rgba(46,109,180,.5),transparent 60%),linear-gradient(160deg,var(--navy-dk) 0%,var(--navy) 60%,#2a5391 100%)}
-.fv-shield{position:absolute;right:-40px;bottom:-60px;width:340px;opacity:.1;pointer-events:none;transform:rotate(8deg)}
-.fv-in{position:relative;z-index:5;max-width:1100px;margin:0 auto;padding:36px 24px 56px}
-.fv-top{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:26px}
-.fv-top .new{background:var(--red);color:#fff;font-size:13px;font-weight:900;letter-spacing:.14em;padding:5px 18px;border-radius:4px}
+/* ── FV ── */
+.fv{position:relative;overflow:hidden;color:#fff;background:
+  linear-gradient(115deg,transparent 42%,rgba(255,255,255,.045) 42%,rgba(255,255,255,.045) 46%,transparent 46%,transparent 58%,rgba(255,255,255,.03) 58%,rgba(255,255,255,.03) 61%,transparent 61%),
+  radial-gradient(ellipse 70% 90% at 80% 8%,rgba(46,109,180,.55),transparent 62%),
+  linear-gradient(160deg,var(--navy-bk) 0%,var(--navy-dk) 34%,var(--navy) 68%,#2a5391 100%)}
+.fv-grid-tex{position:absolute;inset:0;opacity:.06;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:44px 44px}
+.fv-shield{position:absolute;right:-46px;bottom:-70px;width:360px;opacity:.1;pointer-events:none;transform:rotate(8deg)}
+.fv-in{position:relative;z-index:5;max-width:1100px;margin:0 auto;padding:34px 24px 52px}
+.fv-top{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:24px}
+.fv-top .new{background:linear-gradient(180deg,#ff6a5c,var(--red));color:#fff;font-size:13px;font-weight:900;letter-spacing:.14em;padding:5px 20px;border-radius:5px;box-shadow:0 3px 8px rgba(0,0,0,.3);transform:rotate(-2deg)}
 .fv-top .cat{font-size:13.5px;font-weight:700;letter-spacing:.08em;color:#cfe0f5}
-.fv-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:36px;align-items:center}
-.fv-catch{font-size:clamp(29px,4.2vw,48px);font-weight:900;line-height:1.5;letter-spacing:.02em}
-.fv-catch em{font-style:normal;color:var(--yellow)}
-.fv-name{margin-top:14px;display:inline-flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:10px 24px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
-.fv-name .shield{width:38px}
-.fv-name .t{font-size:clamp(19px,2.4vw,25px);font-weight:900;color:var(--navy)}
+.fv-grid{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:36px;align-items:center}
+.fv-catch{font-weight:900;line-height:1.4;letter-spacing:.02em}
+.fv-catch .s1{display:block;font-size:clamp(22px,2.8vw,32px)}
+.fv-catch .s2{display:block;font-size:clamp(34px,4.8vw,56px);margin-top:2px}
+.fv-catch .mam{color:var(--yellow)}
+.fv-catch .q{color:#fff}
+/* 商品名ロゴ座布団 */
+.fv-name{margin-top:18px;display:inline-flex;align-items:center;gap:12px;background:linear-gradient(180deg,#ffffff,#eef2f8);border-radius:16px;padding:12px 26px;box-shadow:inset 0 2px 0 #fff,0 6px 0 rgba(0,0,0,.22),0 14px 28px rgba(0,0,0,.3)}
+.fv-name .shield{width:40px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.2))}
+.fv-name .t{font-size:clamp(20px,2.5vw,26px);font-weight:900;color:var(--navy);letter-spacing:.02em}
+/* 二重リングバッジ */
 .fv-badges{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
-.fvb{width:122px;height:122px;border-radius:50%;background:#fff;color:var(--ink);border:4px solid var(--yellow);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.3;box-shadow:0 8px 20px rgba(0,0,0,.25)}
-.fvb .t{font-size:10.5px;font-weight:700;color:var(--sub)}
-.fvb .v{font-size:13.5px;font-weight:900;color:var(--navy)}
-.fvb .v em{font-style:normal;font-size:22px;color:var(--red)}
+.fvb{width:126px;height:126px;border-radius:50%;background:radial-gradient(circle at 32% 24%,#ffffff 55%,#eef4fb);border:4px solid var(--yellow);box-shadow:inset 0 0 0 4px #fff,inset 0 0 0 6px #ffe08a,0 10px 22px rgba(0,0,0,.32);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.25;color:var(--ink)}
+.fvb .t{font-size:10px;font-weight:700;color:var(--sub)}
+.fvb .v{font-size:13px;font-weight:900;color:var(--navy)}
+.fvb .v em{font-style:normal;font-size:28px;color:var(--red);letter-spacing:-.02em}
 .fvb .v em.n{color:var(--navy)}
-.fv-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.fv-photos figure{margin:0;background:#fff;padding:6px 6px 24px;border-radius:8px;box-shadow:0 10px 28px rgba(0,0,0,.3);position:relative}
-.fv-photos img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px}
-.fv-photos figcaption{position:absolute;left:0;right:0;bottom:4px;text-align:center;font-size:10px;font-weight:700;color:var(--ink)}
-.fv-photos figure.a{transform:rotate(-2deg)}
-.fv-photos figure.b{transform:rotate(1.6deg)}
-/* セット内訳＋総額 */
-.fv-set{margin-top:30px;background:#fff;color:var(--ink);border-radius:16px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.3);display:flex;align-items:stretch}
+/* ポラロイド */
+.fv-photos{position:relative;height:360px}
+.fv-photos figure{margin:0;position:absolute;background:#fff;padding:7px 7px 8px;border-radius:6px;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.fv-photos img{width:100%;height:100%;object-fit:cover;border-radius:3px}
+.fv-photos .tag{position:absolute;left:12px;top:12px;background:var(--red);color:#fff;font-size:10.5px;font-weight:900;padding:2px 12px;border-radius:999px;box-shadow:0 2px 5px rgba(0,0,0,.3)}
+.fv-photos figure.a{left:0;top:14px;width:57%;aspect-ratio:3/4;transform:rotate(-3.5deg);z-index:1}
+.fv-photos figure.b{right:0;top:0;width:54%;aspect-ratio:3/4;transform:rotate(2.5deg);z-index:2}
+/* セット内訳＋総額＋CTA一体 */
+.fv-set{margin-top:30px;background:#fff;color:var(--ink);border-radius:20px;overflow:hidden;box-shadow:0 10px 0 rgba(0,0,0,.18),0 20px 40px rgba(0,0,0,.35);display:flex;align-items:stretch}
 .fv-set .items{flex:1;display:flex;align-items:stretch}
-.fv-set .item{flex:1;padding:14px 12px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:2px;position:relative}
-.fv-set .item+.item::before{content:"＋";position:absolute;left:-9px;top:50%;transform:translateY(-50%);font-weight:900;color:var(--yellow-dk);font-size:16px}
+.fv-set .item{flex:1;padding:16px 12px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:2px;position:relative}
+.fv-set .item+.item::before{content:"＋";position:absolute;left:-10px;top:50%;transform:translateY(-50%);font-weight:900;color:var(--yellow-dk);font-size:18px}
 .fv-set .item b{font-size:13.5px;font-weight:900;color:var(--navy);line-height:1.4}
 .fv-set .item small{font-size:10px;color:var(--sub);line-height:1.4}
-.fv-set .total{flex:0 0 300px;background:var(--yellow);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:14px 20px;text-align:center}
+.fv-set .total{flex:0 0 320px;background:linear-gradient(180deg,var(--yellow-lt),var(--yellow));display:flex;flex-direction:column;justify-content:center;align-items:center;padding:16px 22px;text-align:center;box-shadow:inset 3px 0 0 rgba(199,148,0,.4)}
 .fv-set .total .t{font-size:11px;font-weight:900;color:#6b5200}
-.fv-set .total .v{font-size:34px;font-weight:900;color:var(--ink);line-height:1.2}
-.fv-set .total .v i{font-style:normal;font-size:14px}
+.fv-set .total .v{font-size:38px;font-weight:900;color:var(--ink);line-height:1.15;letter-spacing:-.01em}
+.fv-set .total .v i{font-style:normal;font-size:15px}
 .fv-set .total small{font-size:9.5px;color:#6b5200}
-.fv-ctas{margin-top:26px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+.fv-ctas{margin-top:24px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
 .fv-note{margin-top:12px;text-align:center;font-size:10px;color:#b7c8de}
 
-/* ── 見出し ── */
-.sec-head{text-align:center;margin-bottom:44px}
-.sec-label{display:inline-flex;align-items:center;gap:10px;color:var(--blue);font-size:12.5px;font-weight:900;letter-spacing:.2em;margin-bottom:10px}
-.sec-label::before,.sec-label::after{content:"";width:26px;height:2px;background:var(--yellow);border-radius:2px}
-.sec-title{font-size:clamp(23px,3.4vw,32px);font-weight:900;letter-spacing:.03em;line-height:1.5}
-.sec-title em{font-style:normal;color:var(--red)}
-.sec-title .mk{background:linear-gradient(transparent 62%,rgba(255,193,7,.55) 62%,rgba(255,193,7,.55) 94%,transparent 94%)}
+/* ── 斜めカット区切り ── */
+.slant{line-height:0}
+.slant svg{display:block;width:100%;height:48px}
 
-/* ── 脅威 ── */
+/* ── 見出し ── */
+.sec-head{text-align:center;margin-bottom:42px}
+.sec-label{display:inline-flex;align-items:center;gap:10px;color:var(--blue);font-size:12px;font-weight:900;letter-spacing:.2em;margin-bottom:10px}
+.sec-label::before,.sec-label::after{content:"";width:26px;height:2px;background:var(--yellow);border-radius:2px}
+.sec-title{font-size:clamp(24px,3.6vw,34px);font-weight:900;letter-spacing:.02em;line-height:1.5}
+.sec-title em{font-style:normal;color:var(--navy)}
+.sec-title em.warn{color:var(--red)}
+.sec-title .big{font-size:1.3em;color:var(--red);letter-spacing:-.02em}
+.sec-title .mk{background:linear-gradient(transparent 60%,rgba(255,193,7,.6) 60%,rgba(255,193,7,.6) 94%,transparent 94%)}
+
+/* ── 脅威（警告カード・山場1） ── */
+.threat-sec{background:
+  radial-gradient(ellipse 40% 30% at 88% 8%,rgba(226,58,46,.06),transparent 70%),
+  linear-gradient(180deg,var(--sky),#e2ecf8)}
 .threats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.threat{background:#fff;border-radius:16px;padding:24px 22px;border-top:6px solid var(--red);box-shadow:0 8px 24px rgba(28,61,110,.08)}
-.threat .cat{font-size:11px;font-weight:900;color:var(--red);letter-spacing:.12em;margin-bottom:6px}
-.threat h3{font-size:16px;font-weight:900;line-height:1.5;margin-bottom:6px}
-.threat p{font-size:12.5px;color:var(--sub);line-height:1.7}
-.double-loss{margin-top:36px;background:var(--navy);color:#fff;border-radius:18px;padding:30px 32px}
-.double-loss h3{text-align:center;font-size:19px;font-weight:900;margin-bottom:20px}
+.threat{position:relative;background:#fff;border:2px solid #f0d4d1;border-top:6px solid var(--red);border-radius:14px;padding:30px 22px 22px;background-image:repeating-linear-gradient(-45deg,transparent 0 12px,rgba(226,58,46,.03) 12px 15px);box-shadow:0 8px 22px rgba(28,61,110,.1)}
+.threat .warn-tab{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:10.5px;font-weight:900;letter-spacing:.14em;padding:2px 16px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.25);white-space:nowrap}
+.threat h3{font-size:15.5px;font-weight:900;line-height:1.5;margin-bottom:6px}
+.threat p{font-size:13.5px;color:var(--sub);line-height:1.7}
+.double-loss{margin-top:38px;background:linear-gradient(160deg,var(--navy-dk),var(--navy));color:#fff;border-radius:20px;padding:32px;box-shadow:0 14px 32px rgba(18,42,78,.35)}
+.double-loss h3{text-align:center;font-size:clamp(18px,2.6vw,23px);font-weight:900;margin-bottom:22px}
 .double-loss h3 em{font-style:normal;color:var(--yellow)}
 .loss-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.loss{background:rgba(255,255,255,.08);border-radius:12px;padding:20px 22px}
-.loss .no{font-size:10.5px;font-weight:900;color:var(--yellow);letter-spacing:.14em}
-.loss h4{font-size:16px;font-weight:900;margin:2px 0 6px}
-.loss p{font-size:12.5px;color:#cfe0f5;line-height:1.7}
-.loss b{color:#fff;font-size:14px}
+.loss{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:22px}
+.loss .no{display:inline-block;background:var(--yellow);color:var(--navy-bk);font-size:10.5px;font-weight:900;letter-spacing:.12em;padding:1px 12px;border-radius:999px}
+.loss h4{font-size:16.5px;font-weight:900;margin:8px 0 6px}
+.loss p{font-size:13.5px;color:#cfe0f5;line-height:1.7}
+.loss b{color:var(--yellow);font-size:15px}
 .threat-photos{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.threat-photos figure{margin:0}
-.threat-photos img{border-radius:12px;aspect-ratio:4/3;object-fit:cover;width:100%}
-.threat-photos figcaption{font-size:12px;font-weight:700;color:var(--sub);padding-top:6px;text-align:center}
+.threat-photos figure{margin:0;background:#fff;border-radius:12px;padding:7px 7px 0;box-shadow:0 8px 20px rgba(28,61,110,.12)}
+.threat-photos img{border-radius:8px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.threat-photos figcaption{font-size:11.5px;font-weight:700;color:var(--sub);padding:7px 4px 9px;text-align:center}
 
-/* ── 三位一体 ── */
-.trinity{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.tri{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(28,61,110,.08);text-align:center}
-.tri-head{background:var(--navy);color:#fff;padding:12px;font-size:16.5px;font-weight:900}
+/* ── 中間CTA帯 ── */
+.midcta{background:linear-gradient(120deg,var(--navy-bk),var(--navy) 70%,#2a5391);color:#fff;position:relative;overflow:hidden}
+.midcta::before{content:"";position:absolute;right:-40px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.06)}
+.midcta-in{max-width:1000px;margin:0 auto;padding:30px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.midcta-in .t{font-size:clamp(16px,2.4vw,21px);font-weight:900;line-height:1.6}
+.midcta-in .t small{display:block;font-size:12px;font-weight:700;color:#b7c8de}
+
+/* ── 三位一体（中央主役） ── */
+.trinity{display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:18px;align-items:stretch;max-width:980px;margin:0 auto}
+.tri{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(28,61,110,.1);text-align:center;display:flex;flex-direction:column}
+.tri.main{border:4px solid var(--yellow);box-shadow:0 14px 32px rgba(28,61,110,.2);position:relative;transform:translateY(-10px)}
+.tri.main .hero-tag{position:absolute;top:-15px;left:50%;transform:translateX(-50%) rotate(-2deg);background:linear-gradient(180deg,#ff6a5c,var(--red));color:#fff;font-size:12px;font-weight:900;padding:4px 20px;border-radius:999px;box-shadow:0 4px 10px rgba(0,0,0,.25);white-space:nowrap}
+.tri-head{background:linear-gradient(180deg,#25497f,var(--navy-dk));color:#fff;padding:14px 12px;font-size:16.5px;font-weight:900}
+.tri.main .tri-head{padding-top:22px}
 .tri-head small{display:block;font-size:10px;font-weight:700;color:var(--yellow);letter-spacing:.16em}
-.tri-body{padding:20px 22px;font-size:12.5px;color:var(--sub);line-height:1.7;text-align:left}
+.tri-body{padding:20px 22px;font-size:13.5px;color:var(--sub);line-height:1.7;text-align:left;flex:1}
 .tri-body b{color:var(--ink)}
 
 /* ── まもる君 ── */
 .mamoru{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:start}
-.points>div{background:#fff;border-radius:14px;padding:18px 22px;margin-bottom:14px;box-shadow:0 6px 18px rgba(28,61,110,.07)}
-.points .pt{display:inline-block;background:var(--yellow);color:var(--ink);font-size:11px;font-weight:900;padding:2px 12px;border-radius:999px;margin-bottom:6px}
+.points>div{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:14px;box-shadow:0 6px 18px rgba(28,61,110,.08)}
+.ribbon{display:inline-block;background:linear-gradient(180deg,var(--yellow-lt),var(--yellow));color:#6b5200;font-weight:900;font-size:11.5px;letter-spacing:.1em;padding:5px 24px;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 50%,100% 100%,0 100%,10px 50%);margin-bottom:8px;filter:drop-shadow(0 3px 4px rgba(199,148,0,.35))}
 .points h3{font-size:15.5px;font-weight:900;margin-bottom:4px}
-.points p{font-size:12.5px;color:var(--sub);line-height:1.7}
+.points p{font-size:13.5px;color:var(--sub);line-height:1.7}
 .mamoru-note{font-size:10.5px;color:var(--sub);margin-top:8px;line-height:1.7}
 .mamoru-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.mamoru-photos figure{margin:0}
+.mamoru-photos figure{margin:0;background:#fff;border-radius:10px;padding:6px 6px 0;box-shadow:0 8px 20px rgba(28,61,110,.12)}
 .mamoru-photos figure.wide{grid-column:1/-1}
-.mamoru-photos img{border-radius:12px;aspect-ratio:3/4;object-fit:cover;width:100%}
+.mamoru-photos img{border-radius:6px;aspect-ratio:3/4;object-fit:cover;width:100%}
 .mamoru-photos .wide img{aspect-ratio:16/7}
-.mamoru-photos figcaption{font-size:11.5px;font-weight:700;color:var(--sub);padding-top:5px;text-align:center}
+.mamoru-photos figcaption{font-size:11px;font-weight:700;color:var(--sub);padding:6px 4px 8px;text-align:center}
 
-/* ── 補償 ── */
-.cover-flags{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:860px;margin:0 auto 32px}
-.flag{background:#fff;border:4px solid var(--yellow);border-radius:16px;padding:18px 14px;text-align:center;box-shadow:0 8px 20px rgba(28,61,110,.08)}
-.flag .t{font-size:12px;font-weight:700;color:var(--sub)}
-.flag .v{font-size:clamp(20px,2.8vw,26px);font-weight:900;color:var(--navy);line-height:1.3}
+/* ── 補償（山場2） ── */
+.cover-sec{background:
+  radial-gradient(ellipse 46% 34% at 12% 12%,rgba(255,193,7,.1),transparent 70%),
+  linear-gradient(180deg,#e2ecf8,var(--sky))}
+.cover-flags{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:0 auto 34px}
+.flag{background:radial-gradient(circle at 32% 22%,#ffffff 60%,#f4f8fd);border:4px solid var(--yellow);border-radius:20px;padding:24px 14px;text-align:center;box-shadow:inset 0 0 0 4px #fff,inset 0 0 0 6px #ffe08a,0 12px 26px rgba(28,61,110,.14)}
+.flag .t{font-size:12px;font-weight:900;color:var(--sub)}
+.flag .v{font-size:clamp(24px,3.4vw,34px);font-weight:900;color:var(--navy);line-height:1.3;letter-spacing:-.01em}
 .flag .v em{font-style:normal;color:var(--red)}
 .cover-detail{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;margin:0 auto}
-.cover-card{background:#fff;border-radius:16px;padding:24px 26px;box-shadow:0 8px 24px rgba(28,61,110,.08)}
+.cover-card{background:#fff;border-radius:16px;padding:24px 26px;box-shadow:0 8px 22px rgba(28,61,110,.1)}
 .cover-card h3{font-size:15px;font-weight:900;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:8px}
 .cover-card h3::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow)}
 .cover-card ul{list-style:none}
 .cover-card li{font-size:13px;padding:5px 0 5px 1.5em;text-indent:-1.5em;border-bottom:1px solid var(--sky)}
 .cover-card li::before{content:"✔";color:var(--blue);font-weight:900;margin-right:.5em}
-.cover-card p{font-size:12.5px;color:var(--sub);line-height:1.8}
-.cover-fine{max-width:920px;margin:18px auto 0;font-size:10px;color:var(--sub);line-height:1.8}
+.cover-card p{font-size:13.5px;color:var(--sub);line-height:1.8}
+.cover-fine{max-width:920px;margin:18px auto 0;font-size:11px;color:var(--sub);line-height:1.8}
 
 /* ── 加入要件 ── */
 .conds{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.cond{background:#fff;border-radius:14px;padding:20px 16px;text-align:center;box-shadow:0 6px 18px rgba(28,61,110,.07)}
-.cond .no{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--navy);color:var(--yellow);font-weight:900;align-items:center;justify-content:center;font-size:14px;margin-bottom:8px}
+.cond{background:#fff;border-radius:16px;padding:22px 16px;text-align:center;box-shadow:0 6px 18px rgba(28,61,110,.08)}
+.cond .no{display:inline-flex;width:36px;height:36px;border-radius:50%;background:linear-gradient(180deg,#25497f,var(--navy-dk));color:var(--yellow);font-weight:900;align-items:center;justify-content:center;font-size:15px;margin-bottom:8px;box-shadow:0 3px 6px rgba(18,42,78,.3)}
 .cond h3{font-size:13.5px;font-weight:900;line-height:1.5;margin-bottom:4px}
-.cond p{font-size:11px;color:var(--sub);line-height:1.6;text-align:left}
-.hazard-box{margin-top:28px;background:#fff;border:3px solid var(--navy);border-radius:16px;padding:26px 28px}
+.cond p{font-size:12px;color:var(--sub);line-height:1.6;text-align:left}
+.hazard-box{margin-top:28px;background:#fff;border:3px solid var(--navy);border-radius:18px;padding:26px 28px}
 .hazard-box h3{font-size:15px;font-weight:900;color:var(--navy);margin-bottom:10px}
 .hazard-box ol{margin-left:1.5em}
-.hazard-box li{font-size:12.5px;color:var(--sub);padding:3px 0;line-height:1.7}
+.hazard-box li{font-size:13.5px;color:var(--sub);padding:3px 0;line-height:1.7}
 .hazard-box .sub{font-size:11px;color:var(--sub);margin-top:8px}
 
 /* ── フロー ── */
 .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.step{position:relative;background:#fff;border-radius:12px;padding:18px 12px;text-align:center;box-shadow:0 6px 18px rgba(28,61,110,.07)}
+.step{position:relative;background:#fff;border-radius:14px;padding:18px 12px;text-align:center;box-shadow:0 6px 18px rgba(28,61,110,.08)}
 .step:not(:last-child)::after{content:"▶";position:absolute;right:-11px;top:50%;transform:translateY(-50%);color:var(--yellow-dk);font-size:11px;z-index:2}
 .step .no{display:inline-block;background:var(--sky);color:var(--navy);font-size:10px;font-weight:900;padding:1px 10px;border-radius:999px;letter-spacing:.1em}
 .step h4{font-size:14.5px;font-weight:900;margin:5px 0 3px}
-.step p{font-size:10.5px;color:var(--sub);line-height:1.6}
-.flow-merit{margin-top:24px;background:var(--navy);color:#fff;border-radius:12px;padding:18px 26px;text-align:center;font-size:14.5px;font-weight:900}
+.step p{font-size:11.5px;color:var(--sub);line-height:1.6}
+.flow-merit{margin-top:24px;background:linear-gradient(160deg,var(--navy-dk),var(--navy));color:#fff;border-radius:14px;padding:20px 26px;text-align:center;font-size:15px;font-weight:900;box-shadow:0 8px 20px rgba(18,42,78,.3)}
 .flow-merit em{font-style:normal;color:var(--yellow)}
 .flow-note{margin-top:8px;font-size:10.5px;color:var(--sub);text-align:center}
 
 /* ── メリット ── */
 .merits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.merit{background:#fff;border-radius:16px;padding:24px 22px;text-align:center;box-shadow:0 8px 24px rgba(28,61,110,.08)}
-.merit .cat{display:inline-block;background:var(--sky);color:var(--navy);font-size:11px;font-weight:900;padding:2px 14px;border-radius:999px;margin-bottom:8px}
+.merit{background:#fff;border-radius:16px;padding:26px 22px;text-align:center;box-shadow:0 8px 22px rgba(28,61,110,.1)}
+.merit .cat{display:inline-block;background:linear-gradient(180deg,#25497f,var(--navy-dk));color:#fff;font-size:11px;font-weight:900;padding:3px 16px;border-radius:999px;margin-bottom:8px}
 .merit h3{font-size:15.5px;font-weight:900;margin-bottom:6px;line-height:1.5}
-.merit p{font-size:12.5px;color:var(--sub);line-height:1.7;text-align:left}
+.merit p{font-size:13.5px;color:var(--sub);line-height:1.7;text-align:left}
 
 /* ── 価格 ── */
-.price-box{max-width:780px;margin:0 auto;background:#fff;border:4px solid var(--navy);border-radius:20px;overflow:hidden;position:relative;box-shadow:0 12px 32px rgba(28,61,110,.12)}
-.price-head{background:var(--navy);color:#fff;padding:14px 26px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
-.price-head .new{background:var(--red);font-size:11px;font-weight:900;letter-spacing:.12em;padding:3px 12px;border-radius:4px}
+.price-box{max-width:780px;margin:0 auto;background:#fff;border:4px solid var(--navy);border-radius:22px;overflow:hidden;position:relative;box-shadow:0 10px 0 rgba(18,42,78,.15),0 20px 40px rgba(28,61,110,.18)}
+.price-head{background:linear-gradient(180deg,#25497f,var(--navy-dk));color:#fff;padding:15px 26px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.price-head .new{background:linear-gradient(180deg,#ff6a5c,var(--red));font-size:11px;font-weight:900;letter-spacing:.12em;padding:3px 14px;border-radius:5px;transform:rotate(-2deg)}
 .price-head h3{font-size:19px;font-weight:900}
 .price-body{padding:28px 30px;text-align:center}
 .price-parts{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
-.ppart{background:var(--sky);border-radius:10px;padding:10px 16px;text-align:center}
+.ppart{background:var(--sky);border-radius:12px;padding:10px 16px;text-align:center}
 .ppart b{display:block;font-size:13.5px;font-weight:900;color:var(--navy)}
 .ppart small{font-size:10px;color:var(--sub)}
 .pplus{font-weight:900;color:var(--yellow-dk);font-size:18px}
 .price-total{margin-top:20px}
 .price-total .t{font-size:12px;font-weight:900;color:var(--sub)}
-.price-total .v{font-size:clamp(38px,5.5vw,52px);font-weight:900;color:var(--navy);line-height:1.2}
-.price-total .v i{font-style:normal;font-size:17px}
+.price-total .v{font-size:clamp(42px,6vw,58px);font-weight:900;color:var(--navy);line-height:1.15;letter-spacing:-.01em}
+.price-total .v i{font-style:normal;font-size:18px}
 .price-total small{font-size:10.5px;color:var(--sub)}
-.price-extra{margin-top:18px;background:#fff8e1;border:2px solid var(--yellow);border-radius:10px;padding:12px 18px;font-size:12.5px;text-align:left}
+.price-extra{margin-top:18px;background:#fff8e1;border:2px solid var(--yellow);border-radius:12px;padding:12px 18px;font-size:12.5px;text-align:left}
 .price-extra b{color:var(--navy)}
 
 /* ── 条件 ── */
-.terms{background:#fff;border-radius:16px;padding:26px 28px;font-size:11.5px;color:var(--sub);line-height:1.9;box-shadow:0 6px 18px rgba(28,61,110,.07)}
+.terms{background:#fff;border-radius:16px;padding:26px 28px;font-size:12.5px;color:var(--sub);line-height:1.9;box-shadow:0 6px 18px rgba(28,61,110,.08)}
 .terms h3{font-size:13.5px;font-weight:900;color:var(--navy);margin-bottom:6px}
 .terms h3:not(:first-child){margin-top:18px}
 .terms ul{list-style:none}
@@ -217,48 +254,63 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .terms li::before{content:"・"}
 
 /* ── CTA ── */
-.cta{position:relative;background:radial-gradient(ellipse 70% 90% at 80% 10%,rgba(46,109,180,.5),transparent 60%),linear-gradient(160deg,var(--navy-dk),var(--navy));color:#fff;overflow:hidden}
+.cta{position:relative;background:radial-gradient(ellipse 70% 90% at 80% 10%,rgba(46,109,180,.5),transparent 60%),linear-gradient(160deg,var(--navy-bk),var(--navy));color:#fff;overflow:hidden}
 .cta .fv-shield{opacity:.1}
 .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:72px 24px;text-align:center}
 .cta h2{font-size:clamp(22px,3.4vw,30px);font-weight:900;letter-spacing:.03em;line-height:1.6}
+.cta h2 .y{color:var(--yellow)}
 .cta p{margin-top:12px;font-size:13.5px;color:#cfe0f5}
 .cta .btns{margin-top:26px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
 .cta-tel{margin-top:22px;font-size:12px;color:#b7c8de}
-.cta-tel b{display:block;font-size:26px;color:#fff;letter-spacing:.05em;margin-top:2px}
+.cta-tel b{display:block;font-size:27px;color:#fff;letter-spacing:.05em;margin-top:2px}
 
 /* ── 会社概要 ── */
-.company-table{width:100%;max-width:700px;margin:0 auto;border-collapse:collapse}
-.company-table th,.company-table td{border-bottom:1px solid var(--line);padding:11px 8px;font-size:13px;text-align:left;vertical-align:top}
+.company-table{width:100%;max-width:640px;margin:0 auto;border-collapse:collapse;border-top:1px solid #e6edf0}
+.company-table th,.company-table td{border-bottom:1px solid #e6edf0;padding:16px 8px;font-size:13.5px;text-align:left;vertical-align:top}
 .company-table th{width:7.5em;font-weight:700;color:var(--navy)}
 
-.footer{background:var(--navy-dk);color:#9fb4d0;font-size:11px;padding:22px 0}
+.footer{background:var(--navy-bk);color:#9fb4d0;font-size:11px;padding:22px 0}
 .footer .inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
+/* ── SP固定CTA ── */
+.fixed-cta{position:fixed;left:0;right:0;bottom:0;z-index:300;display:none;grid-template-columns:1fr 1.5fr;gap:8px;padding:9px 10px calc(9px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);box-shadow:0 -4px 16px rgba(0,0,0,.16)}
+.fixed-cta a{display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-weight:900;border-radius:10px;padding:12px 6px;font-size:13px;line-height:1.2}
+.fixed-cta .ftel{background:#fff;border:2px solid var(--navy);color:var(--navy)}
+.fixed-cta .fbtn{background:linear-gradient(180deg,var(--yellow-lt),var(--yellow));color:var(--ink);box-shadow:inset 0 2px 0 rgba(255,255,255,.6),0 3px 0 var(--yellow-dk)}
+
 @media (max-width:920px){
-  .fv-grid{grid-template-columns:1fr;gap:36px}
-  .fv-photos{max-width:420px;margin:0 auto;width:100%}
-  .threats,.trinity,.merits{grid-template-columns:1fr}
+  .fv-grid{grid-template-columns:1fr;gap:38px}
+  .fv-photos{max-width:430px;margin:0 auto;width:100%;height:320px}
+  .threats,.merits{grid-template-columns:1fr}
+  .trinity{grid-template-columns:1fr;max-width:520px}
+  .tri.main{transform:none}
   .conds{grid-template-columns:1fr 1fr}
   .mamoru,.cover-detail{grid-template-columns:1fr}
   .flow{grid-template-columns:1fr;gap:14px}
   .step:not(:last-child)::after{right:50%;top:auto;bottom:-13px;transform:translateX(50%) rotate(90deg)}
   .fv-set{flex-direction:column}
   .fv-set .items{flex-direction:column}
-  .fv-set .item{padding:11px 18px}
-  .fv-set .item+.item::before{left:50%;top:-9px;transform:translateX(-50%)}
-  .fv-set .total{flex:none}
+  .fv-set .item{padding:12px 18px}
+  .fv-set .item+.item::before{left:50%;top:-10px;transform:translateX(-50%)}
+  .fv-set .total{flex:none;box-shadow:inset 0 3px 0 rgba(199,148,0,.4)}
   .threat-photos{grid-template-columns:1fr}
   .cover-flags{grid-template-columns:1fr}
   .loss-grid{grid-template-columns:1fr}
 }
 @media (max-width:640px){
-  .section{padding:56px 0}
-  .fv-in{padding:24px 20px 44px}
+  .section{padding:54px 0}
+  body{padding-bottom:70px}
+  .fv-in{padding:22px 20px 44px}
   .fv-badges{gap:10px}
-  .fvb{width:106px;height:106px}
+  .fvb{width:108px;height:108px}
+  .fvb .v em{font-size:23px}
   .conds{grid-template-columns:1fr}
   .header-tel{display:none}
   .fv-shield{width:220px}
+  .fv-photos{height:270px}
+  .btn-y{font-size:15.5px;padding:15px 20px 15px 30px;white-space:nowrap}
+  .fixed-cta{display:grid}
+  .midcta-in{justify-content:center;text-align:center}
 }
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
@@ -273,12 +325,13 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
     <div class="brand"><b>盗難対策まもるくんセット</b><small>株式会社RE-INNOVATIONS</small></div>
     <div class="header-r">
       <div class="header-tel">お電話でのご相談<b>03-5244-5436</b></div>
-      <a class="btn btn-y small" href="https://re-innovations.co.jp/contact/">WEBお申込み・ご相談</a>
+      <a class="btn btn-y small" href="https://re-innovations.co.jp/contact/">WEBお申込み・ご相談<span class="ar">→</span></a>
     </div>
   </div>
 </header>
 
 <section class="fv">
+  <div class="fv-grid-tex" aria-hidden="true"></div>
   <img class="fv-shield" src="images/deco/shield.webp" alt="" aria-hidden="true">
   <div class="fv-in">
     <div class="fv-top">
@@ -287,7 +340,10 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
     </div>
     <div class="fv-grid">
       <div>
-        <h1 class="fv-catch bdx">その発電所、<br><em>守れて</em>いますか？</h1>
+        <h1 class="fv-catch">
+          <span class="s1 fuchi-n bdx">その発電所、</span>
+          <span class="s2"><span class="mam fuchi-n">守れて</span><span class="q fuchi-n">いますか？</span></span>
+        </h1>
         <div class="fv-name">
           <img class="shield" src="images/deco/shield.webp" alt="">
           <span class="t">盗難対策まもるくんセット</span>
@@ -299,8 +355,8 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
         </div>
       </div>
       <div class="fv-photos">
-        <figure class="a"><img src="images/pole.jpg" alt="まもる君による構内柱の防護施工" fetchpriority="high"><figcaption>施工例｜構内柱</figcaption></figure>
-        <figure class="b"><img src="images/ac-panel.jpg" alt="まもる君による交流盤の防護施工"><figcaption>施工例｜交流盤</figcaption></figure>
+        <figure class="a"><img src="images/pole.jpg" alt="まもる君による構内柱の防護施工" fetchpriority="high"><span class="tag">施工例｜構内柱</span></figure>
+        <figure class="b"><img src="images/ac-panel.jpg" alt="まもる君による交流盤の防護施工"><span class="tag">施工例｜交流盤</span></figure>
       </div>
     </div>
     <div class="fv-set">
@@ -312,32 +368,32 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
       <div class="total"><span class="t">総額（施工費・点検・特典含む）</span><span class="v">450,000<i>円（税別）</i></span><small>※ご提供条件は下部詳細をご確認ください</small></div>
     </div>
     <div class="fv-ctas">
-      <a class="btn btn-y" href="https://re-innovations.co.jp/contact/">WEBでお申込み</a>
+      <a class="btn btn-y" href="https://re-innovations.co.jp/contact/">WEBでお申込み<span class="ar">→</span></a>
       <a class="btn btn-w" href="https://re-innovations.co.jp/contact/">まずは相談してみる</a>
     </div>
     <p class="fv-note">※補償特典は1年ごとの更新／最長5年。落雷・風災・水災等もカバーします（適用条件あり）。</p>
   </div>
 </section>
 
-<section class="section tint">
-  <div class="inner">
+<section class="threat-sec">
+  <div class="inner" style="padding-top:80px;padding-bottom:84px">
     <div class="sec-head">
       <span class="sec-label">THREAT</span>
-      <h2 class="sec-title bdx">盗難対策は、もう<em>「当たり前」</em>の時代へ</h2>
+      <h2 class="sec-title bdx">盗難対策は、もう<em class="warn">「当たり前」</em>の時代へ</h2>
     </div>
     <div class="threats">
       <div class="threat">
-        <div class="cat">盗難被害の拡大</div>
+        <span class="warn-tab">盗難被害の拡大</span>
         <h3 class="bdx">関東・中部から西日本各地へ</h3>
         <p>住宅至近でも白昼堂々と作業員を装う犯行が急増。銅価格の高騰で修復費用は数年前の20〜30%増です。</p>
       </div>
       <div class="threat">
-        <div class="cat">自然災害の激甚化</div>
+        <span class="warn-tab">自然災害の激甚化</span>
         <h3 class="bdx">「想定」を上回る事象が頻発</h3>
         <p>線状降水帯による浸水・土砂災害、落雷サージによるパワコン破壊、竜巻・突風によるパネル飛散。</p>
       </div>
       <div class="threat">
-        <div class="cat">保険市場の変化</div>
+        <span class="warn-tab">保険市場の変化</span>
         <h3 class="bdx">入りたくても保険に入れない？！</h3>
         <p>損保各社が盗難リスクの引受を停止。加入できても免責は数十万〜百万円単位、落雷が除外されるケースも。</p>
       </div>
@@ -357,15 +413,22 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
   </div>
 </section>
 
+<section class="midcta">
+  <div class="midcta-in">
+    <p class="t bdx">被害が出てからでは、遅い。<small>ハザードリスク評価・お見積りは無料です</small></p>
+    <a class="btn btn-y" href="https://re-innovations.co.jp/contact/">まずは無料相談<span class="ar">→</span></a>
+  </div>
+</section>
+
 <section class="section">
   <div class="inner">
     <div class="sec-head">
       <span class="sec-label">SOLUTION</span>
-      <h2 class="sec-title bdx">防犯・補償・点検の<em>三位一体</em>プラン</h2>
+      <h2 class="sec-title bdx">防犯・補償・点検の<span class="mk">三位一体</span>プラン</h2>
     </div>
     <div class="trinity">
       <div class="tri"><div class="tri-head"><small>01 ── 防犯</small>物理防護「まもる君」</div><div class="tri-body">犯行に<b>「手間と時間」を強要</b>し、犯行を断念させる強固な防犯対策を実施します。</div></div>
-      <div class="tri"><div class="tri-head"><small>02 ── 補償</small>盗難＋災害補償特典</div><div class="tri-body">被害時も<b>免責（自己負担）なし</b>で復旧を支援。盗難だけでなく落雷・風災もカバーします。</div></div>
+      <div class="tri main"><span class="hero-tag">セットの要！</span><div class="tri-head"><small>02 ── 補償</small>盗難＋災害補償特典</div><div class="tri-body">被害時も<b>免責（自己負担）なし</b>で復旧を支援。盗難だけでなく<b>落雷・風災もカバー</b>。補償限度額は初年度1,500万円です。</div></div>
       <div class="tri"><div class="tri-head"><small>03 ── 点検</small>専門家による継続点検</div><div class="tri-body"><b>5年間の簡易目視点検（年1回）</b>。不具合や盗難による異常を早期発見・対処します。</div></div>
     </div>
   </div>
@@ -380,9 +443,9 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
     <div class="mamoru">
       <div>
         <div class="points">
-          <div><span class="pt">POINT 1</span><h3 class="bdx">重要箇所の集中防護</h3><p>立ち上げ部や集電箱周辺など、盗難の起点となる箇所を強固にガードします。</p></div>
-          <div><span class="pt">POINT 2</span><h3 class="bdx">露出箇所の徹底排除</h3><p>ケーブル全線を保護カバー等で覆い、物理的に接触できない状態を構築します。</p></div>
-          <div><span class="pt">POINT 3</span><h3 class="bdx">証跡写真で補償につなぐ</h3><p>補償認定には対策完了を示す証跡写真の提出が必須。施工から証跡まで一貫して対応します。</p></div>
+          <div><span class="ribbon">POINT 1</span><h3 class="bdx">重要箇所の集中防護</h3><p>立ち上げ部や集電箱周辺など、盗難の起点となる箇所を強固にガードします。</p></div>
+          <div><span class="ribbon">POINT 2</span><h3 class="bdx">露出箇所の徹底排除</h3><p>ケーブル全線を保護カバー等で覆い、物理的に接触できない状態を構築します。</p></div>
+          <div><span class="ribbon">POINT 3</span><h3 class="bdx">証跡写真で補償につなぐ</h3><p>補償認定には対策完了を示す証跡写真の提出が必須。施工から証跡まで一貫して対応します。</p></div>
         </div>
         <p class="mamoru-note">※イメージは一般的な発電設備の場合です。設備状況により施工内容やお見積金額は異なります。埋設以外のケーブル施工の場合は、別途対策を要します。</p>
       </div>
@@ -395,11 +458,11 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
   </div>
 </section>
 
-<section class="section">
-  <div class="inner">
+<section class="cover-sec">
+  <div class="inner" style="padding-top:84px;padding-bottom:88px">
     <div class="sec-head">
       <span class="sec-label">COVERAGE</span>
-      <h2 class="sec-title bdx">免責<em>なし</em>、落雷も<em>対象</em>。</h2>
+      <h2 class="sec-title bdx">免責<em class="warn">なし</em>、落雷も<em class="warn">対象</em>。</h2>
     </div>
     <div class="cover-flags">
       <div class="flag"><span class="t">免責金額</span><div class="v"><em>なし</em></div></div>
@@ -428,7 +491,7 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
   </div>
 </section>
 
-<section class="section tint">
+<section class="section">
   <div class="inner">
     <div class="sec-head">
       <span class="sec-label">CONDITIONS</span>
@@ -449,6 +512,13 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
       </ol>
       <p class="sub">※設置場所・状況により「通常パターン」「水災害免責パターン」のいずれで加入可能かを判定します。</p>
     </div>
+  </div>
+</section>
+
+<section class="midcta">
+  <div class="midcta-in">
+    <p class="t bdx">うちの発電所は加入できる？<small>所在地と設備状況が分かれば、加入可否の目安をご案内できます</small></p>
+    <a class="btn btn-y" href="https://re-innovations.co.jp/contact/">加入できるか確認する<span class="ar">→</span></a>
   </div>
 </section>
 
@@ -543,10 +613,10 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 <section class="cta">
   <img class="fv-shield" src="images/deco/shield.webp" alt="" aria-hidden="true">
   <div class="cta-in">
-    <h2 class="bdx">まずは、発電所の状況をお聞かせください。</h2>
+    <h2 class="bdx">被害が出る<span class="y">前</span>に、<br>まずは発電所の状況をお聞かせください。</h2>
     <p class="bdx">ハザードリスク評価・お見積りは無料です。発電所の所在地と設備状況が分かれば、加入可否の目安をご案内できます。</p>
     <div class="btns">
-      <a class="btn btn-y" href="https://re-innovations.co.jp/contact/">WEBでお申込み</a>
+      <a class="btn btn-y" href="https://re-innovations.co.jp/contact/">WEBでお申込み<span class="ar">→</span></a>
       <a class="btn btn-w" href="https://re-innovations.co.jp/contact/">まずは相談してみる</a>
     </div>
     <div class="cta-tel">お電話でのご相談<b>03-5244-5436</b></div>
@@ -576,6 +646,11 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
     <div>※補償範囲・対象機器等の詳細条件は、ご契約書またはご契約時のご案内文書にてご確認ください。</div>
   </div>
 </footer>
+
+<nav class="fixed-cta" aria-label="お問い合わせ">
+  <a class="ftel" href="tel:0352445436">📞 電話で相談</a>
+  <a class="fbtn" href="https://re-innovations.co.jp/contact/">WEBでお申込み →</a>
+</nav>
 
 <script type="module">
 try{
