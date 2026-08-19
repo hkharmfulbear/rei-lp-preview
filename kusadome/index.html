@@ -63,7 +63,7 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .fv-happa{position:absolute;pointer-events:none;filter:drop-shadow(0 6px 10px rgba(27,94,32,.15))}
 .fv-happa.h1p{width:96px;left:1.5%;top:7%;transform:rotate(-14deg)}
 .fv-happa.h2p{width:120px;right:2.5%;top:4%;transform:rotate(10deg)}
-.fv-in{position:relative;z-index:5;max-width:1100px;margin:0 auto;padding:38px 24px 130px}
+.fv-in{position:relative;z-index:5;max-width:1100px;margin:0 auto;padding:44px 24px 64px}
 .fv-grid{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:36px;align-items:center}
 .fv-label{display:inline-block;background:var(--green);color:#fff;font-size:12.5px;font-weight:900;letter-spacing:.12em;padding:5px 20px;border-radius:999px;margin-bottom:18px;box-shadow:0 3px 8px rgba(27,94,32,.25)}
 /* 広告見出し化した文字組 */
@@ -316,6 +316,74 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
   html{scroll-behavior:auto}
   .btn,.btn:hover{transition:none;transform:none}
 }
+
+/* ═══ トーン調整：落ち着いた法人向け ═══ */
+:root{--yellow:#e9b83c;--yellow-lt:#f2cd66;--yellow-dk:#b98f1e;--red:#c05a48;--sky:#e9f2f7}
+.fuchi{text-shadow:none}
+.btn{border-radius:8px}
+.btn-y{background:linear-gradient(180deg,#f0c458,#e3ab2e);box-shadow:0 2px 8px rgba(35,51,39,.18)}
+.btn-y:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(35,51,39,.22)}
+.btn-y .ar{background:transparent;color:inherit;width:auto;height:auto;font-size:inherit}
+.fv-label{border-radius:4px;font-weight:700;letter-spacing:.14em}
+.fv-catch .l1 .zab{background:linear-gradient(transparent 60%,#f3dc8a 60%);border-radius:0;box-shadow:none;transform:none;padding:0 2px;margin:0;color:var(--deep)}
+.fv-catch .frac{font-size:clamp(56px,7.4vw,86px);color:var(--green)}
+.fv-catch .frac::before{border-radius:0;background:linear-gradient(transparent 72%,#f3dc8a 72%);width:100%;height:100%;top:50%;transform:translate(-50%,-50%);box-shadow:none}
+.fv-namebox{border-radius:10px;border-width:2px;background:#fff;box-shadow:0 4px 14px rgba(27,94,32,.1)}
+.fv-namebox .rakuraku{border-radius:4px;background:var(--green);color:#fff;box-shadow:none}
+.fv-badges{gap:10px}
+.fvb{width:auto;height:auto;flex:1;min-width:104px;border-radius:8px;border:1px solid var(--line);border-top:3px solid var(--green);background:#fff;box-shadow:0 3px 10px rgba(27,94,32,.06);padding:12px 8px}
+.fv-photo-main{border-radius:14px;aspect-ratio:4/3;border-width:6px}
+.fv-ba{gap:2px}
+.fv-ba .ph{border-radius:10px}
+.fv-ba.before{transform:none;bottom:34px;left:-10px}
+.fv-ba.after{transform:none;bottom:-16px;left:70px}
+.fv-ba .lb{border-radius:4px;font-weight:700}
+.fv-panel{border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(27,94,32,.09)}
+.fv-panel .cta{background:#f6faf3}
+.fv-panel .telbox{border-radius:6px}
+.wave svg{height:30px}
+.sec-title{font-weight:700}
+.sec-title em{font-weight:900}
+.check{border-radius:8px}
+.check .ic{background:var(--green);box-shadow:none}
+.formula{border-radius:12px;box-shadow:0 6px 18px rgba(27,94,32,.08)}
+.formula .box{background:var(--green);box-shadow:none;border-radius:8px}
+.formula .box.alt{box-shadow:none;border-width:2px;border-radius:8px}
+.scheme-figure img{border-radius:10px}
+.compare{border-radius:12px;box-shadow:0 6px 18px rgba(27,94,32,.08)}
+.cmp-fill{border-radius:6px}
+.cmp-fill.sheet{background:#9aa89e}
+.cmp-fill.ours{background:var(--green);box-shadow:none}
+.cmp-badge{transform:translateY(-50%);border-radius:4px;background:#f3dc8a;color:var(--deep);box-shadow:none}
+.pt3{border-radius:12px;box-shadow:0 6px 18px rgba(27,94,32,.08)}
+.pt3:nth-child(2){transform:none;border:1px solid var(--line);border-top:3px solid var(--green)}
+.ribbon{background:none;border:1px solid var(--green);color:var(--green);clip-path:none;filter:none;border-radius:3px;padding:3px 16px;letter-spacing:.16em}
+.midcta::before{display:none}
+.con{border-radius:10px;background-image:none;border:1px solid #e5d5d1;border-top:4px solid var(--red)}
+.con .warn-tab{border-radius:3px;box-shadow:none}
+.case-ba img{border-radius:12px;border-width:4px;box-shadow:0 8px 20px rgba(27,94,32,.12)}
+.case-ba figcaption{border-radius:4px;box-shadow:none;font-weight:700}
+.case-arrow{background:none;box-shadow:none;color:var(--green);font-size:30px;width:auto;height:auto}
+.gallery figure{border-radius:8px;box-shadow:0 4px 12px rgba(27,94,32,.07)}
+.gallery img{border-radius:5px}
+.plans .plan{border-radius:12px;border-width:1px;border-color:var(--line)}
+.plan.reco{border:2px solid var(--green)}
+.plan-head{background:var(--green);font-weight:700}
+.plan.diy .plan-head{background:#5c6f63}
+.reco-tag{transform:translateX(-50%);border-radius:4px;background:var(--red);box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.plan-sub{border-radius:6px}
+.spec-card{border-radius:10px}
+.caution{border-radius:6px;border-width:1px}
+.herb{border-radius:10px;box-shadow:0 4px 12px rgba(27,94,32,.06)}
+.herb .when{border-radius:4px;background:var(--green);box-shadow:none}
+.cta{background:linear-gradient(160deg,#26603a,#2e7d32)}
+.cta h2 .y{color:#f3dc8a}
+.midcta{background:linear-gradient(120deg,#26603a,#2e7d32)}
+.fixed-cta a{border-radius:8px}
+.fixed-cta .fbtn{background:linear-gradient(180deg,#f0c458,#e3ab2e);box-shadow:0 2px 6px rgba(35,51,39,.18)}
+@media (max-width:640px){
+  .fvb{min-width:calc(33% - 8px)}
+}
 </style>
 </head>
 <body>
@@ -331,8 +399,6 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 </header>
 
 <section class="fv">
-  <img class="fv-happa h1p" src="images/deco/happa1.webp" alt="" aria-hidden="true">
-  <img class="fv-happa h2p" src="images/deco/happa2.webp" alt="" aria-hidden="true">
   <div class="fv-in">
     <div class="fv-grid">
       <div>
@@ -354,7 +420,6 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
       </div>
       <div class="fv-visual">
         <div class="fv-photo-main"><img src="images/hero.jpg" alt="太陽光パネルの列間に施工された草止めネット" fetchpriority="high"></div>
-        <div class="fv-burst" aria-hidden="true"><span class="s">雑草対策費用</span><span class="b"><em>1/3</em>に</span></div>
         <div class="fv-ba before"><span class="ph"><img src="images/case-before.jpg" alt="施工前：雑草が生い茂った発電所"></span><span class="lb">施工前</span></div>
         <div class="fv-ba after"><span class="ph"><img src="images/case-after.jpg" alt="施工後：ネットで雑草が押さえられた発電所"></span><span class="lb">施工後</span></div>
       </div>
@@ -370,7 +435,6 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
       </div>
     </div>
   </div>
-  <div class="fv-obi"><img src="images/deco/kusa_obi.webp" alt="" aria-hidden="true"></div>
 </section>
 
 <section class="section">
@@ -588,7 +652,6 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
     <a class="btn btn-y" href="https://re-innovations.co.jp/contact/">無料見積りを依頼する<span class="ar">→</span></a>
     <div class="cta-tel">お電話でのご相談<b>03-5244-5436</b></div>
   </div>
-  <div class="cta-obi"><img src="images/deco/kusa_obi.webp" alt="" aria-hidden="true"></div>
 </section>
 
 <section class="section">
