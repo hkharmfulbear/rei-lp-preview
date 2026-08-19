@@ -374,6 +374,9 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .terms{border-radius:10px}
 .fixed-cta a{border-radius:8px}
 .fixed-cta .fbtn{background:linear-gradient(180deg,#efc04a,#dfa416);box-shadow:0 2px 6px rgba(0,0,0,.2)}
+/* バッジ切れ修正：カードのoverflowを開放し、角丸はヘッダー側で維持 */
+.trinity .tri{overflow:visible}
+.tri-head{border-radius:9px 9px 0 0}
 @media (max-width:640px){
   .fvb{min-width:calc(33% - 8px)}
 }
