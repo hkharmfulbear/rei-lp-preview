@@ -53,22 +53,35 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 
 /* ── FV ── */
 .fv{position:relative;overflow:hidden;color:#fff;background:
-  radial-gradient(ellipse 70% 80% at 12% 8%,rgba(255,255,255,.07),transparent 60%),
-  linear-gradient(165deg,#1c6a33 0%,#175a2a 55%,#124a22 100%)}
+  repeating-linear-gradient(115deg,transparent 0 90px,rgba(255,255,255,.035) 90px 150px),
+  radial-gradient(ellipse 80% 90% at 12% 0%,rgba(174,240,92,.13),transparent 55%),
+  linear-gradient(165deg,#1e7038 0%,#175a2a 55%,#11431f 100%)}
 .fv-in{position:relative;z-index:5;max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,44%);gap:0;align-items:stretch}
 .fv-copy{position:relative;padding:44px 40px 48px max(24px,calc((100vw - 1180px)/2 + 24px))}
 .fv-staff{position:absolute;right:-36px;bottom:0;height:min(46%,300px);width:auto;z-index:6;filter:drop-shadow(-4px 6px 12px rgba(0,0,0,.3));pointer-events:none}
 .fv-worry{margin-bottom:6px}
-.fv-worry .w{display:block;font-size:clamp(24px,3.3vw,37px);font-weight:900;line-height:1.5;letter-spacing:.01em;text-shadow:0 2px 8px rgba(0,0,0,.25)}
+.fv-worry,.fv-label,.fv-plan,.fv-gtitle,.fv-graph,.fv-cta-row{animation:fvUp .7s cubic-bezier(.2,.7,.3,1) both}
+.fv-label{animation-delay:.12s}.fv-plan{animation-delay:.22s}.fv-gtitle{animation-delay:.34s}.fv-graph{animation-delay:.4s}.fv-cta-row{animation-delay:.52s}
+@keyframes fvUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.fv-worry{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.fv-worry .w{position:relative;display:inline-block;background:#fff;color:var(--ink);font-size:clamp(19px,2.5vw,28px);font-weight:900;line-height:1.5;letter-spacing:.01em;padding:10px 26px;border-radius:16px;box-shadow:0 8px 18px rgba(0,0,0,.28)}
+.fv-worry .w b{color:#e33d2b}
+.fv-worry .w::after{content:"";position:absolute;bottom:-11px;left:36px;border:12px solid transparent;border-top-color:#fff;border-bottom:0;border-left-width:6px;border-right-width:14px}
+.fv-worry .w1{transform:rotate(-1.5deg)}
+.fv-worry .w2{transform:rotate(1.2deg);margin-left:30px}
+.fv-worry .w2::after{left:auto;right:44px;border-left-width:14px;border-right-width:6px}
 .fv-label{display:block;text-align:right;font-size:clamp(12px,1.5vw,14.5px);font-weight:700;color:#e3f2e0;letter-spacing:.06em;margin:4px 0 22px}
 .fv-plan{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.fv-cost-badge{flex:0 0 auto;width:92px;height:92px;border-radius:50%;background:#d63a2a;border:3px solid #fff;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:16px;line-height:1.3;transform:rotate(-8deg);box-shadow:0 6px 14px rgba(0,0,0,.3);text-align:center}
+.fv-cost-badge{position:relative;flex:0 0 auto;width:108px;height:108px;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:16.5px;line-height:1.3;transform:rotate(-10deg);text-align:center;filter:drop-shadow(0 6px 12px rgba(0,0,0,.35));z-index:2}
+.fv-cost-badge::before{content:"";position:absolute;inset:0;background:#e33d2b;clip-path:polygon(50% 0%,60% 12%,75% 5%,79% 20%,95% 18%,92% 33%,100% 42%,90% 52%,98% 65%,84% 68%,86% 84%,71% 81%,66% 96%,53% 87%,41% 98%,34% 84%,19% 89%,20% 73%,4% 71%,12% 57%,0% 47%,12% 38%,6% 23%,22% 24%,23% 8%,38% 13%)}
+.fv-cost-badge span{position:relative;z-index:1}
 .fv-plan-name{line-height:1.35}
 .fv-plan-name .row1{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .fv-plan-name .netlogo{height:clamp(52px,6vw,72px);width:auto;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35))}
 .fv-plan-name .x{color:#fff;font-size:clamp(20px,2.6vw,30px);font-weight:900}
 .fv-plan-name .spr{background:#fff;color:#d63a2a;font-size:clamp(22px,3vw,32px);font-weight:900;padding:4px 18px;border-radius:8px;letter-spacing:.02em;box-shadow:0 4px 10px rgba(0,0,0,.25)}
-.fv-plan-name .hyb{display:block;color:#ffe100;font-size:clamp(32px,4.4vw,49px);font-weight:900;letter-spacing:.04em;margin-top:2px;text-shadow:0 3px 10px rgba(0,0,0,.3)}
+.fv-plan-name .hyb{display:inline-block;position:relative;color:#ffe100;font-size:clamp(36px,5vw,58px);font-weight:900;letter-spacing:.04em;margin-top:4px;text-shadow:2px 2px 0 rgba(0,0,0,.28),0 6px 16px rgba(0,0,0,.3)}
+.fv-plan-name .hyb::after{content:"";position:absolute;left:2%;right:2%;bottom:-6px;height:8px;background:linear-gradient(90deg,#ffe100,#ffb400);border-radius:99px;transform:skewX(-18deg)}
 .fv-gtitle{margin-top:24px;font-size:clamp(14px,1.8vw,17px);font-weight:900;letter-spacing:.04em}
 .fv-gtitle small{font-weight:700;font-size:.78em;color:#d5ead2}
 /* 5年間対策費グラフ（白カード） */
@@ -89,15 +102,19 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .fv-cta-row{margin-top:22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .fv-cta-row .telbox{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:6px;padding:5px 18px;font-size:10px;color:#d5ead2;line-height:1.5}
 .fv-cta-row .telbox b{display:block;font-size:16px;color:#fff}
-.btn-big{font-size:19px;padding:19px 44px;border-radius:999px}
+.btn-big{font-size:20px;padding:20px 48px;border-radius:999px;animation:ctaBob 2.4s ease-in-out infinite}
 .btn-big::before{content:"▶";font-size:13px}
+.btn-free{position:absolute;top:-14px;left:-10px;background:#e33d2b;color:#fff;font-size:11.5px;font-weight:900;padding:3px 12px;border-radius:999px;transform:rotate(-8deg);box-shadow:0 3px 7px rgba(0,0,0,.3);letter-spacing:.06em}
+@keyframes ctaBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 /* 右写真 */
 .fv-visual{position:relative;min-height:520px}
 .fv-visual .main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
-.fv-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#175a2a 0%,rgba(23,90,42,.35) 12%,transparent 30%);z-index:1;pointer-events:none}
+.fv-visual::before{content:"";position:absolute;inset:0 auto 0 -1px;width:130px;background:linear-gradient(102deg,#175a2a 34%,rgba(23,90,42,.4) 60%,transparent 86%);clip-path:polygon(0 0,100% 0,32% 100%,0 100%);z-index:1;pointer-events:none}
 .fv-inset{position:absolute;right:26px;bottom:110px;width:190px;height:190px;border-radius:50%;overflow:hidden;border:5px solid #fff;box-shadow:0 10px 26px rgba(0,0,0,.35);z-index:2}
 .fv-inset img{width:100%;height:100%;object-fit:cover}
 .fv-photo-cta{position:absolute;right:26px;bottom:26px;z-index:3}
+.fv-wave{position:absolute;left:0;right:0;bottom:-1px;z-index:4;line-height:0}
+.fv-wave svg{display:block;width:100%;height:34px}
 .fv-cap{position:absolute;left:34px;top:18px;z-index:2;background:rgba(23,90,42,.85);color:#fff;font-size:11px;font-weight:700;padding:3px 14px;border-radius:4px}
 
 /* ── 波形区切り ── */
@@ -266,8 +283,8 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .caution b{color:var(--red)}
 
 /* ── CTA ── */
-.cta{position:relative;background:linear-gradient(160deg,#26603a,#2f8f46);color:#fff;overflow:hidden}
-.cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:76px 24px;text-align:center}
+section.cta{position:relative;background:linear-gradient(160deg,#26603a,#2f8f46);color:#fff;overflow:hidden}
+section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:76px 24px;text-align:center}
 .cta h2{font-size:clamp(22px,3.4vw,30px);font-weight:900;letter-spacing:.03em;line-height:1.6}
 .cta h2 .y{color:#f3dc8a}
 .cta p{margin-top:12px;font-size:13.5px;color:#d9ead9}
@@ -313,7 +330,8 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
   .fixed-cta{display:grid}
   .midcta-in{justify-content:center;text-align:center}
   .btn-y{font-size:15.5px;padding:15px 24px;white-space:nowrap}
-  .fv-worry .w{font-size:24px}
+  .fv-worry .w{font-size:18.5px;padding:8px 18px}
+  .fv-worry .w2{margin-left:16px}
   .fv-staff{display:none}
   .fv-plan-name .netlogo{height:44px}
   .fv-plan-name .hyb{font-size:33px}
@@ -325,6 +343,8 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   .btn,.btn:hover{transition:none;transform:none}
+  .btn-big{animation:none}
+  .fv-worry,.fv-label,.fv-plan,.fv-gtitle,.fv-graph,.fv-cta-row{animation:none}
 }
 </style>
 </head>
@@ -344,12 +364,12 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
   <div class="fv-in">
     <div class="fv-copy">
       <h1 class="fv-worry">
-        <span class="w">「防草シートは高すぎる！」</span>
-        <span class="w">「草刈り頻度が多すぎる！」</span>
+        <span class="w w1">防草シートは<b>高すぎる！</b></span>
+        <span class="w w2">草刈り頻度が<b>多すぎる！</b></span>
       </h1>
       <p class="fv-label bdx">…と、お悩みの太陽光発電所オーナー様へ</p>
       <div class="fv-plan">
-        <span class="fv-cost-badge">コスト<br>最小化!</span>
+        <span class="fv-cost-badge"><span>コスト<br>最小化!</span></span>
         <div class="fv-plan-name">
           <span class="row1"><img class="netlogo" src="images/deco/logo-net.webp" alt="らくらく草止めネット"><span class="x">×</span><span class="spr">除草剤散布</span></span>
           <span class="hyb">ハイブリッドプラン</span>
@@ -372,7 +392,7 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
         <p class="gnote">※一般的な低圧太陽光発電所（1,000㎡程度）5年間の目安・当社調べ。草刈り＝1回5〜6万円×年3〜4回、ネット施工＝35万円〜＋除草剤散布 年6万円〜×5年で試算。現地の状況により異なります。</p>
       </div>
       <div class="fv-cta-row">
-        <a class="btn btn-y btn-big" href="https://re-innovations.co.jp/contact/">今すぐ申し込む</a>
+        <a class="btn btn-y btn-big" href="https://re-innovations.co.jp/contact/"><span class="btn-free">見積り無料</span>今すぐ申し込む</a>
         <div class="telbox">お電話でのご相談<b>03-5244-5436</b></div>
       </div>
       <img class="fv-staff" src="images/deco/staff.webp" alt="" aria-hidden="true">
@@ -383,6 +403,7 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
       <div class="fv-inset"><img src="images/fv-spray.jpg" alt="ネット施工箇所以外への除草剤散布作業"></div>
     </div>
   </div>
+  <div class="fv-wave" aria-hidden="true"><svg viewBox="0 0 1440 44" preserveAspectRatio="none"><path d="M0,22 C240,44 480,0 720,15 C960,30 1200,6 1440,26 L1440,44 L0,44 Z" fill="#ffffff"/></svg></div>
 </section>
 
 <section class="section">
@@ -437,42 +458,64 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
         <p class="snote">※除草剤が使えない立地の場合は、散布の代わりに草刈りで対応します（別途お見積り）。</p>
       </div>
       <figure class="scheme-figure">
-        <svg viewBox="0 0 560 330" role="img" aria-label="施工範囲の図：パネル周囲に草止めネットを施工し、その他のエリアは除草剤散布または草刈りで管理">
-          <rect x="8" y="8" width="544" height="284" rx="10" fill="#dff0fa"/>
-          <rect x="8" y="8" width="544" height="284" rx="10" fill="none" stroke="#8fa8b8" stroke-width="2.5" stroke-dasharray="7 5"/>
-          <g>
-            <rect x="34" y="30" width="88" height="240" rx="6" fill="#a5d489"/>
-            <rect x="140" y="30" width="88" height="240" rx="6" fill="#a5d489"/>
-            <rect x="246" y="30" width="88" height="240" rx="6" fill="#a5d489"/>
-            <rect x="352" y="30" width="88" height="240" rx="6" fill="#a5d489"/>
-            <rect x="458" y="30" width="66" height="240" rx="6" fill="#a5d489"/>
+        <svg viewBox="0 0 560 372" role="img" aria-label="施工範囲の図：パネル周囲と外周にネットを施工し、門扉からぐるっと一周できる点検導線を確保。その他のエリアは除草剤散布または草刈りで管理">
+          <rect x="8" y="8" width="544" height="276" rx="10" fill="#dff0fa"/>
+          <rect x="8" y="8" width="544" height="276" rx="10" fill="none" stroke="#8fa8b8" stroke-width="2.5" stroke-dasharray="7 5"/>
+          <!-- 外周のネット導線（ぐるっと一周） -->
+          <rect x="27" y="27" width="506" height="238" rx="12" fill="none" stroke="#a5d489" stroke-width="20"/>
+          <!-- パネル列（緑パッド＋紺パネル） -->
+          <g fill="#a5d489">
+            <rect x="50" y="37" width="74" height="218" rx="5"/>
+            <rect x="143" y="37" width="74" height="218" rx="5"/>
+            <rect x="236" y="37" width="74" height="218" rx="5"/>
+            <rect x="329" y="37" width="74" height="218" rx="5"/>
+            <rect x="422" y="37" width="74" height="218" rx="5"/>
           </g>
           <g fill="#1c3d6e">
-            <rect x="48" y="44" width="60" height="212" rx="3"/>
-            <rect x="154" y="44" width="60" height="212" rx="3"/>
-            <rect x="260" y="44" width="60" height="212" rx="3"/>
-            <rect x="366" y="44" width="60" height="212" rx="3"/>
-            <rect x="468" y="44" width="46" height="212" rx="3"/>
+            <rect x="62" y="53" width="50" height="186" rx="3"/>
+            <rect x="155" y="53" width="50" height="186" rx="3"/>
+            <rect x="248" y="53" width="50" height="186" rx="3"/>
+            <rect x="341" y="53" width="50" height="186" rx="3"/>
+            <rect x="434" y="53" width="50" height="186" rx="3"/>
           </g>
           <g stroke="#ffffff" stroke-width="1.1" opacity=".55">
-            <line x1="48" y1="97" x2="108" y2="97"/><line x1="48" y1="150" x2="108" y2="150"/><line x1="48" y1="203" x2="108" y2="203"/>
-            <line x1="154" y1="97" x2="214" y2="97"/><line x1="154" y1="150" x2="214" y2="150"/><line x1="154" y1="203" x2="214" y2="203"/>
-            <line x1="260" y1="97" x2="320" y2="97"/><line x1="260" y1="150" x2="320" y2="150"/><line x1="260" y1="203" x2="320" y2="203"/>
-            <line x1="366" y1="97" x2="426" y2="97"/><line x1="366" y1="150" x2="426" y2="150"/><line x1="366" y1="203" x2="426" y2="203"/>
-            <line x1="468" y1="97" x2="514" y2="97"/><line x1="468" y1="150" x2="514" y2="150"/><line x1="468" y1="203" x2="514" y2="203"/>
+            <line x1="62" y1="99" x2="112" y2="99"/><line x1="62" y1="146" x2="112" y2="146"/><line x1="62" y1="193" x2="112" y2="193"/>
+            <line x1="155" y1="99" x2="205" y2="99"/><line x1="155" y1="146" x2="205" y2="146"/><line x1="155" y1="193" x2="205" y2="193"/>
+            <line x1="248" y1="99" x2="298" y2="99"/><line x1="248" y1="146" x2="298" y2="146"/><line x1="248" y1="193" x2="298" y2="193"/>
+            <line x1="341" y1="99" x2="391" y2="99"/><line x1="341" y1="146" x2="391" y2="146"/><line x1="341" y1="193" x2="391" y2="193"/>
+            <line x1="434" y1="99" x2="484" y2="99"/><line x1="434" y1="146" x2="484" y2="146"/><line x1="434" y1="193" x2="484" y2="193"/>
           </g>
+          <!-- 点検導線（門扉から一周） -->
+          <path d="M280 296 L280 265 M280 265 H521 Q533 265 533 253 V39 Q533 27 521 27 H39 Q27 27 27 39 V253 Q27 265 39 265 H272" fill="none" stroke="#f29100" stroke-width="3" stroke-dasharray="9 7" stroke-linecap="round"/>
+          <g fill="#f29100">
+            <polygon points="410,258 424,265 410,272"/>
+            <polygon points="540,150 533,136 526,150"/>
+            <polygon points="150,20 136,27 150,34"/>
+            <polygon points="34,160 27,174 20,160"/>
+          </g>
+          <!-- 門扉 -->
+          <rect x="258" y="279" width="44" height="10" fill="#ffffff"/>
+          <rect x="254" y="276" width="7" height="16" rx="2" fill="#1c3d6e"/>
+          <rect x="299" y="276" width="7" height="16" rx="2" fill="#1c3d6e"/>
           <g font-family="'Noto Sans JP',sans-serif">
+            <text x="280" y="312" font-size="12" font-weight="900" fill="#233327" text-anchor="middle">門扉</text>
             <g>
-              <rect x="14" y="300" width="14" height="14" rx="3" fill="#a5d489"/>
-              <text x="34" y="312" font-size="12.5" font-weight="700" fill="#233327">ネット施工（パネル周囲＋導線）</text>
-              <rect x="242" y="300" width="14" height="14" rx="3" fill="#dff0fa" stroke="#8fa8b8"/>
-              <text x="262" y="312" font-size="12.5" font-weight="700" fill="#233327">除草剤散布（または草刈り）</text>
-              <rect x="452" y="300" width="14" height="14" rx="3" fill="#1c3d6e"/>
-              <text x="472" y="312" font-size="12.5" font-weight="700" fill="#233327">パネル</text>
+              <rect x="322" y="296" width="226" height="22" rx="11" fill="#fff3df" stroke="#f29100"/>
+              <text x="435" y="311" font-size="11.5" font-weight="700" fill="#b96e00" text-anchor="middle">門扉から、ぐるっと一周できる点検導線</text>
+            </g>
+            <g>
+              <rect x="14" y="344" width="13" height="13" rx="3" fill="#a5d489"/>
+              <text x="32" y="355" font-size="10.5" font-weight="700" fill="#233327">ネット施工（パネル周囲＋外周導線）</text>
+              <rect x="232" y="344" width="13" height="13" rx="3" fill="#dff0fa" stroke="#8fa8b8"/>
+              <text x="250" y="355" font-size="10.5" font-weight="700" fill="#233327">除草剤散布（または草刈り）</text>
+              <rect x="404" y="344" width="13" height="13" rx="3" fill="#1c3d6e"/>
+              <text x="422" y="355" font-size="10.5" font-weight="700" fill="#233327">パネル</text>
+              <line x1="474" y1="350" x2="500" y2="350" stroke="#f29100" stroke-width="3" stroke-dasharray="6 4"/>
+              <text x="506" y="355" font-size="10.5" font-weight="700" fill="#233327">点検導線</text>
             </g>
           </g>
         </svg>
-        <figcaption>施工範囲のイメージ（フェンス内・1,000㎡程度の例）</figcaption>
+        <figcaption>施工範囲のイメージ（1,000㎡程度の例）──ネットの上を歩いて、門扉から発電所を一周点検できます</figcaption>
       </figure>
     </div>
     <div class="merit3">
@@ -517,7 +560,7 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
     <div class="timeline">
       <figure class="tl t1"><span class="when">6月・施工前</span><img src="images/wk-before.jpg" alt="6月施工前：雑草が生い茂りパネルに迫っている状態" loading="lazy"><figcaption>雑草が伸び放題。パネルに草がかかる寸前</figcaption></figure>
       <figure class="tl t2"><span class="when">6月・施工直後</span><img src="images/wk-just.jpg" alt="6月施工直後：草刈りをせずに草の上からネットを施工" loading="lazy"><figcaption>草刈りせず、草の上からそのまま施工</figcaption></figure>
-      <figure class="tl t3"><span class="when">8月・約50日後</span><img src="images/walk.jpg" alt="施工約50日後：ネット部分は草が抑えられている" loading="lazy"><figcaption>ネット部分は草を抑制。パネルに影がかからない</figcaption></figure>
+      <figure class="tl t3"><span class="when">8月・約50日後</span><img src="images/wk-50.jpg" alt="施工約50日後：ネット部分は草が抑えられている" loading="lazy"><figcaption>ネット部分は草を抑制。パネルに影がかからない</figcaption></figure>
     </div>
     <div class="tl-notes">
       <div class="tl-note bdx"><b>パネルに影がかからない＝発電を守れる。</b><small>ネットのない場所の草が伸びても、発電への影響は防げています。だから草刈りのタイミングに追われません。</small></div>
