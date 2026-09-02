@@ -56,7 +56,8 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
   radial-gradient(ellipse 70% 80% at 12% 8%,rgba(255,255,255,.07),transparent 60%),
   linear-gradient(165deg,#1c6a33 0%,#175a2a 55%,#124a22 100%)}
 .fv-in{position:relative;z-index:5;max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,44%);gap:0;align-items:stretch}
-.fv-copy{padding:44px 40px 48px max(24px,calc((100vw - 1180px)/2 + 24px))}
+.fv-copy{position:relative;padding:44px 40px 48px max(24px,calc((100vw - 1180px)/2 + 24px))}
+.fv-staff{position:absolute;right:-36px;bottom:0;height:min(46%,300px);width:auto;z-index:6;filter:drop-shadow(-4px 6px 12px rgba(0,0,0,.3));pointer-events:none}
 .fv-worry{margin-bottom:6px}
 .fv-worry .w{display:block;font-size:clamp(24px,3.3vw,37px);font-weight:900;line-height:1.5;letter-spacing:.01em;text-shadow:0 2px 8px rgba(0,0,0,.25)}
 .fv-label{display:block;text-align:right;font-size:clamp(12px,1.5vw,14.5px);font-weight:700;color:#e3f2e0;letter-spacing:.06em;margin:4px 0 22px}
@@ -64,9 +65,9 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .fv-cost-badge{flex:0 0 auto;width:92px;height:92px;border-radius:50%;background:#d63a2a;border:3px solid #fff;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:16px;line-height:1.3;transform:rotate(-8deg);box-shadow:0 6px 14px rgba(0,0,0,.3);text-align:center}
 .fv-plan-name{line-height:1.35}
 .fv-plan-name .row1{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.fv-plan-name .net{color:#aef05c;font-size:clamp(23px,3vw,33px);font-weight:900;letter-spacing:.02em;text-shadow:0 2px 6px rgba(0,0,0,.35)}
-.fv-plan-name .x{color:#fff;font-size:clamp(16px,2vw,22px);font-weight:900}
-.fv-plan-name .spr{background:#fff;color:#d63a2a;font-size:clamp(17px,2.2vw,24px);font-weight:900;padding:2px 14px;border-radius:6px;letter-spacing:.02em}
+.fv-plan-name .netlogo{height:clamp(52px,6vw,72px);width:auto;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35))}
+.fv-plan-name .x{color:#fff;font-size:clamp(20px,2.6vw,30px);font-weight:900}
+.fv-plan-name .spr{background:#fff;color:#d63a2a;font-size:clamp(22px,3vw,32px);font-weight:900;padding:4px 18px;border-radius:8px;letter-spacing:.02em;box-shadow:0 4px 10px rgba(0,0,0,.25)}
 .fv-plan-name .hyb{display:block;color:#ffe100;font-size:clamp(32px,4.4vw,49px);font-weight:900;letter-spacing:.04em;margin-top:2px;text-shadow:0 3px 10px rgba(0,0,0,.3)}
 .fv-gtitle{margin-top:24px;font-size:clamp(14px,1.8vw,17px);font-weight:900;letter-spacing:.04em}
 .fv-gtitle small{font-weight:700;font-size:.78em;color:#d5ead2}
@@ -169,11 +170,13 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .midcta-in .t small{display:block;font-size:12px;font-weight:700;color:#cfe6cf}
 
 /* ── ブリッジ帯（だからRE-Iは〜） ── */
-.bridge{background:linear-gradient(120deg,#26603a,#2e7d32);color:#fff;text-align:center}
-.bridge-in{max-width:860px;margin:0 auto;padding:44px 24px}
-.bridge h2{font-size:clamp(19px,2.8vw,26px);font-weight:900;line-height:1.7}
-.bridge h2 .y{color:#f3dc8a}
-.bridge p{margin-top:8px;font-size:clamp(13px,1.8vw,15px);font-weight:700;color:#d9ead9}
+.bridge{background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(255,255,255,.08),transparent 60%),linear-gradient(120deg,#1d5c30,#2e7d32);color:#fff;text-align:center;border-top:4px solid #ffe100;border-bottom:4px solid #ffe100}
+.bridge-in{max-width:900px;margin:0 auto;padding:64px 24px}
+.bridge .lb{display:inline-block;background:#ffe100;color:#1b5e20;font-size:13px;font-weight:900;letter-spacing:.18em;padding:5px 22px;border-radius:999px;margin-bottom:18px;box-shadow:0 3px 8px rgba(0,0,0,.2)}
+.bridge h2{font-size:clamp(23px,3.4vw,33px);font-weight:900;line-height:1.7;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.bridge h2 .y{color:#ffe100}
+.bridge p{margin-top:14px;font-size:clamp(15px,2vw,18px);font-weight:900;color:#eaf5e6}
+.bridge p .y2{color:#ffe100;background:linear-gradient(transparent 68%,rgba(255,225,0,.25) 68%);padding:0 2px}
 
 /* ── 経過観察 ── */
 .timeline{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;max-width:1000px;margin:0 auto;align-items:start}
@@ -311,6 +314,8 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
   .midcta-in{justify-content:center;text-align:center}
   .btn-y{font-size:15.5px;padding:15px 24px;white-space:nowrap}
   .fv-worry .w{font-size:24px}
+  .fv-staff{display:none}
+  .fv-plan-name .netlogo{height:44px}
   .fv-plan-name .hyb{font-size:33px}
   .fv-cost-badge{width:80px;height:80px;font-size:14px}
   .fvg-bar.ours{min-width:8em;font-size:11px;padding:0 8px}
@@ -346,7 +351,7 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
       <div class="fv-plan">
         <span class="fv-cost-badge">コスト<br>最小化!</span>
         <div class="fv-plan-name">
-          <span class="row1"><span class="net">草止めネット</span><span class="x">×</span><span class="spr">除草剤散布</span></span>
+          <span class="row1"><img class="netlogo" src="images/deco/logo-net.webp" alt="らくらく草止めネット"><span class="x">×</span><span class="spr">除草剤散布</span></span>
           <span class="hyb">ハイブリッドプラン</span>
         </div>
       </div>
@@ -370,11 +375,12 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
         <a class="btn btn-y btn-big" href="https://re-innovations.co.jp/contact/">今すぐ申し込む</a>
         <div class="telbox">お電話でのご相談<b>03-5244-5436</b></div>
       </div>
+      <img class="fv-staff" src="images/deco/staff.webp" alt="" aria-hidden="true">
     </div>
     <div class="fv-visual">
-      <img class="main" src="images/wk-after.jpg" alt="施工約50日後：ネット部分は草が抑えられ、パネルに影がかかっていない発電所" fetchpriority="high">
-      <span class="fv-cap">施工 約50日後（除草剤散布なし）</span>
-      <div class="fv-inset"><img src="images/douzen.jpg" alt="パネル際に施工された草止めネットの拡大"></div>
+      <img class="main" src="images/fv-main.jpg" alt="パネル間に施工された草止めネット" fetchpriority="high">
+      <span class="fv-cap">施工イメージ</span>
+      <div class="fv-inset"><img src="images/fv-spray.jpg" alt="ネット施工箇所以外への除草剤散布作業"></div>
     </div>
   </div>
 </section>
@@ -568,8 +574,9 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 
 <section class="bridge">
   <div class="bridge-in">
+    <span class="lb">RE-Iからのご提案</span>
     <h2 class="bdx">だからRE-Iは<span class="y">「ネット施工」＋「除草剤散布」</span>の<br>ハイブリッド雑草対策を提案します。</h2>
-    <p class="bdx">それぞれのデメリットを補完しつつ、最大限のメリットを低価格で実現！</p>
+    <p class="bdx">それぞれのデメリットを補完しつつ、<span class="y2">最大限のメリットを低価格で実現！</span></p>
   </div>
 </section>
 
