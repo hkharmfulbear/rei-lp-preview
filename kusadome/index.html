@@ -53,35 +53,22 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 
 /* ── FV ── */
 .fv{position:relative;overflow:hidden;color:#fff;background:
-  repeating-linear-gradient(115deg,transparent 0 90px,rgba(255,255,255,.035) 90px 150px),
-  radial-gradient(ellipse 80% 90% at 12% 0%,rgba(174,240,92,.13),transparent 55%),
-  linear-gradient(165deg,#1e7038 0%,#175a2a 55%,#11431f 100%)}
+  radial-gradient(ellipse 70% 80% at 12% 8%,rgba(255,255,255,.07),transparent 60%),
+  linear-gradient(165deg,#1c6a33 0%,#175a2a 55%,#124a22 100%)}
 .fv-in{position:relative;z-index:5;max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,44%);gap:0;align-items:stretch}
 .fv-copy{position:relative;padding:44px 40px 48px max(24px,calc((100vw - 1180px)/2 + 24px))}
 .fv-staff{position:absolute;right:-36px;bottom:0;height:min(46%,300px);width:auto;z-index:6;filter:drop-shadow(-4px 6px 12px rgba(0,0,0,.3));pointer-events:none}
 .fv-worry{margin-bottom:6px}
-.fv-worry,.fv-label,.fv-plan,.fv-gtitle,.fv-graph,.fv-cta-row{animation:fvUp .7s cubic-bezier(.2,.7,.3,1) both}
-.fv-label{animation-delay:.12s}.fv-plan{animation-delay:.22s}.fv-gtitle{animation-delay:.34s}.fv-graph{animation-delay:.4s}.fv-cta-row{animation-delay:.52s}
-@keyframes fvUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-.fv-worry{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-.fv-worry .w{position:relative;display:inline-block;background:#fff;color:var(--ink);font-size:clamp(19px,2.5vw,28px);font-weight:900;line-height:1.5;letter-spacing:.01em;padding:10px 26px;border-radius:16px;box-shadow:0 8px 18px rgba(0,0,0,.28)}
-.fv-worry .w b{color:#e33d2b}
-.fv-worry .w::after{content:"";position:absolute;bottom:-11px;left:36px;border:12px solid transparent;border-top-color:#fff;border-bottom:0;border-left-width:6px;border-right-width:14px}
-.fv-worry .w1{transform:rotate(-1.5deg)}
-.fv-worry .w2{transform:rotate(1.2deg);margin-left:30px}
-.fv-worry .w2::after{left:auto;right:44px;border-left-width:14px;border-right-width:6px}
+.fv-worry .w{display:block;font-size:clamp(24px,3.3vw,37px);font-weight:900;line-height:1.5;letter-spacing:.01em;text-shadow:0 2px 8px rgba(0,0,0,.25)}
 .fv-label{display:block;text-align:right;font-size:clamp(12px,1.5vw,14.5px);font-weight:700;color:#e3f2e0;letter-spacing:.06em;margin:4px 0 22px}
 .fv-plan{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.fv-cost-badge{position:relative;flex:0 0 auto;width:108px;height:108px;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:16.5px;line-height:1.3;transform:rotate(-10deg);text-align:center;filter:drop-shadow(0 6px 12px rgba(0,0,0,.35));z-index:2}
-.fv-cost-badge::before{content:"";position:absolute;inset:0;background:#e33d2b;clip-path:polygon(50% 0%,60% 12%,75% 5%,79% 20%,95% 18%,92% 33%,100% 42%,90% 52%,98% 65%,84% 68%,86% 84%,71% 81%,66% 96%,53% 87%,41% 98%,34% 84%,19% 89%,20% 73%,4% 71%,12% 57%,0% 47%,12% 38%,6% 23%,22% 24%,23% 8%,38% 13%)}
-.fv-cost-badge span{position:relative;z-index:1}
+.fv-cost-badge{flex:0 0 auto;width:92px;height:92px;border-radius:50%;background:#d63a2a;border:3px solid #fff;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:16px;line-height:1.3;transform:rotate(-8deg);box-shadow:0 6px 14px rgba(0,0,0,.3);text-align:center}
 .fv-plan-name{line-height:1.35}
 .fv-plan-name .row1{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .fv-plan-name .netlogo{height:clamp(52px,6vw,72px);width:auto;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35))}
 .fv-plan-name .x{color:#fff;font-size:clamp(20px,2.6vw,30px);font-weight:900}
 .fv-plan-name .spr{background:#fff;color:#d63a2a;font-size:clamp(22px,3vw,32px);font-weight:900;padding:4px 18px;border-radius:8px;letter-spacing:.02em;box-shadow:0 4px 10px rgba(0,0,0,.25)}
-.fv-plan-name .hyb{display:inline-block;position:relative;color:#ffe100;font-size:clamp(36px,5vw,58px);font-weight:900;letter-spacing:.04em;margin-top:4px;text-shadow:2px 2px 0 rgba(0,0,0,.28),0 6px 16px rgba(0,0,0,.3)}
-.fv-plan-name .hyb::after{content:"";position:absolute;left:2%;right:2%;bottom:-6px;height:8px;background:linear-gradient(90deg,#ffe100,#ffb400);border-radius:99px;transform:skewX(-18deg)}
+.fv-plan-name .hyb{display:block;color:#ffe100;font-size:clamp(32px,4.4vw,49px);font-weight:900;letter-spacing:.04em;margin-top:2px;text-shadow:0 3px 10px rgba(0,0,0,.3)}
 .fv-gtitle{margin-top:24px;font-size:clamp(14px,1.8vw,17px);font-weight:900;letter-spacing:.04em}
 .fv-gtitle small{font-weight:700;font-size:.78em;color:#d5ead2}
 /* 5年間対策費グラフ（白カード） */
@@ -102,19 +89,15 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .fv-cta-row{margin-top:22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .fv-cta-row .telbox{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:6px;padding:5px 18px;font-size:10px;color:#d5ead2;line-height:1.5}
 .fv-cta-row .telbox b{display:block;font-size:16px;color:#fff}
-.btn-big{font-size:20px;padding:20px 48px;border-radius:999px;animation:ctaBob 2.4s ease-in-out infinite}
+.btn-big{font-size:19px;padding:19px 44px;border-radius:999px}
 .btn-big::before{content:"▶";font-size:13px}
-.btn-free{position:absolute;top:-14px;left:-10px;background:#e33d2b;color:#fff;font-size:11.5px;font-weight:900;padding:3px 12px;border-radius:999px;transform:rotate(-8deg);box-shadow:0 3px 7px rgba(0,0,0,.3);letter-spacing:.06em}
-@keyframes ctaBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 /* 右写真 */
 .fv-visual{position:relative;min-height:520px}
 .fv-visual .main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
-.fv-visual::before{content:"";position:absolute;inset:0 auto 0 -1px;width:130px;background:linear-gradient(102deg,#175a2a 34%,rgba(23,90,42,.4) 60%,transparent 86%);clip-path:polygon(0 0,100% 0,32% 100%,0 100%);z-index:1;pointer-events:none}
+.fv-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#175a2a 0%,rgba(23,90,42,.35) 12%,transparent 30%);z-index:1;pointer-events:none}
 .fv-inset{position:absolute;right:26px;bottom:110px;width:190px;height:190px;border-radius:50%;overflow:hidden;border:5px solid #fff;box-shadow:0 10px 26px rgba(0,0,0,.35);z-index:2}
 .fv-inset img{width:100%;height:100%;object-fit:cover}
 .fv-photo-cta{position:absolute;right:26px;bottom:26px;z-index:3}
-.fv-wave{position:absolute;left:0;right:0;bottom:-1px;z-index:4;line-height:0}
-.fv-wave svg{display:block;width:100%;height:34px}
 .fv-cap{position:absolute;left:34px;top:18px;z-index:2;background:rgba(23,90,42,.85);color:#fff;font-size:11px;font-weight:700;padding:3px 14px;border-radius:4px}
 
 /* ── 波形区切り ── */
@@ -219,14 +202,36 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .sheet-photos img{border-radius:6px;aspect-ratio:4/3;object-fit:cover;width:100%}
 .sheet-photos figcaption{font-size:11.5px;font-weight:700;color:var(--sub);padding:7px 4px 9px;text-align:center}
 
-/* ── 散布除草剤について ── */
-.herb-wrap{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.herb-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px 26px;box-shadow:0 6px 18px rgba(27,94,32,.06)}
-.herb-card .h{display:inline-block;background:var(--green);color:#fff;font-weight:900;font-size:11.5px;letter-spacing:.14em;padding:3px 16px;border-radius:3px;margin-bottom:10px}
-.herb-card h3{font-size:16px;font-weight:900;margin-bottom:6px;line-height:1.5}
-.herb-card p{font-size:13.5px;color:var(--sub);line-height:1.8}
-.herb-note{max-width:860px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 20px;font-size:12.5px;color:var(--sub);line-height:1.8}
-.herb-note b{color:var(--ink)}
+/* ── 効果を最大化する除草剤散布 ── */
+.herb-lead{max-width:760px;margin:-20px auto 30px;text-align:center;font-size:14px;color:var(--sub);line-height:1.9}
+.herb-lead b{display:block;color:var(--ink);font-size:15px;font-weight:700;margin-bottom:4px}
+.herb-table-wrap{max-width:980px;margin:0 auto;overflow-x:auto}
+.herb-table{width:100%;min-width:720px;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(27,94,32,.06)}
+.herb-table th,.herb-table td{padding:14px 12px;text-align:center;vertical-align:middle;border-bottom:1px solid var(--line);font-size:13.5px}
+.herb-table tr:last-child th,.herb-table tr:last-child td{border-bottom:none}
+.herb-table th{background:var(--cream);color:var(--deep);font-weight:900;font-size:12.5px;letter-spacing:.06em;width:9.5em;text-align:left;padding-left:18px;border-right:1px solid var(--line)}
+.herb-table td+td{border-left:1px solid var(--line)}
+.herb-table .kind{background:#f6faf3}
+.herb-table .kind .ic{display:flex;justify-content:center;gap:6px;margin-bottom:6px}
+.herb-table .kind .ic img{height:52px;width:auto}
+.herb-table .kind b{display:block;font-size:14.5px;font-weight:900;color:var(--ink)}
+.herb-table .kind img.ph{width:100%;max-width:170px;height:110px;object-fit:contain;background:#fff;border-radius:6px;margin:8px auto 0;border:1px solid var(--line)}
+.herb-table .prod{font-weight:900;color:var(--deep);font-size:14px}
+.herb-table .prod small{display:block;font-weight:500;font-size:11px;color:var(--sub);margin-top:2px}
+.herb-table .when b{font-weight:900;font-size:14px}
+.herb-table .when small{display:block;font-size:11px;color:var(--sub);margin-top:2px}
+.herb-table .eff{font-size:26px;font-weight:900;line-height:1;color:var(--green)}
+.herb-table .eff.tri{color:#c9a227}
+.herb-table .eff.dbl{color:var(--green)}
+.herb-hard{max-width:980px;margin:22px auto 0;background:#fff;border:1px solid var(--line);border-left:4px solid var(--red);border-radius:10px;padding:20px 24px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+.herb-hard h3{font-size:14.5px;font-weight:900;color:var(--red);margin-bottom:8px}
+.herb-hard ol{margin-left:1.4em;font-size:13.5px;color:var(--ink);line-height:1.9}
+.herb-hard .pics{display:flex;gap:10px}
+.herb-hard figure{margin:0;text-align:center}
+.herb-hard img{width:150px;height:96px;object-fit:cover;border-radius:6px;border:1px solid var(--line)}
+.herb-hard figcaption{font-size:11px;font-weight:700;color:var(--sub);margin-top:4px}
+.herb-note{max-width:980px;margin:14px auto 0;font-size:11.5px;color:var(--sub);line-height:1.8}
+.herb-cards{display:none}
 
 /* ── 料金 ── */
 .plan-main{max-width:680px;margin:0 auto;background:#fff;border:2px solid var(--green);border-radius:12px;position:relative;box-shadow:0 10px 26px rgba(27,94,32,.12)}
@@ -316,7 +321,24 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
   .scheme-grid{grid-template-columns:1fr}
   .merit3,.risks,.sheet-photos{grid-template-columns:1fr}
   .timeline{grid-template-columns:1fr;max-width:480px;gap:26px}
-  .tl-notes,.herb-wrap,.spec-grid,.pro-grid{grid-template-columns:1fr}
+  .tl-notes,.spec-grid,.pro-grid{grid-template-columns:1fr}
+  .herb-hard{grid-template-columns:1fr}
+  .herb-hard .pics{justify-content:flex-start}
+  .herb-table-wrap{overflow:visible}
+  .herb-table{display:none}
+  .herb-cards{display:grid;gap:14px}
+  .herb-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 4px 12px rgba(27,94,32,.06)}
+  .herb-card .top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .herb-card .top img{height:44px;width:auto}
+  .herb-card .top b{font-size:16px;font-weight:900}
+  .herb-card .top b small{display:block;font-size:11px;font-weight:500;color:var(--sub)}
+  .herb-card .prodph{width:100%;height:120px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:6px;margin-bottom:10px}
+  .herb-card dl{display:grid;grid-template-columns:8.5em 1fr;gap:6px 10px;font-size:13px}
+  .herb-card dt{color:var(--sub);font-weight:700}
+  .herb-card dd{font-weight:900;color:var(--deep)}
+  .herb-card dd small{display:block;font-weight:500;color:var(--sub);font-size:11px}
+  .herb-card dd .eff{font-size:22px;line-height:1}
+
 }
 @media (max-width:640px){
   .section{padding:56px 0}
@@ -330,8 +352,7 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
   .fixed-cta{display:grid}
   .midcta-in{justify-content:center;text-align:center}
   .btn-y{font-size:15.5px;padding:15px 24px;white-space:nowrap}
-  .fv-worry .w{font-size:18.5px;padding:8px 18px}
-  .fv-worry .w2{margin-left:16px}
+  .fv-worry .w{font-size:24px}
   .fv-staff{display:none}
   .fv-plan-name .netlogo{height:44px}
   .fv-plan-name .hyb{font-size:33px}
@@ -343,8 +364,6 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   .btn,.btn:hover{transition:none;transform:none}
-  .btn-big{animation:none}
-  .fv-worry,.fv-label,.fv-plan,.fv-gtitle,.fv-graph,.fv-cta-row{animation:none}
 }
 </style>
 </head>
@@ -364,12 +383,12 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
   <div class="fv-in">
     <div class="fv-copy">
       <h1 class="fv-worry">
-        <span class="w w1">防草シートは<b>高すぎる！</b></span>
-        <span class="w w2">草刈り頻度が<b>多すぎる！</b></span>
+        <span class="w">「防草シートは高すぎる！」</span>
+        <span class="w">「草刈り頻度が多すぎる！」</span>
       </h1>
       <p class="fv-label bdx">…と、お悩みの太陽光発電所オーナー様へ</p>
       <div class="fv-plan">
-        <span class="fv-cost-badge"><span>コスト<br>最小化!</span></span>
+        <span class="fv-cost-badge">コスト<br>最小化!</span>
         <div class="fv-plan-name">
           <span class="row1"><img class="netlogo" src="images/deco/logo-net.webp" alt="らくらく草止めネット"><span class="x">×</span><span class="spr">除草剤散布</span></span>
           <span class="hyb">ハイブリッドプラン</span>
@@ -392,7 +411,7 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
         <p class="gnote">※一般的な低圧太陽光発電所（1,000㎡程度）5年間の目安・当社調べ。草刈り＝1回5〜6万円×年3〜4回、ネット施工＝35万円〜＋除草剤散布 年6万円〜×5年で試算。現地の状況により異なります。</p>
       </div>
       <div class="fv-cta-row">
-        <a class="btn btn-y btn-big" href="https://re-innovations.co.jp/contact/"><span class="btn-free">見積り無料</span>今すぐ申し込む</a>
+        <a class="btn btn-y btn-big" href="https://re-innovations.co.jp/contact/">今すぐ申し込む</a>
         <div class="telbox">お電話でのご相談<b>03-5244-5436</b></div>
       </div>
       <img class="fv-staff" src="images/deco/staff.webp" alt="" aria-hidden="true">
@@ -403,7 +422,6 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
       <div class="fv-inset"><img src="images/fv-spray.jpg" alt="ネット施工箇所以外への除草剤散布作業"></div>
     </div>
   </div>
-  <div class="fv-wave" aria-hidden="true"><svg viewBox="0 0 1440 44" preserveAspectRatio="none"><path d="M0,22 C240,44 480,0 720,15 C960,30 1200,6 1440,26 L1440,44 L0,44 Z" fill="#ffffff"/></svg></div>
 </section>
 
 <section class="section">
@@ -596,22 +614,69 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
   <div class="inner">
     <div class="sec-head">
       <span class="sec-label">HERBICIDE</span>
-      <h2 class="sec-title bdx">散布する除草剤について</h2>
-      <p class="sec-lede bdx">発電所の状態にあわせて、2種類の除草剤を使い分けて散布します。</p>
+      <h2 class="sec-title bdx">効果を<em>最大化</em>する除草剤散布</h2>
     </div>
-    <div class="herb-wrap">
-      <div class="herb-card">
-        <span class="h">施工前に</span>
-        <h3 class="bdx">下処理用の除草剤</h3>
-        <p class="bdx">施工前の下処理に相性が良いタイプ。スギナなどの手強い雑草にも対応します。</p>
-      </div>
-      <div class="herb-card">
-        <span class="h">施工後に</span>
-        <h3 class="bdx">維持管理用の除草剤</h3>
-        <p class="bdx">施工後の維持管理に効果的なタイプ。ネット未施工箇所への年2回の定期散布で、きれいな状態をキープします。</p>
+    <p class="herb-lead bdx"><b>雑草は種類・場所・時期にあわせて適した除草剤を散布することが重要です。</b>一般的な除草剤（グリホサート系）から厄介な雑草を対策する除草剤まで、現場にあわせた散布をご提案します。</p>
+    <div class="herb-table-wrap">
+      <table class="herb-table">
+        <tr>
+          <th>雑草種類</th>
+          <td class="kind"><div class="ic"><img src="images/herb/ic-take.webp" alt=""><img src="images/herb/ic-sasa.webp" alt=""></div><b>竹・笹</b><img class="ph" src="images/herb/take.jpg" alt="クロレートS（粒剤）" loading="lazy"></td>
+          <td class="kind"><div class="ic"><img src="images/herb/ic-arechi.webp" alt=""></div><b>オオアレチノギク</b><img class="ph" src="images/herb/arechi.jpg" alt="バックアップフロアブル（液剤）" loading="lazy"></td>
+          <td class="kind"><div class="ic"><img src="images/herb/ic-ippan.webp" alt=""></div><b>一般的な草<small style="display:block;font-weight:500;font-size:11px;color:var(--sub)">（一年草・多年草）</small></b><img class="ph" src="images/herb/ippan.jpg" alt="クサトローゼ（液剤）" loading="lazy"></td>
+        </tr>
+        <tr>
+          <th>相性の良い<br>除草剤（例）</th>
+          <td class="prod">クロレートS<small>粒剤</small></td>
+          <td class="prod">バックアップフロアブル<small>液剤</small></td>
+          <td class="prod">クサトローゼ<small>液剤</small></td>
+        </tr>
+        <tr>
+          <th>散布時期</th>
+          <td class="when"><b>3月〜4月頃</b><small>※タケノコが生える時期</small></td>
+          <td class="when"><b>5月〜6月頃</b><small>※草丈が低めの時期</small></td>
+          <td class="when"><b>年2回以上〜</b></td>
+        </tr>
+        <tr>
+          <th>一般的な除草剤の効果<br><small style="font-weight:500;letter-spacing:0">（グリホサート系）</small></th>
+          <td><span class="eff tri">△</span></td>
+          <td><span class="eff">〇</span></td>
+          <td><span class="eff dbl">◎</span></td>
+        </tr>
+      </table>
+      <div class="herb-cards">
+        <div class="herb-card">
+          <div class="top"><img src="images/herb/ic-take.webp" alt=""><img src="images/herb/ic-sasa.webp" alt=""><b>竹・笹</b></div>
+          <img class="prodph" src="images/herb/take.jpg" alt="クロレートS（粒剤）" loading="lazy">
+          <dl><dt>相性の良い除草剤（例）</dt><dd>クロレートS<small>粒剤</small></dd><dt>散布時期</dt><dd>3月〜4月頃<small>※タケノコが生える時期</small></dd><dt>一般的な除草剤の効果<small>（グリホサート系）</small></dt><dd><span class="eff" style="color:#c9a227">△</span></dd></dl>
+        </div>
+        <div class="herb-card">
+          <div class="top"><img src="images/herb/ic-arechi.webp" alt=""><b>オオアレチノギク</b></div>
+          <img class="prodph" src="images/herb/arechi.jpg" alt="バックアップフロアブル（液剤）" loading="lazy">
+          <dl><dt>相性の良い除草剤（例）</dt><dd>バックアップフロアブル<small>液剤</small></dd><dt>散布時期</dt><dd>5月〜6月頃<small>※草丈が低めの時期</small></dd><dt>一般的な除草剤の効果<small>（グリホサート系）</small></dt><dd><span class="eff">〇</span></dd></dl>
+        </div>
+        <div class="herb-card">
+          <div class="top"><img src="images/herb/ic-ippan.webp" alt=""><b>一般的な草<small>（一年草・多年草）</small></b></div>
+          <img class="prodph" src="images/herb/ippan.jpg" alt="クサトローゼ（液剤）" loading="lazy">
+          <dl><dt>相性の良い除草剤（例）</dt><dd>クサトローゼ<small>液剤</small></dd><dt>散布時期</dt><dd>年2回以上〜</dd><dt>一般的な除草剤の効果<small>（グリホサート系）</small></dt><dd><span class="eff">◎</span></dd></dl>
+        </div>
       </div>
     </div>
-    <p class="herb-note bdx"><b>散布量の目安：</b>グリホサート系除草剤を1回あたり500㎖×2本使用（1,000㎡程度の場合）。液状の除草剤はネットの上から散布することも可能です。<br>※周囲に田畑があるなど除草剤が使えない立地では、散布の代わりに草刈りで対応します（別途お見積り）。</p>
+    <div class="herb-hard">
+      <div>
+        <h3>●除草剤だけの対応が難しい場合の例</h3>
+        <ol>
+          <li>雑草量が多く散布頻度が多い</li>
+          <li>必要な除草剤が高額になる場合</li>
+          <li>除草剤効果が弱い草（オヒシバ等）・外部侵入した草（クズ等）</li>
+        </ol>
+      </div>
+      <div class="pics">
+        <figure><img src="images/herb/ohishiba.jpg" alt="オヒシバ" loading="lazy"><figcaption>オヒシバ</figcaption></figure>
+        <figure><img src="images/herb/kuzu.jpg" alt="クズ" loading="lazy"><figcaption>クズ</figcaption></figure>
+      </div>
+    </div>
+    <p class="herb-note bdx">※周囲に田畑があるなど除草剤が使えない立地では、散布の代わりに草刈りで対応します（別途お見積り）。液状の除草剤はネットの上から散布することも可能です。</p>
   </div>
 </section>
 
