@@ -81,8 +81,17 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .fvg-bar{height:100%;border-radius:5px;display:flex;align-items:center;padding:0 12px;font-weight:900;color:#fff;font-size:12px;white-space:nowrap;transform-origin:left center;animation:fvgGrow .9s cubic-bezier(.2,.7,.3,1) both}
 .fvg-bar.kusakari{width:100%;background:#b0a394;animation-delay:.1s}
 .fvg-bar.sheet{width:84%;background:#a3b0a6;animation-delay:.25s}
-.fvg-bar.ours{width:55%;min-width:8.5em;background:linear-gradient(90deg,#2e7d32,#3a8c3f);animation-delay:.4s}
-.fvg-badge{position:absolute;left:calc(55% + 10px);top:50%;transform:translateY(-50%);background:#f3dc8a;color:var(--deep);font-weight:900;font-size:11.5px;padding:3px 11px;border-radius:4px;white-space:nowrap}
+.fvg-row.ours-row{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line)}
+.fvg-row.ours-row .fvg-label b{font-size:12.5px;color:var(--deep)}
+.fvg-row.ours-row .fvg-track{height:34px;background:#eaf5e6}
+.fvg-bar.ours{width:55%;min-width:8.5em;background:linear-gradient(90deg,#2e7d32,#3a8c3f);animation-delay:.4s;font-size:14px;box-shadow:0 3px 8px rgba(27,94,32,.3)}
+.fvg-badge{position:absolute;left:calc(55% + 10px);top:50%;transform:translateY(-50%);background:linear-gradient(180deg,#ffe100,#ffc107);color:#7a1f14;font-weight:900;font-size:13px;padding:5px 12px;border-radius:6px;white-space:nowrap;line-height:1.15;box-shadow:0 3px 8px rgba(0,0,0,.18);text-align:center}
+.fvg-badge em{display:block;font-style:normal;font-size:11px;color:#b3400e}
+.fvg-badge b{display:block;font-size:17px;color:#d63a2a;letter-spacing:-.01em}
+.fvg-badge b i{font-style:normal;font-size:11px;font-weight:900}
+.fvg-diff{margin-top:10px;background:#fff8e1;border:1.5px solid #f3dc8a;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.fvg-diff .tag{background:#d63a2a;color:#fff;font-size:10.5px;font-weight:900;padding:2px 9px;border-radius:999px;letter-spacing:.06em}
+.fvg-diff b{color:#d63a2a;font-size:15px}
 @keyframes fvgGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media (prefers-reduced-motion: reduce){.fvg-bar{animation:none}}
 .fv-graph .gnote{font-size:9px;color:var(--sub);margin-top:7px;line-height:1.7}
@@ -160,7 +169,13 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .cmp-fill.kusakari{width:100%;background:#b0a394}
 .cmp-fill.sheet{width:84%;background:#9aa89e}
 .cmp-fill.ours{width:55%;min-width:9em;background:var(--green)}
-.cmp-badge{position:absolute;left:calc(55% + 12px);top:50%;transform:translateY(-50%);background:#f3dc8a;color:var(--deep);font-weight:900;font-size:13.5px;padding:6px 16px;border-radius:4px;white-space:nowrap}
+.cmp-badge{position:absolute;left:calc(55% + 12px);top:50%;transform:translateY(-50%);background:linear-gradient(180deg,#ffe100,#ffc107);color:#7a1f14;font-weight:900;font-size:13px;padding:6px 14px;border-radius:6px;white-space:nowrap;line-height:1.15;box-shadow:0 3px 8px rgba(0,0,0,.15);text-align:center}
+.cmp-badge em{display:block;font-style:normal;font-size:11px;color:#b3400e}
+.cmp-badge b{display:block;font-size:18px;color:#d63a2a}
+.cmp-badge b i{font-style:normal;font-size:12px}
+.cmp-diff{margin-top:14px;background:#fff8e1;border:1.5px solid #f3dc8a;border-radius:8px;padding:10px 16px;font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.cmp-diff .tag{background:#d63a2a;color:#fff;font-size:11px;font-weight:900;padding:2px 10px;border-radius:999px;letter-spacing:.06em}
+.cmp-diff b{color:#d63a2a;font-size:17px}
 .compare .note{font-size:10px;color:var(--sub);margin-top:4px;line-height:1.7}
 
 /* ── 中間CTA帯 ── */
@@ -193,7 +208,7 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .tl-note small{display:block;color:var(--sub);font-size:12px}
 /* 動画 */
 .movie{max-width:760px;margin:44px auto 0;background:#fff;border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(27,94,32,.09)}
-.movie video{width:100%;border-radius:8px;display:block}
+.movie video{width:100%;aspect-ratio:16/9;height:auto;border-radius:8px;display:block;background:#000}
 .movie figcaption{font-size:12.5px;font-weight:700;color:var(--sub);padding:10px 4px 4px;text-align:center}
 
 /* ── 防草シートの実態 ── */
@@ -206,16 +221,17 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .herb-lead{max-width:760px;margin:-20px auto 30px;text-align:center;font-size:14px;color:var(--sub);line-height:1.9}
 .herb-lead b{display:block;color:var(--ink);font-size:15px;font-weight:700;margin-bottom:4px}
 .herb-table-wrap{max-width:980px;margin:0 auto;overflow-x:auto}
-.herb-table{width:100%;min-width:720px;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(27,94,32,.06)}
+.herb-table{width:100%;min-width:720px;table-layout:fixed;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(27,94,32,.06)}
 .herb-table th,.herb-table td{padding:14px 12px;text-align:center;vertical-align:middle;border-bottom:1px solid var(--line);font-size:13.5px}
 .herb-table tr:last-child th,.herb-table tr:last-child td{border-bottom:none}
-.herb-table th{background:var(--cream);color:var(--deep);font-weight:900;font-size:12.5px;letter-spacing:.06em;width:9.5em;text-align:left;padding-left:18px;border-right:1px solid var(--line)}
+.herb-table th{background:var(--cream);color:var(--deep);font-weight:900;font-size:12.5px;letter-spacing:.06em;width:150px;text-align:left;padding-left:18px;border-right:1px solid var(--line)}
+.herb-table td{width:calc((100% - 150px) / 3)}
 .herb-table td+td{border-left:1px solid var(--line)}
 .herb-table .kind{background:#f6faf3}
 .herb-table .kind .ic{display:flex;justify-content:center;gap:6px;margin-bottom:6px}
-.herb-table .kind .ic img{height:52px;width:auto}
+.herb-table .kind .ic img{height:88px;width:auto;filter:drop-shadow(0 2px 4px rgba(0,0,0,.12))}
 .herb-table .kind b{display:block;font-size:14.5px;font-weight:900;color:var(--ink)}
-.herb-table .kind img.ph{width:100%;max-width:170px;height:110px;object-fit:contain;background:#fff;border-radius:6px;margin:8px auto 0;border:1px solid var(--line)}
+.herb-table .kind img.ph{width:auto;max-width:170px;height:130px;object-fit:contain;margin:10px auto 0;filter:drop-shadow(0 4px 8px rgba(0,0,0,.14))}
 .herb-table .prod{font-weight:900;color:var(--deep);font-size:14px}
 .herb-table .prod small{display:block;font-weight:500;font-size:11px;color:var(--sub);margin-top:2px}
 .herb-table .when b{display:block;font-weight:900;font-size:14px;line-height:1.5}
@@ -331,10 +347,10 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
   .herb-cards{display:grid;gap:14px}
   .herb-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 4px 12px rgba(27,94,32,.06)}
   .herb-card .top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-  .herb-card .top img{height:44px;width:auto}
+  .herb-card .top img{height:64px;width:auto}
   .herb-card .top b{font-size:16px;font-weight:900}
   .herb-card .top b small{display:block;font-size:11px;font-weight:500;color:var(--sub)}
-  .herb-card .prodph{width:100%;height:120px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:6px;margin-bottom:10px}
+  .herb-card .prodph{width:auto;max-width:100%;height:140px;object-fit:contain;margin:0 auto 10px;display:block;filter:drop-shadow(0 4px 8px rgba(0,0,0,.14))}
   .herb-card dl{display:grid;grid-template-columns:8.5em 1fr;gap:6px 10px;font-size:13px}
   .herb-card dt{color:var(--sub);font-weight:700}
   .herb-card dd{font-weight:900;color:var(--deep)}
@@ -360,7 +376,10 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
   .fv-plan-name .hyb{font-size:33px}
   .fv-cost-badge{width:80px;height:80px;font-size:14px}
   .fvg-bar.ours{min-width:8em;font-size:11px;padding:0 8px}
-  .fvg-badge{font-size:10.5px;padding:3px 8px;left:auto;right:4px}
+  .fvg-badge{font-size:10px;padding:3px 7px;left:auto;right:4px}
+  .fvg-badge b{font-size:13px}
+  .fvg-diff{font-size:11px}
+  .fvg-diff b{font-size:13px}
   .pro-photos{flex-direction:row}
 }
 @media (prefers-reduced-motion: reduce){
@@ -406,10 +425,11 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
           <p class="fvg-label">防草シート全面施工の場合</p>
           <div class="fvg-track"><div class="fvg-bar sheet">約100万円〜</div></div>
         </div>
-        <div class="fvg-row">
+        <div class="fvg-row ours-row">
           <p class="fvg-label"><b>草止めネット＋除草剤散布</b></p>
-          <div class="fvg-track"><div class="fvg-bar ours">約65万円〜</div><span class="fvg-badge">断然オトク！</span></div>
+          <div class="fvg-track"><div class="fvg-bar ours">約65万円〜</div><span class="fvg-badge"><em>断然オトク！</em><b>最大<i>約</i>55<i>万円</i>安い</b></span></div>
         </div>
+        <div class="fvg-diff"><span class="tag">差額</span>草刈り継続より <b>最大約55万円</b>、防草シートより <b>約35万円</b> おトク（5年間）</div>
         <p class="gnote">※一般的な低圧太陽光発電所（1,000㎡程度）5年間の目安・当社調べ。草刈り＝1回5〜6万円×年3〜4回、ネット施工＝35万円〜＋除草剤散布 年6万円〜×5年で試算。現地の状況により異なります。</p>
       </div>
       <div class="fv-cta-row">
@@ -558,8 +578,9 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
       </div>
       <div class="cmp-row">
         <div class="cmp-label">ネット施工＋除草剤散布<small>ネット35万円〜＋散布 年6万円〜×5年</small></div>
-        <div class="cmp-track"><div class="cmp-fill ours">約65万円〜</div><span class="cmp-badge">断然オトク！</span></div>
+        <div class="cmp-track"><div class="cmp-fill ours">約65万円〜</div><span class="cmp-badge"><em>断然オトク！</em><b>最大<i>約</i>55<i>万円</i>安い</b></span></div>
       </div>
+      <div class="cmp-diff"><span class="tag">差額</span>草刈りを頼み続けるより <b>最大約55万円</b>、防草シート全面施工より <b>約35万円</b> おトク（5年間）</div>
       <p class="note">※当社調べの目安です。発電所の面積・現地の状態により価格は異なります。※除草剤が使えない立地では草刈りで代替します（別途お見積り）。</p>
     </div>
   </div>
@@ -589,7 +610,7 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
       <div class="tl-note bdx"><b>ネットの上は歩けます。</b><small>点検や散布の通路が確保されるので、その後の管理作業もスムーズです。</small></div>
     </div>
     <figure class="movie">
-      <video controls muted playsinline preload="none" poster="images/wk-after2.jpg">
+      <video controls muted playsinline preload="none" poster="images/walk-poster.jpg" width="960" height="540">
         <source src="images/walk.mp4" type="video/mp4">
       </video>
       <figcaption>ネットの上を実際に歩いている様子（施工約50日後）</figcaption>
@@ -625,9 +646,9 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
       <table class="herb-table">
         <tr>
           <th>雑草種類</th>
-          <td class="kind"><div class="ic"><img src="images/herb/ic-take.webp" alt=""><img src="images/herb/ic-sasa.webp" alt=""></div><b>竹・笹</b><img class="ph" src="images/herb/take.jpg" alt="クロレートS（粒剤）" loading="lazy"></td>
-          <td class="kind"><div class="ic"><img src="images/herb/ic-arechi.webp" alt=""></div><b>オオアレチノギク</b><img class="ph" src="images/herb/arechi.jpg" alt="バックアップフロアブル（液剤）" loading="lazy"></td>
-          <td class="kind"><div class="ic"><img src="images/herb/ic-ippan.webp" alt=""></div><b>一般的な草<small style="display:block;font-weight:500;font-size:11px;color:var(--sub)">（一年草・多年草）</small></b><img class="ph" src="images/herb/ippan.jpg" alt="クサトローゼ（液剤）" loading="lazy"></td>
+          <td class="kind"><div class="ic"><img src="images/herb/ic-take.webp" alt=""><img src="images/herb/ic-sasa.webp" alt=""></div><b>竹・笹</b><img class="ph" src="images/herb/prod-take.webp" alt="クロレートS（粒剤）" loading="lazy"></td>
+          <td class="kind"><div class="ic"><img src="images/herb/ic-arechi.webp" alt=""></div><b>オオアレチノギク</b><img class="ph" src="images/herb/prod-arechi.webp" alt="バックアップフロアブル（液剤）" loading="lazy"></td>
+          <td class="kind"><div class="ic"><img src="images/herb/ic-ippan.webp" alt=""></div><b>一般的な草<small style="display:block;font-weight:500;font-size:11px;color:var(--sub)">（一年草・多年草）</small></b><img class="ph" src="images/herb/prod-ippan.webp" alt="クサトローゼ（液剤）" loading="lazy"></td>
         </tr>
         <tr>
           <th>相性の良い<br>除草剤（例）</th>
@@ -651,17 +672,17 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
       <div class="herb-cards">
         <div class="herb-card">
           <div class="top"><img src="images/herb/ic-take.webp" alt=""><img src="images/herb/ic-sasa.webp" alt=""><b>竹・笹</b></div>
-          <img class="prodph" src="images/herb/take.jpg" alt="クロレートS（粒剤）" loading="lazy">
+          <img class="prodph" src="images/herb/prod-take.webp" alt="クロレートS（粒剤）" loading="lazy">
           <dl><dt>相性の良い除草剤（例）</dt><dd>クロレートS<small>粒剤</small></dd><dt>散布時期</dt><dd>①3月〜4月頃<sup>※</sup><br>②5月〜6月頃<small>※タケノコが生える時期</small></dd><dt>一般的な除草剤の効果<small>（グリホサート系）</small></dt><dd><span class="eff" style="color:#c9a227">△</span></dd></dl>
         </div>
         <div class="herb-card">
           <div class="top"><img src="images/herb/ic-arechi.webp" alt=""><b>オオアレチノギク</b></div>
-          <img class="prodph" src="images/herb/arechi.jpg" alt="バックアップフロアブル（液剤）" loading="lazy">
+          <img class="prodph" src="images/herb/prod-arechi.webp" alt="バックアップフロアブル（液剤）" loading="lazy">
           <dl><dt>相性の良い除草剤（例）</dt><dd>バックアップフロアブル<small>液剤</small></dd><dt>散布時期</dt><dd>①5月〜6月頃<br>②8月〜9月頃<small>※日当たりの良い場所で必要にあわせて散布（草丈が低めの時期）</small></dd><dt>一般的な除草剤の効果<small>（グリホサート系）</small></dt><dd><span class="eff">〇</span></dd></dl>
         </div>
         <div class="herb-card">
           <div class="top"><img src="images/herb/ic-ippan.webp" alt=""><b>一般的な草<small>（一年草・多年草）</small></b></div>
-          <img class="prodph" src="images/herb/ippan.jpg" alt="クサトローゼ（液剤）" loading="lazy">
+          <img class="prodph" src="images/herb/prod-ippan.webp" alt="クサトローゼ（液剤）" loading="lazy">
           <dl><dt>相性の良い除草剤（例）</dt><dd>クサトローゼ<small>液剤</small></dd><dt>散布時期</dt><dd>通年を通して草量にあわせて適時散布</dd><dt>一般的な除草剤の効果<small>（グリホサート系）</small></dt><dd><span class="eff">◎</span></dd></dl>
         </div>
       </div>
