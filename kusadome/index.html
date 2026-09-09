@@ -484,6 +484,8 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
           <rect x="8" y="8" width="544" height="276" rx="10" fill="none" stroke="#8fa8b8" stroke-width="2.5" stroke-dasharray="7 5"/>
           <!-- パネル列（周囲ネット＝緑パッド）：列間はネットで連結 -->
           <rect x="40" y="34" width="480" height="222" rx="8" fill="#a5d489"/>
+          <!-- 門扉前のネット施工（門扉からパネル群までのアプローチ） -->
+          <rect x="236" y="250" width="88" height="30" rx="4" fill="#a5d489"/>
           <!-- 列と列のあいだの散布エリア（架台下は施工範囲外の表現として細い水色帯） -->
           <g fill="#1c3d6e">
             <rect x="58" y="52" width="60" height="186" rx="3"/>
@@ -500,14 +502,18 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
             <line x1="442" y1="98" x2="502" y2="98"/><line x1="442" y1="145" x2="502" y2="145"/><line x1="442" y1="192" x2="502" y2="192"/>
           </g>
           <!-- 点検導線：門扉→パネル列の間を蛇行して回る -->
-          <path d="M280 296 V247 H328 V43 H424 V247 H520 M232 247 V43 H136 V247 H40" fill="none" stroke="#f29100" stroke-width="3" stroke-dasharray="9 7" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M280 247 H232" fill="none" stroke="#f29100" stroke-width="3" stroke-dasharray="9 7" stroke-linecap="round"/>
+          <!-- 右側ルート：門扉→列間→右端長辺まで -->
+          <path d="M280 296 V247 H328 V43 H424 V247 H512 V43" fill="none" stroke="#f29100" stroke-width="3" stroke-dasharray="9 7" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- 左側ルート：門扉→列間→左端長辺まで -->
+          <path d="M280 247 H232 V43 H136 V247 H48 V43" fill="none" stroke="#f29100" stroke-width="3" stroke-dasharray="9 7" stroke-linecap="round" stroke-linejoin="round"/>
           <g fill="#f29100">
             <polygon points="280,262 273,276 287,276"/>
             <polygon points="328,120 321,134 335,134"/>
             <polygon points="424,150 417,136 431,136"/>
+            <polygon points="512,120 505,134 519,134"/>
             <polygon points="232,120 225,134 239,134"/>
             <polygon points="136,150 129,136 143,136"/>
+            <polygon points="48,120 41,134 55,134"/>
           </g>
           <!-- 門扉 -->
           <rect x="258" y="279" width="44" height="10" fill="#ffffff"/>
@@ -521,17 +527,17 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
             </g>
             <g>
               <rect x="14" y="344" width="13" height="13" rx="3" fill="#a5d489"/>
-              <text x="32" y="355" font-size="10.5" font-weight="700" fill="#233327">ネット施工（パネル周囲）</text>
-              <rect x="196" y="344" width="13" height="13" rx="3" fill="#dff0fa" stroke="#8fa8b8"/>
-              <text x="214" y="355" font-size="10.5" font-weight="700" fill="#233327">除草剤散布（または草刈り）</text>
-              <rect x="368" y="344" width="13" height="13" rx="3" fill="#1c3d6e"/>
-              <text x="386" y="355" font-size="10.5" font-weight="700" fill="#233327">パネル</text>
-              <line x1="438" y1="350" x2="464" y2="350" stroke="#f29100" stroke-width="3" stroke-dasharray="6 4"/>
-              <text x="470" y="355" font-size="10.5" font-weight="700" fill="#233327">点検導線</text>
+              <text x="32" y="355" font-size="10.5" font-weight="700" fill="#233327">ネット施工（パネル周囲＋門扉前）</text>
+              <rect x="222" y="344" width="13" height="13" rx="3" fill="#dff0fa" stroke="#8fa8b8"/>
+              <text x="240" y="355" font-size="10.5" font-weight="700" fill="#233327">除草剤散布（または草刈り）</text>
+              <rect x="394" y="344" width="13" height="13" rx="3" fill="#1c3d6e"/>
+              <text x="412" y="355" font-size="10.5" font-weight="700" fill="#233327">パネル</text>
+              <line x1="462" y1="350" x2="488" y2="350" stroke="#f29100" stroke-width="3" stroke-dasharray="6 4"/>
+              <text x="494" y="355" font-size="10.5" font-weight="700" fill="#233327">点検導線</text>
             </g>
           </g>
         </svg>
-        <figcaption>施工範囲のイメージ（1,000㎡程度の例）──門扉からネットの上を歩いて、パネルの周りを点検できます</figcaption>
+        <figcaption>施工範囲のイメージ（1,000㎡程度の例）──門扉前からパネル周囲までネットがつながり、ネットの上を歩いて点検できます</figcaption>
       </figure>
     </div>
     <div class="merit3">
