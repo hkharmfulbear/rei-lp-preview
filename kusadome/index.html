@@ -57,22 +57,23 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
   linear-gradient(165deg,#1c6a33 0%,#175a2a 55%,#124a22 100%)}
 .fv-in{position:relative;z-index:5;max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,44%);gap:0;align-items:stretch}
 .fv-copy{position:relative;padding:44px 40px 48px max(24px,calc((100vw - 1180px)/2 + 24px))}
-.fv-staff{position:absolute;right:-36px;bottom:0;height:min(46%,300px);width:auto;z-index:6;filter:drop-shadow(-4px 6px 12px rgba(0,0,0,.3));pointer-events:none}
+.fv-staff{position:absolute;left:max(-12px,calc((100vw - 1180px)/2 - 50px));bottom:0;height:min(58%,380px);width:auto;z-index:6;filter:drop-shadow(4px 6px 12px rgba(0,0,0,.35));pointer-events:none}
+.fv-gtitle,.fv-graph,.fv-cta-row{margin-left:clamp(120px,15vw,200px)}
 .fv-worry{margin-bottom:6px}
 .fv-worry .w{display:block;font-size:clamp(24px,3.3vw,37px);font-weight:900;line-height:1.5;letter-spacing:.01em;text-shadow:0 2px 8px rgba(0,0,0,.25)}
 .fv-label{display:block;text-align:right;font-size:clamp(12px,1.5vw,14.5px);font-weight:700;color:#e3f2e0;letter-spacing:.06em;margin:4px 0 22px}
 .fv-plan{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .fv-cost-badge{flex:0 0 auto;width:92px;height:92px;border-radius:50%;background:#d63a2a;border:3px solid #fff;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:16px;line-height:1.3;transform:rotate(-8deg);box-shadow:0 6px 14px rgba(0,0,0,.3);text-align:center}
 .fv-plan-name{line-height:1.35}
-.fv-plan-name .row1{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.fv-plan-name .netlogo{height:clamp(52px,6vw,72px);width:auto;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35))}
-.fv-plan-name .x{color:#fff;font-size:clamp(20px,2.6vw,30px);font-weight:900}
-.fv-plan-name .spr{background:#fff;color:#d63a2a;font-size:clamp(22px,3vw,32px);font-weight:900;padding:4px 18px;border-radius:8px;letter-spacing:.02em;box-shadow:0 4px 10px rgba(0,0,0,.25)}
+.fv-plan-name .row1{display:flex;align-items:center;gap:6px;flex-wrap:nowrap}
+.fv-plan-name .netlogo{height:clamp(60px,6.2vw,88px);width:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,.4))}
+.fv-plan-name .x{color:#ffe100;font-size:clamp(24px,2.8vw,36px);font-weight:900;text-shadow:0 2px 6px rgba(0,0,0,.35)}
+.fv-plan-name .spr{background:#fff;color:#d63a2a;font-size:clamp(26px,3.1vw,40px);font-weight:900;padding:3px 16px;border-radius:10px;letter-spacing:.01em;box-shadow:0 5px 12px rgba(0,0,0,.3);border:3px solid #ffe100;white-space:nowrap}
 .fv-plan-name .hyb{display:block;color:#ffe100;font-size:clamp(32px,4.4vw,49px);font-weight:900;letter-spacing:.04em;margin-top:2px;text-shadow:0 3px 10px rgba(0,0,0,.3)}
 .fv-gtitle{margin-top:24px;font-size:clamp(14px,1.8vw,17px);font-weight:900;letter-spacing:.04em}
 .fv-gtitle small{font-weight:700;font-size:.78em;color:#d5ead2}
 /* 5年間対策費グラフ（白カード） */
-.fv-graph{margin-top:10px;background:#fff;color:var(--ink);border-radius:12px;box-shadow:0 10px 26px rgba(0,0,0,.28);padding:16px 20px 12px;max-width:560px}
+.fv-graph{margin-top:10px;background:#fff;color:var(--ink);border-radius:12px;box-shadow:0 10px 26px rgba(0,0,0,.28);padding:16px 20px 12px;max-width:520px}
 .fvg-row{margin-bottom:10px}
 .fvg-row:last-of-type{margin-bottom:0}
 .fvg-label{font-size:10.5px;font-weight:700;color:var(--sub);margin-bottom:3px}
@@ -85,7 +86,7 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .fvg-row.ours-row .fvg-label b{font-size:12.5px;color:var(--deep)}
 .fvg-row.ours-row .fvg-track{height:34px;background:#eaf5e6}
 .fvg-bar.ours{width:55%;min-width:8.5em;background:linear-gradient(90deg,#2e7d32,#3a8c3f);animation-delay:.4s;font-size:14px;box-shadow:0 3px 8px rgba(27,94,32,.3)}
-.fvg-badge{position:absolute;left:calc(55% + 10px);top:50%;transform:translateY(-50%);background:linear-gradient(180deg,#ffe100,#ffc107);color:#7a1f14;font-weight:900;font-size:13px;padding:5px 12px;border-radius:6px;white-space:nowrap;line-height:1.15;box-shadow:0 3px 8px rgba(0,0,0,.18);text-align:center}
+.fvg-badge{position:absolute;left:calc(55% + 8px);right:0;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#ffe100,#ffc107);color:#7a1f14;font-weight:900;font-size:13px;padding:2px 10px;border-radius:5px;white-space:nowrap;line-height:1.15;box-shadow:0 3px 8px rgba(0,0,0,.18);text-align:center}
 .fvg-badge em{display:block;font-style:normal;font-size:11px;color:#b3400e}
 .fvg-badge b{display:block;font-size:17px;color:#d63a2a;letter-spacing:-.01em}
 .fvg-badge b i{font-style:normal;font-size:11px;font-weight:900}
@@ -104,7 +105,8 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .fv-visual{position:relative;min-height:520px}
 .fv-visual .main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
 .fv-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#175a2a 0%,rgba(23,90,42,.35) 12%,transparent 30%);z-index:1;pointer-events:none}
-.fv-inset{position:absolute;right:26px;bottom:110px;width:190px;height:190px;border-radius:50%;overflow:hidden;border:5px solid #fff;box-shadow:0 10px 26px rgba(0,0,0,.35);z-index:2}
+.fv-inset{position:absolute;right:22px;bottom:96px;width:min(300px,44%);aspect-ratio:1;border-radius:50%;overflow:hidden;border:6px solid #fff;box-shadow:0 12px 30px rgba(0,0,0,.4);z-index:2}
+.fv-inset .cap2{position:absolute;left:0;right:0;bottom:0;background:rgba(214,58,42,.92);color:#fff;font-size:12.5px;font-weight:900;text-align:center;padding:9px 0 12px;letter-spacing:.06em}
 .fv-inset img{width:100%;height:100%;object-fit:cover}
 .fv-photo-cta{position:absolute;right:26px;bottom:26px;z-index:3}
 .fv-cap{position:absolute;left:34px;top:18px;z-index:2;background:rgba(23,90,42,.85);color:#fff;font-size:11px;font-weight:700;padding:3px 14px;border-radius:4px}
@@ -169,7 +171,7 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .cmp-fill.kusakari{width:100%;background:#b0a394}
 .cmp-fill.sheet{width:84%;background:#9aa89e}
 .cmp-fill.ours{width:55%;min-width:9em;background:var(--green)}
-.cmp-badge{position:absolute;left:calc(55% + 12px);top:50%;transform:translateY(-50%);background:linear-gradient(180deg,#ffe100,#ffc107);color:#7a1f14;font-weight:900;font-size:13px;padding:6px 14px;border-radius:6px;white-space:nowrap;line-height:1.15;box-shadow:0 3px 8px rgba(0,0,0,.15);text-align:center}
+.cmp-badge{position:absolute;left:calc(55% + 10px);right:0;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#ffe100,#ffc107);color:#7a1f14;font-weight:900;font-size:13px;padding:2px 14px;border-radius:6px;white-space:nowrap;line-height:1.15;box-shadow:0 3px 8px rgba(0,0,0,.15);text-align:center}
 .cmp-badge em{display:block;font-style:normal;font-size:11px;color:#b3400e}
 .cmp-badge b{display:block;font-size:18px;color:#d63a2a}
 .cmp-badge b i{font-style:normal;font-size:12px}
@@ -334,7 +336,8 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
   .fv-copy{padding:34px 24px 40px}
   .fv-visual{min-height:300px;aspect-ratio:4/3}
   .fv-visual::before{background:linear-gradient(180deg,#175a2a 0%,rgba(23,90,42,.3) 14%,transparent 32%)}
-  .fv-inset{width:130px;height:130px;right:16px;bottom:16px}
+  .fv-inset{width:150px;right:14px;bottom:14px}
+  .fv-inset .cap2{font-size:10.5px;padding:6px 0 8px}
   .fv-photo-cta{display:none}
   .scheme-grid{grid-template-columns:1fr}
   .merit3,.risks,.sheet-photos{grid-template-columns:1fr}
@@ -372,11 +375,14 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
   .btn-y{font-size:15.5px;padding:15px 24px;white-space:nowrap}
   .fv-worry .w{font-size:24px}
   .fv-staff{display:none}
-  .fv-plan-name .netlogo{height:44px}
+  .fv-gtitle,.fv-graph,.fv-cta-row{margin-left:0}
+  .fv-plan-name .netlogo{height:54px}
+  .fv-plan-name .row1{flex-wrap:wrap}
+  .fv-plan-name .spr{font-size:24px;padding:3px 14px}
   .fv-plan-name .hyb{font-size:33px}
   .fv-cost-badge{width:80px;height:80px;font-size:14px}
   .fvg-bar.ours{min-width:8em;font-size:11px;padding:0 8px}
-  .fvg-badge{font-size:10px;padding:3px 7px;left:auto;right:4px}
+  .fvg-badge{font-size:9.5px;padding:2px 6px}
   .fvg-badge b{font-size:13px}
   .fvg-diff{font-size:11px}
   .fvg-diff b{font-size:13px}
@@ -436,12 +442,12 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
         <a class="btn btn-y btn-big" href="https://re-innovations.co.jp/contact/">今すぐ申し込む</a>
         <div class="telbox">お電話でのご相談<b>03-5244-5436</b></div>
       </div>
-      <img class="fv-staff" src="images/deco/staff.webp" alt="" aria-hidden="true">
+      <img class="fv-staff" src="images/deco/staff-bust.webp" alt="" aria-hidden="true">
     </div>
     <div class="fv-visual">
       <img class="main" src="images/fv-main.jpg" alt="パネル間に施工された草止めネット" fetchpriority="high">
       <span class="fv-cap">施工イメージ</span>
-      <div class="fv-inset"><img src="images/fv-spray.jpg" alt="ネット施工箇所以外への除草剤散布作業"></div>
+      <div class="fv-inset"><img src="images/fv-spray.jpg" alt="ネット施工箇所以外への除草剤散布作業"><span class="cap2">除草剤散布</span></div>
     </div>
   </div>
 </section>
@@ -610,7 +616,7 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
       <div class="tl-note bdx"><b>ネットの上は歩けます。</b><small>点検や散布の通路が確保されるので、その後の管理作業もスムーズです。</small></div>
     </div>
     <figure class="movie">
-      <video controls muted playsinline preload="none" poster="images/walk-poster.jpg" width="960" height="540">
+      <video id="walkVideo" controls muted playsinline preload="metadata" poster="images/walk-poster.jpg" width="960" height="540" onclick="if(this.paused){this.play();}">
         <source src="images/walk.mp4" type="video/mp4">
       </video>
       <figcaption>ネットの上を実際に歩いている様子（施工約50日後）</figcaption>
