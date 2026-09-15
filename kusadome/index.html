@@ -55,25 +55,25 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .fv{position:relative;overflow:hidden;color:#fff;background:
   radial-gradient(ellipse 70% 80% at 12% 8%,rgba(255,255,255,.07),transparent 60%),
   linear-gradient(165deg,#1c6a33 0%,#175a2a 55%,#124a22 100%)}
-.fv-in{position:relative;z-index:5;width:100%;aspect-ratio:16/9;max-height:820px;font-size:calc(100vw / 1280 * 10)} /* 1fu = 1/128 vw */
+.fv-in{position:relative;z-index:5;width:100%;max-width:1680px;margin:0 auto;aspect-ratio:16/9;font-size:calc(min(100vw,1680px) / 1280 * 10)} /* 1fu = 1/128 vw */
 .fv-abs{position:absolute}
 /* 右：写真（x54.3% w45.7% 全高） */
-.fv-visual{left:54.3%;top:0;width:45.7%;height:100%}
+.fv-visual{left:54.3%;top:0;width:calc(45.7% + (100vw - min(100vw,1680px)) / 2);height:100%}
 .fv-visual .main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
 .fv-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#175a2a 0%,rgba(23,90,42,.35) 8%,transparent 22%);z-index:1;pointer-events:none}
 .fv-cap{left:0;top:2.7%;z-index:2;background:rgba(23,90,42,.85);color:#fff;font-size:1.2em;font-weight:700;padding:.3em 1.2em;border-radius:0 .4em .4em 0}
 /* 丸ワイプ（写真内 x74%→写真基準43% / y17% / 幅26%→写真基準57%） */
-.fv-inset{left:43%;top:17%;width:57%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:.5em solid #fff;box-shadow:0 1.2em 3em rgba(0,0,0,.4);z-index:2}
+.fv-inset{left:auto;right:3.5%;top:17%;width:33.2em;aspect-ratio:1;border-radius:50%;overflow:hidden;border:.5em solid #fff;box-shadow:0 1.2em 3em rgba(0,0,0,.4);z-index:2}
 .fv-inset img{width:100%;height:100%;object-fit:cover}
 .fv-inset .cap2{position:absolute;left:0;right:0;bottom:0;background:rgba(214,58,42,.92);color:#fff;font-size:1.3em;font-weight:900;text-align:center;padding:.7em 0 .9em;letter-spacing:.06em}
 /* 丸の下ラベル（x80.6% y64.2%） */
-.fv-netlabel{left:57.5%;top:64.2%;z-index:3;display:flex;flex-direction:column;align-items:center;gap:.3em}
+.fv-netlabel{left:auto;right:12%;top:65%;z-index:3;display:flex;flex-direction:column;align-items:center;gap:.3em}
 .fv-netlabel i{width:2.6em;height:2.6em;border-radius:50%;background:#fff;border:.25em solid #d63a2a;display:block}
 .fv-netlabel b{background:#175a2a;color:#fff;font-size:1.2em;font-weight:900;padding:.15em .9em;border-radius:.3em;white-space:nowrap}
 /* 左上：お悩みコピー（x0.3% y2.7% w34%） */
 .fv-worry{left:2.4%;top:2.6%;width:50%;margin:0}
 .fv-worry .w{display:block;font-size:2.05em;font-weight:900;line-height:1.38;letter-spacing:.01em;text-shadow:0 .1em .4em rgba(0,0,0,.25);white-space:nowrap}
-.fv-label{left:5.6%;top:19.2%;width:40%;text-align:right;font-size:1.25em;font-weight:700;color:#e3f2e0;letter-spacing:.06em;margin:0}
+.fv-label{left:5.6%;top:19.6%;width:40%;text-align:right;font-size:1.25em;font-weight:700;color:#e3f2e0;letter-spacing:.06em;margin:0}
 /* コストバッジ（x0.3% y22.2% w11.9%） */
 .fv-cost-badge{left:1.6%;top:25.5%;width:9.4%;aspect-ratio:1;border-radius:50%;background:#d63a2a;border:.3em solid #fff;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:1.55em;line-height:1.25;transform:rotate(-8deg);box-shadow:0 .5em 1.2em rgba(0,0,0,.3);text-align:center}
 /* プラン名（x11.9% y22.3% w47.9% h23.6%） */
@@ -86,10 +86,10 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 /* スタッフ（x0 y44.9% w22.5% h55%） */
 .fv-staff{left:-0.5%;bottom:0;height:56%;width:auto;z-index:6;filter:drop-shadow(.3em .5em 1em rgba(0,0,0,.35));pointer-events:none}
 /* グラフ（x20.7% y47.5% w31.8%） */
-.fv-gwrap{left:20.7%;top:47.5%;width:31.8%}
+.fv-gwrap{left:20.7%;top:46%;width:31.8%}
 .fv-gtitle{font-size:1.45em;font-weight:900;letter-spacing:.04em;margin:0 0 .4em}
 .fv-gtitle small{font-weight:700;font-size:.78em;color:#d5ead2}
-.fv-graph{background:#fff;color:var(--ink);border-radius:1em;box-shadow:0 1em 2.6em rgba(0,0,0,.28);padding:1.3em 1.6em 1em}
+.fv-graph{background:#fff;color:var(--ink);border-radius:1em;box-shadow:0 1em 2.6em rgba(0,0,0,.28);padding:1.1em 1.5em .9em}
 .fvg-row{margin-bottom:.8em}
 .fvg-row:last-of-type{margin-bottom:0}
 .fvg-label{font-size:1.02em;font-weight:700;color:var(--sub);margin-bottom:.25em}
@@ -111,7 +111,7 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .fvg-diff b{color:#d63a2a;font-size:1.25em}
 @keyframes fvgGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media (prefers-reduced-motion: reduce){.fvg-bar{animation:none}}
-.fv-graph .gnote{font-size:.85em;color:var(--sub);margin-top:.6em;line-height:1.6}
+.fv-graph .gnote{font-size:.8em;color:var(--sub);margin-top:.5em;line-height:1.5}
 /* CTA（x63.3% y83.2% w26.1% h13.2%・写真に重なる） */
 .fv-cta-row{left:63.3%;top:83.2%;width:26.1%;height:13.2%;z-index:7;display:flex;align-items:stretch;margin:0}
 .fv-cta-row .btn-big{width:100%;height:100%;font-size:2.1em;padding:0 1em;border-radius:999px;box-shadow:0 .5em 1.4em rgba(0,0,0,.35)}
@@ -341,27 +341,28 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
 .fixed-cta .fbtn{background:linear-gradient(180deg,#ff9d2e,#ef8300);color:#fff;box-shadow:0 2px 6px rgba(35,51,39,.22)}
 
 @media (max-width:920px){
-  .fv-in{aspect-ratio:auto;max-height:none;font-size:10px;display:flex;flex-direction:column;padding:26px 20px 44px;gap:14px}
+  .fv-in{aspect-ratio:auto;max-width:none;font-size:10px;display:flex;flex-direction:column;padding:22px 18px 0;gap:12px}
   .fv-abs{position:static}
-  .fv-visual{order:6;width:calc(100% + 40px);margin:12px -20px -44px;aspect-ratio:4/3;position:relative;height:auto}
+  .fv-visual{order:6;width:calc(100% + 36px);margin:14px -18px 0;aspect-ratio:4/3;position:relative;height:auto;left:auto;top:auto}
   .fv-in{padding-bottom:0}
-  .fv-netlabel{position:absolute;left:14px;bottom:14px;top:auto;font-size:10px}
+  .fv-netlabel{position:absolute;left:12px;bottom:12px;top:auto;font-size:10px;flex-direction:row;gap:8px}
   .fv-netlabel i{width:22px;height:22px}
   .fv-netlabel b{font-size:11px}
   .fv-visual::before{background:linear-gradient(180deg,#175a2a 0%,rgba(23,90,42,.3) 14%,transparent 32%)}
-  .fv-cap{position:absolute;left:14px;top:14px;border-radius:4px;font-size:11px}
-  .fv-inset{position:absolute;left:auto;right:14px;top:auto;bottom:14px;width:150px;border-width:4px}
-  .fv-inset .cap2{font-size:10.5px;padding:6px 0 8px}
+  .fv-cap{position:absolute;left:12px;top:12px;border-radius:4px;font-size:11px}
+  .fv-inset{position:absolute;left:auto;right:12px;top:12px;bottom:auto;width:44%;border-width:4px}
+  .fv-netlabel{right:auto}
+  .fv-inset .cap2{font-size:11px;padding:6px 0 9px}
   .fv-worry{width:auto}
-  .fv-worry .w{font-size:24px;white-space:normal}
+  .fv-worry .w{font-size:clamp(20px,6vw,24px);white-space:nowrap}
   .fv-label{width:auto;font-size:12.5px;text-align:right;margin-top:-6px}
-  .fv-cost-badge{width:80px;font-size:14px;margin-top:4px}
+  .fv-cost-badge{width:78px;font-size:13.5px;margin-top:2px;transform:rotate(-8deg)}
   .fv-plan-name{width:auto}
   .fv-plan-name .row1{flex-wrap:wrap}
   .fv-plan-name .netlogo{height:54px}
   .fv-plan-name .x{font-size:24px}
   .fv-plan-name .spr{font-size:24px;padding:3px 14px}
-  .fv-plan-name .hyb{font-size:33px;white-space:normal}
+  .fv-plan-name .hyb{font-size:clamp(27px,8.4vw,33px);white-space:nowrap}
   .fv-staff{display:none}
   .fv-gwrap{width:auto}
   .fv-gtitle{font-size:14px}
@@ -373,9 +374,9 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
   .fvg-badge b{font-size:13px}
   .fvg-diff{font-size:11px}.fvg-diff b{font-size:13px}
   .fv-graph .gnote{font-size:9px}
-  .fv-cta-row{width:auto;height:auto;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-  .fv-cta-row .btn-big{width:auto;height:auto;font-size:17px;padding:16px 30px;white-space:nowrap}
-  .fv-cta-row .telbox{display:block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:6px;padding:5px 18px;font-size:10px;color:#d5ead2;line-height:1.5}
+  .fv-cta-row{width:auto;height:auto;display:flex;flex-direction:column;align-items:stretch;gap:10px;margin-top:4px}
+  .fv-cta-row .btn-big{width:100%;height:auto;font-size:17px;padding:16px 20px;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+  .fv-cta-row .telbox{display:block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:6px;padding:6px 18px;font-size:10px;color:#d5ead2;line-height:1.5;text-align:center}
   .fv-cta-row .telbox b{display:block;font-size:16px;color:#fff}
   .scheme-grid{grid-template-columns:1fr}
   .merit3,.risks,.sheet-photos{grid-template-columns:1fr}
