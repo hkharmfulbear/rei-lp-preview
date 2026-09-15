@@ -51,65 +51,74 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .header-tel{text-align:right;line-height:1.25;font-size:10.5px;color:#b9dcb9}
 .header-tel b{display:block;font-size:17px;color:#fff;letter-spacing:.03em}
 
-/* ── FV ── */
+/* ── FV（指示書比率 1280×720 の絶対配置。PC≥921px） ── */
 .fv{position:relative;overflow:hidden;color:#fff;background:
   radial-gradient(ellipse 70% 80% at 12% 8%,rgba(255,255,255,.07),transparent 60%),
   linear-gradient(165deg,#1c6a33 0%,#175a2a 55%,#124a22 100%)}
-.fv-in{position:relative;z-index:5;max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,44%);gap:0;align-items:stretch}
-.fv-copy{position:relative;padding:44px 40px 48px max(24px,calc((100vw - 1180px)/2 + 24px))}
-.fv-staff{position:absolute;left:max(-12px,calc((100vw - 1180px)/2 - 50px));bottom:0;height:min(58%,380px);width:auto;z-index:6;filter:drop-shadow(4px 6px 12px rgba(0,0,0,.35));pointer-events:none}
-.fv-gtitle,.fv-graph,.fv-cta-row{margin-left:clamp(120px,15vw,200px)}
-.fv-worry{margin-bottom:6px}
-.fv-worry .w{display:block;font-size:clamp(24px,3.3vw,37px);font-weight:900;line-height:1.5;letter-spacing:.01em;text-shadow:0 2px 8px rgba(0,0,0,.25)}
-.fv-label{display:block;text-align:right;font-size:clamp(12px,1.5vw,14.5px);font-weight:700;color:#e3f2e0;letter-spacing:.06em;margin:4px 0 22px}
-.fv-plan{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.fv-cost-badge{flex:0 0 auto;width:92px;height:92px;border-radius:50%;background:#d63a2a;border:3px solid #fff;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:16px;line-height:1.3;transform:rotate(-8deg);box-shadow:0 6px 14px rgba(0,0,0,.3);text-align:center}
-.fv-plan-name{line-height:1.35}
-.fv-plan-name .row1{display:flex;align-items:center;gap:6px;flex-wrap:nowrap}
-.fv-plan-name .netlogo{height:clamp(60px,6.2vw,88px);width:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,.4))}
-.fv-plan-name .x{color:#ffe100;font-size:clamp(24px,2.8vw,36px);font-weight:900;text-shadow:0 2px 6px rgba(0,0,0,.35)}
-.fv-plan-name .spr{background:#fff;color:#d63a2a;font-size:clamp(26px,3.1vw,40px);font-weight:900;padding:3px 16px;border-radius:10px;letter-spacing:.01em;box-shadow:0 5px 12px rgba(0,0,0,.3);border:3px solid #ffe100;white-space:nowrap}
-.fv-plan-name .hyb{display:block;color:#ffe100;font-size:clamp(32px,4.4vw,49px);font-weight:900;letter-spacing:.04em;margin-top:2px;text-shadow:0 3px 10px rgba(0,0,0,.3)}
-.fv-gtitle{margin-top:24px;font-size:clamp(14px,1.8vw,17px);font-weight:900;letter-spacing:.04em}
+.fv-in{position:relative;z-index:5;width:100%;aspect-ratio:16/9;max-height:820px;font-size:calc(100vw / 1280 * 10)} /* 1fu = 1/128 vw */
+.fv-abs{position:absolute}
+/* 右：写真（x54.3% w45.7% 全高） */
+.fv-visual{left:54.3%;top:0;width:45.7%;height:100%}
+.fv-visual .main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.fv-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#175a2a 0%,rgba(23,90,42,.35) 8%,transparent 22%);z-index:1;pointer-events:none}
+.fv-cap{left:0;top:2.7%;z-index:2;background:rgba(23,90,42,.85);color:#fff;font-size:1.2em;font-weight:700;padding:.3em 1.2em;border-radius:0 .4em .4em 0}
+/* 丸ワイプ（写真内 x74%→写真基準43% / y17% / 幅26%→写真基準57%） */
+.fv-inset{left:43%;top:17%;width:57%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:.5em solid #fff;box-shadow:0 1.2em 3em rgba(0,0,0,.4);z-index:2}
+.fv-inset img{width:100%;height:100%;object-fit:cover}
+.fv-inset .cap2{position:absolute;left:0;right:0;bottom:0;background:rgba(214,58,42,.92);color:#fff;font-size:1.3em;font-weight:900;text-align:center;padding:.7em 0 .9em;letter-spacing:.06em}
+/* 丸の下ラベル（x80.6% y64.2%） */
+.fv-netlabel{left:57.5%;top:64.2%;z-index:3;display:flex;flex-direction:column;align-items:center;gap:.3em}
+.fv-netlabel i{width:2.6em;height:2.6em;border-radius:50%;background:#fff;border:.25em solid #d63a2a;display:block}
+.fv-netlabel b{background:#175a2a;color:#fff;font-size:1.2em;font-weight:900;padding:.15em .9em;border-radius:.3em;white-space:nowrap}
+/* 左上：お悩みコピー（x0.3% y2.7% w34%） */
+.fv-worry{left:2.4%;top:2.6%;width:50%;margin:0}
+.fv-worry .w{display:block;font-size:2.05em;font-weight:900;line-height:1.38;letter-spacing:.01em;text-shadow:0 .1em .4em rgba(0,0,0,.25);white-space:nowrap}
+.fv-label{left:5.6%;top:19.2%;width:40%;text-align:right;font-size:1.25em;font-weight:700;color:#e3f2e0;letter-spacing:.06em;margin:0}
+/* コストバッジ（x0.3% y22.2% w11.9%） */
+.fv-cost-badge{left:1.6%;top:25.5%;width:9.4%;aspect-ratio:1;border-radius:50%;background:#d63a2a;border:.3em solid #fff;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:1.55em;line-height:1.25;transform:rotate(-8deg);box-shadow:0 .5em 1.2em rgba(0,0,0,.3);text-align:center}
+/* プラン名（x11.9% y22.3% w47.9% h23.6%） */
+.fv-plan-name{left:11.9%;top:25%;width:42%;line-height:1.3}
+.fv-plan-name .row1{display:flex;align-items:center;gap:.5em;flex-wrap:nowrap}
+.fv-plan-name .netlogo{height:7.2em;width:auto;filter:drop-shadow(0 .3em .6em rgba(0,0,0,.4))}
+.fv-plan-name .x{color:#ffe100;font-size:3em;font-weight:900;text-shadow:0 .1em .3em rgba(0,0,0,.35)}
+.fv-plan-name .spr{background:#fff;color:#d63a2a;font-size:3.2em;font-weight:900;padding:.05em .45em;border-radius:.3em;letter-spacing:.01em;box-shadow:0 .15em .4em rgba(0,0,0,.3);border:.09em solid #ffe100;white-space:nowrap}
+.fv-plan-name .hyb{display:block;color:#ffe100;font-size:4.2em;font-weight:900;letter-spacing:.04em;margin-top:.05em;text-shadow:0 .08em .25em rgba(0,0,0,.3);white-space:nowrap}
+/* スタッフ（x0 y44.9% w22.5% h55%） */
+.fv-staff{left:-0.5%;bottom:0;height:56%;width:auto;z-index:6;filter:drop-shadow(.3em .5em 1em rgba(0,0,0,.35));pointer-events:none}
+/* グラフ（x20.7% y47.5% w31.8%） */
+.fv-gwrap{left:20.7%;top:47.5%;width:31.8%}
+.fv-gtitle{font-size:1.45em;font-weight:900;letter-spacing:.04em;margin:0 0 .4em}
 .fv-gtitle small{font-weight:700;font-size:.78em;color:#d5ead2}
-/* 5年間対策費グラフ（白カード） */
-.fv-graph{margin-top:10px;background:#fff;color:var(--ink);border-radius:12px;box-shadow:0 10px 26px rgba(0,0,0,.28);padding:16px 20px 12px;max-width:520px}
-.fvg-row{margin-bottom:10px}
+.fv-graph{background:#fff;color:var(--ink);border-radius:1em;box-shadow:0 1em 2.6em rgba(0,0,0,.28);padding:1.3em 1.6em 1em}
+.fvg-row{margin-bottom:.8em}
 .fvg-row:last-of-type{margin-bottom:0}
-.fvg-label{font-size:10.5px;font-weight:700;color:var(--sub);margin-bottom:3px}
+.fvg-label{font-size:1.02em;font-weight:700;color:var(--sub);margin-bottom:.25em}
 .fvg-label b{color:var(--ink)}
-.fvg-track{position:relative;height:28px;background:#f2f5f0;border-radius:5px}
-.fvg-bar{height:100%;border-radius:5px;display:flex;align-items:center;padding:0 12px;font-weight:900;color:#fff;font-size:12px;white-space:nowrap;transform-origin:left center;animation:fvgGrow .9s cubic-bezier(.2,.7,.3,1) both}
+.fvg-track{position:relative;height:2.5em;background:#f2f5f0;border-radius:.45em}
+.fvg-bar{height:100%;border-radius:.45em;display:flex;align-items:center;padding:0 1em;font-weight:900;color:#fff;font-size:1.15em;white-space:nowrap;transform-origin:left center;animation:fvgGrow .9s cubic-bezier(.2,.7,.3,1) both}
 .fvg-bar.kusakari{width:100%;background:#b0a394;animation-delay:.1s}
 .fvg-bar.sheet{width:84%;background:#a3b0a6;animation-delay:.25s}
-.fvg-row.ours-row{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line)}
-.fvg-row.ours-row .fvg-label b{font-size:12.5px;color:var(--deep)}
-.fvg-row.ours-row .fvg-track{height:34px;background:#eaf5e6}
-.fvg-bar.ours{width:55%;min-width:8.5em;background:linear-gradient(90deg,#2e7d32,#3a8c3f);animation-delay:.4s;font-size:14px;box-shadow:0 3px 8px rgba(27,94,32,.3)}
-.fvg-badge{position:absolute;left:calc(55% + 8px);right:0;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#ffe100,#ffc107);color:#7a1f14;font-weight:900;font-size:13px;padding:2px 10px;border-radius:5px;white-space:nowrap;line-height:1.15;box-shadow:0 3px 8px rgba(0,0,0,.18);text-align:center}
-.fvg-badge em{display:block;font-style:normal;font-size:11px;color:#b3400e}
-.fvg-badge b{display:block;font-size:17px;color:#d63a2a;letter-spacing:-.01em}
-.fvg-badge b i{font-style:normal;font-size:11px;font-weight:900}
-.fvg-diff{margin-top:10px;background:#fff8e1;border:1.5px solid #f3dc8a;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.fvg-diff .tag{background:#d63a2a;color:#fff;font-size:10.5px;font-weight:900;padding:2px 9px;border-radius:999px;letter-spacing:.06em}
-.fvg-diff b{color:#d63a2a;font-size:15px}
+.fvg-row.ours-row{margin-top:1em;padding-top:.8em;border-top:1px dashed var(--line)}
+.fvg-row.ours-row .fvg-label b{font-size:1.2em;color:var(--deep)}
+.fvg-row.ours-row .fvg-track{height:3.1em;background:#eaf5e6}
+.fvg-bar.ours{width:55%;min-width:8.5em;background:linear-gradient(90deg,#2e7d32,#3a8c3f);animation-delay:.4s;font-size:1.3em;box-shadow:0 .25em .7em rgba(27,94,32,.3)}
+.fvg-badge{position:absolute;left:calc(55% + .6em);right:0;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#ffe100,#ffc107);color:#7a1f14;font-weight:900;font-size:1.15em;padding:.1em .8em;border-radius:.4em;white-space:nowrap;line-height:1.15;box-shadow:0 .25em .7em rgba(0,0,0,.18);text-align:center}
+.fvg-badge em{display:block;font-style:normal;font-size:.85em;color:#b3400e}
+.fvg-badge b{display:block;font-size:1.3em;color:#d63a2a;letter-spacing:-.01em}
+.fvg-badge b i{font-style:normal;font-size:.65em;font-weight:900}
+.fvg-diff{margin-top:.8em;background:#fff8e1;border:1.5px solid #f3dc8a;border-radius:.6em;padding:.55em 1em;font-size:1.12em;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:.6em;flex-wrap:wrap}
+.fvg-diff .tag{background:#d63a2a;color:#fff;font-size:.85em;font-weight:900;padding:.15em .8em;border-radius:999px;letter-spacing:.06em}
+.fvg-diff b{color:#d63a2a;font-size:1.25em}
 @keyframes fvgGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media (prefers-reduced-motion: reduce){.fvg-bar{animation:none}}
-.fv-graph .gnote{font-size:9px;color:var(--sub);margin-top:7px;line-height:1.7}
-.fv-cta-row{margin-top:22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.fv-cta-row .telbox{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:6px;padding:5px 18px;font-size:10px;color:#d5ead2;line-height:1.5}
-.fv-cta-row .telbox b{display:block;font-size:16px;color:#fff}
-.btn-big{font-size:19px;padding:19px 44px;border-radius:999px}
-.btn-big::before{content:"▶";font-size:13px}
-/* 右写真 */
-.fv-visual{position:relative;min-height:520px}
-.fv-visual .main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
-.fv-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#175a2a 0%,rgba(23,90,42,.35) 12%,transparent 30%);z-index:1;pointer-events:none}
-.fv-inset{position:absolute;right:22px;bottom:96px;width:min(300px,44%);aspect-ratio:1;border-radius:50%;overflow:hidden;border:6px solid #fff;box-shadow:0 12px 30px rgba(0,0,0,.4);z-index:2}
-.fv-inset .cap2{position:absolute;left:0;right:0;bottom:0;background:rgba(214,58,42,.92);color:#fff;font-size:12.5px;font-weight:900;text-align:center;padding:9px 0 12px;letter-spacing:.06em}
-.fv-inset img{width:100%;height:100%;object-fit:cover}
-.fv-photo-cta{position:absolute;right:26px;bottom:26px;z-index:3}
-.fv-cap{position:absolute;left:34px;top:18px;z-index:2;background:rgba(23,90,42,.85);color:#fff;font-size:11px;font-weight:700;padding:3px 14px;border-radius:4px}
+.fv-graph .gnote{font-size:.85em;color:var(--sub);margin-top:.6em;line-height:1.6}
+/* CTA（x63.3% y83.2% w26.1% h13.2%・写真に重なる） */
+.fv-cta-row{left:63.3%;top:83.2%;width:26.1%;height:13.2%;z-index:7;display:flex;align-items:stretch;margin:0}
+.fv-cta-row .btn-big{width:100%;height:100%;font-size:2.1em;padding:0 1em;border-radius:999px;box-shadow:0 .5em 1.4em rgba(0,0,0,.35)}
+.btn-big::before{content:"▶";font-size:.62em}
+.fv-cta-row .telbox{display:none}
+.fv-tel{left:20.7%;top:93%;font-size:1.15em;color:#d5ead2}
+.fv-tel b{color:#fff;font-size:1.3em;margin-left:.5em}
 
 /* ── 波形区切り ── */
 .wave{line-height:0;position:relative;z-index:2}
@@ -332,13 +341,42 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
 .fixed-cta .fbtn{background:linear-gradient(180deg,#ff9d2e,#ef8300);color:#fff;box-shadow:0 2px 6px rgba(35,51,39,.22)}
 
 @media (max-width:920px){
-  .fv-in{grid-template-columns:1fr}
-  .fv-copy{padding:34px 24px 40px}
-  .fv-visual{min-height:300px;aspect-ratio:4/3}
+  .fv-in{aspect-ratio:auto;max-height:none;font-size:10px;display:flex;flex-direction:column;padding:26px 20px 44px;gap:14px}
+  .fv-abs{position:static}
+  .fv-visual{order:6;width:calc(100% + 40px);margin:12px -20px -44px;aspect-ratio:4/3;position:relative;height:auto}
+  .fv-in{padding-bottom:0}
+  .fv-netlabel{position:absolute;left:14px;bottom:14px;top:auto;font-size:10px}
+  .fv-netlabel i{width:22px;height:22px}
+  .fv-netlabel b{font-size:11px}
   .fv-visual::before{background:linear-gradient(180deg,#175a2a 0%,rgba(23,90,42,.3) 14%,transparent 32%)}
-  .fv-inset{width:150px;right:14px;bottom:14px}
+  .fv-cap{position:absolute;left:14px;top:14px;border-radius:4px;font-size:11px}
+  .fv-inset{position:absolute;left:auto;right:14px;top:auto;bottom:14px;width:150px;border-width:4px}
   .fv-inset .cap2{font-size:10.5px;padding:6px 0 8px}
-  .fv-photo-cta{display:none}
+  .fv-worry{width:auto}
+  .fv-worry .w{font-size:24px;white-space:normal}
+  .fv-label{width:auto;font-size:12.5px;text-align:right;margin-top:-6px}
+  .fv-cost-badge{width:80px;font-size:14px;margin-top:4px}
+  .fv-plan-name{width:auto}
+  .fv-plan-name .row1{flex-wrap:wrap}
+  .fv-plan-name .netlogo{height:54px}
+  .fv-plan-name .x{font-size:24px}
+  .fv-plan-name .spr{font-size:24px;padding:3px 14px}
+  .fv-plan-name .hyb{font-size:33px;white-space:normal}
+  .fv-staff{display:none}
+  .fv-gwrap{width:auto}
+  .fv-gtitle{font-size:14px}
+  .fv-graph{padding:14px 16px 12px;border-radius:12px}
+  .fvg-label{font-size:10.5px}.fvg-track{height:28px}.fvg-bar{font-size:12px}
+  .fvg-row.ours-row .fvg-track{height:32px}
+  .fvg-bar.ours{min-width:8em;font-size:11px;padding:0 8px}
+  .fvg-badge{font-size:9.5px;padding:2px 6px}
+  .fvg-badge b{font-size:13px}
+  .fvg-diff{font-size:11px}.fvg-diff b{font-size:13px}
+  .fv-graph .gnote{font-size:9px}
+  .fv-cta-row{width:auto;height:auto;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+  .fv-cta-row .btn-big{width:auto;height:auto;font-size:17px;padding:16px 30px;white-space:nowrap}
+  .fv-cta-row .telbox{display:block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:6px;padding:5px 18px;font-size:10px;color:#d5ead2;line-height:1.5}
+  .fv-cta-row .telbox b{display:block;font-size:16px;color:#fff}
   .scheme-grid{grid-template-columns:1fr}
   .merit3,.risks,.sheet-photos{grid-template-columns:1fr}
   .timeline{grid-template-columns:1fr;max-width:480px;gap:26px}
@@ -373,19 +411,6 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
   .fixed-cta{display:grid}
   .midcta-in{justify-content:center;text-align:center}
   .btn-y{font-size:15.5px;padding:15px 24px;white-space:nowrap}
-  .fv-worry .w{font-size:24px}
-  .fv-staff{display:none}
-  .fv-gtitle,.fv-graph,.fv-cta-row{margin-left:0}
-  .fv-plan-name .netlogo{height:54px}
-  .fv-plan-name .row1{flex-wrap:wrap}
-  .fv-plan-name .spr{font-size:24px;padding:3px 14px}
-  .fv-plan-name .hyb{font-size:33px}
-  .fv-cost-badge{width:80px;height:80px;font-size:14px}
-  .fvg-bar.ours{min-width:8em;font-size:11px;padding:0 8px}
-  .fvg-badge{font-size:9.5px;padding:2px 6px}
-  .fvg-badge b{font-size:13px}
-  .fvg-diff{font-size:11px}
-  .fvg-diff b{font-size:13px}
   .pro-photos{flex-direction:row}
 }
 @media (prefers-reduced-motion: reduce){
@@ -408,20 +433,25 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
 
 <section class="fv">
   <div class="fv-in">
-    <div class="fv-copy">
-      <h1 class="fv-worry">
-        <span class="w">「防草シートは高すぎる！」</span>
-        <span class="w">「草刈り頻度が多すぎる！」</span>
-      </h1>
-      <p class="fv-label bdx">…と、お悩みの太陽光発電所オーナー様へ</p>
-      <div class="fv-plan">
-        <span class="fv-cost-badge">コスト<br>最小化!</span>
-        <div class="fv-plan-name">
-          <span class="row1"><img class="netlogo" src="images/deco/logo-net.webp" alt="らくらく草止めネット"><span class="x">×</span><span class="spr">除草剤散布</span></span>
-          <span class="hyb">ハイブリッドプラン</span>
-        </div>
-      </div>
-      <p class="fv-gtitle bdx">比べれば費用は断然オトク<small>（5年間対策費）</small></p>
+    <div class="fv-visual fv-abs">
+      <img class="main" src="images/fv-main.jpg" alt="パネル間に施工された草止めネット" fetchpriority="high">
+      <span class="fv-cap fv-abs">施工イメージ</span>
+      <div class="fv-inset fv-abs"><img src="images/fv-spray.jpg" alt="ネット施工箇所以外への除草剤散布作業"><span class="cap2">除草剤散布</span></div>
+      <div class="fv-netlabel fv-abs"><i></i><b>草止めネット</b></div>
+    </div>
+    <h1 class="fv-worry fv-abs">
+      <span class="w">「防草シートは高すぎる！」</span>
+      <span class="w">「草刈り頻度が多すぎる！」</span>
+    </h1>
+    <p class="fv-label fv-abs">…と、お悩みの太陽光発電所オーナー様へ</p>
+    <span class="fv-cost-badge fv-abs">コスト<br>最小化!</span>
+    <div class="fv-plan-name fv-abs">
+      <span class="row1"><img class="netlogo" src="images/deco/logo-net.webp" alt="らくらく草止めネット"><span class="x">×</span><span class="spr">除草剤散布</span></span>
+      <span class="hyb">ハイブリッドプラン</span>
+    </div>
+    <img class="fv-staff fv-abs" src="images/deco/staff-bust.webp" alt="" aria-hidden="true">
+    <div class="fv-gwrap fv-abs">
+      <p class="fv-gtitle">比べれば費用は断然オトク<small>（5年間対策費）</small></p>
       <div class="fv-graph">
         <div class="fvg-row">
           <p class="fvg-label">草刈りを頼み続けた場合（年3〜4回）</p>
@@ -438,16 +468,10 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
         <div class="fvg-diff"><span class="tag">差額</span>草刈り継続より <b>最大約55万円</b>、防草シートより <b>約35万円</b> おトク（5年間）</div>
         <p class="gnote">※一般的な低圧太陽光発電所（1,000㎡程度）5年間の目安・当社調べ。草刈り＝1回5〜6万円×年3〜4回、ネット施工＝35万円〜＋除草剤散布 年6万円〜×5年で試算。現地の状況により異なります。</p>
       </div>
-      <div class="fv-cta-row">
-        <a class="btn btn-y btn-big" href="https://re-innovations.co.jp/contact/">今すぐ申し込む</a>
-        <div class="telbox">お電話でのご相談<b>03-5244-5436</b></div>
-      </div>
-      <img class="fv-staff" src="images/deco/staff-bust.webp" alt="" aria-hidden="true">
     </div>
-    <div class="fv-visual">
-      <img class="main" src="images/fv-main.jpg" alt="パネル間に施工された草止めネット" fetchpriority="high">
-      <span class="fv-cap">施工イメージ</span>
-      <div class="fv-inset"><img src="images/fv-spray.jpg" alt="ネット施工箇所以外への除草剤散布作業"><span class="cap2">除草剤散布</span></div>
+    <div class="fv-cta-row fv-abs">
+      <a class="btn btn-y btn-big" href="https://re-innovations.co.jp/contact/">今すぐ申し込む</a>
+      <div class="telbox">お電話でのご相談<b>03-5244-5436</b></div>
     </div>
   </div>
 </section>
