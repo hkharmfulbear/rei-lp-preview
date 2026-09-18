@@ -67,7 +67,7 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .fv-inset img{width:100%;height:100%;object-fit:cover}
 .fv-inset .cap2{position:absolute;left:0;right:0;bottom:0;background:rgba(214,58,42,.92);color:#fff;font-size:1.3em;font-weight:900;text-align:center;padding:.7em 0 .9em;letter-spacing:.06em}
 /* 丸の下ラベル（x80.6% y64.2%） */
-.fv-netlabel{left:auto;right:12%;top:65%;z-index:3;display:flex;flex-direction:column;align-items:center;gap:.3em}
+.fv-netlabel{left:auto;right:14%;top:66%;z-index:3;display:flex;flex-direction:column;align-items:center;gap:.3em}
 .fv-netlabel i{width:2.6em;height:2.6em;border-radius:50%;background:#fff;border:.25em solid #d63a2a;display:block}
 .fv-netlabel b{background:#175a2a;color:#fff;font-size:1.2em;font-weight:900;padding:.15em .9em;border-radius:.3em;white-space:nowrap}
 /* 左上：お悩みコピー（x0.3% y2.7% w34%） */
@@ -75,13 +75,13 @@ a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .fv-worry .w{display:block;font-size:2.05em;font-weight:900;line-height:1.38;letter-spacing:.01em;text-shadow:0 .1em .4em rgba(0,0,0,.25);white-space:nowrap}
 .fv-label{left:5.6%;top:19.6%;width:40%;text-align:right;font-size:1.25em;font-weight:700;color:#e3f2e0;letter-spacing:.06em;margin:0}
 /* コストバッジ（x0.3% y22.2% w11.9%） */
-.fv-cost-badge{left:1.6%;top:25.5%;width:9.4%;aspect-ratio:1;border-radius:50%;background:#d63a2a;border:.3em solid #fff;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:1.55em;line-height:1.25;transform:rotate(-8deg);box-shadow:0 .5em 1.2em rgba(0,0,0,.3);text-align:center}
+.fv-cost-badge{left:1.6%;top:25.5%;width:9.4%;aspect-ratio:1;border-radius:50%;background:#d63a2a;border:.3em solid #fff;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:2.15em;line-height:1.15;letter-spacing:-.02em;transform:rotate(-8deg);box-shadow:0 .5em 1.2em rgba(0,0,0,.3);text-align:center}
 /* プラン名（x11.9% y22.3% w47.9% h23.6%） */
 .fv-plan-name{left:11.9%;top:25%;width:42%;line-height:1.3}
-.fv-plan-name .row1{display:flex;align-items:center;gap:.5em;flex-wrap:nowrap}
+.fv-plan-name .row1{display:flex;align-items:flex-end;gap:.5em;flex-wrap:nowrap}
 .fv-plan-name .netlogo{height:7.2em;width:auto;filter:drop-shadow(0 .3em .6em rgba(0,0,0,.4))}
-.fv-plan-name .x{color:#ffe100;font-size:3em;font-weight:900;text-shadow:0 .1em .3em rgba(0,0,0,.35)}
-.fv-plan-name .spr{background:#fff;color:#d63a2a;font-size:3.2em;font-weight:900;padding:.05em .45em;border-radius:.3em;letter-spacing:.01em;box-shadow:0 .15em .4em rgba(0,0,0,.3);border:.09em solid #ffe100;white-space:nowrap}
+.fv-plan-name .x{color:#ffe100;font-size:3em;font-weight:900;text-shadow:0 .1em .3em rgba(0,0,0,.35);line-height:1;margin-bottom:.3em}
+.fv-plan-name .spr{background:#fff;color:#d63a2a;font-size:3.2em;font-weight:900;padding:.05em .45em;border-radius:.3em;letter-spacing:.01em;box-shadow:0 .15em .4em rgba(0,0,0,.3);border:.09em solid #ffe100;white-space:nowrap;line-height:1.2;margin-bottom:.12em}
 .fv-plan-name .hyb{display:block;color:#ffe100;font-size:4.2em;font-weight:900;letter-spacing:.04em;margin-top:.05em;text-shadow:0 .08em .25em rgba(0,0,0,.3);white-space:nowrap}
 /* スタッフ（x0 y44.9% w22.5% h55%） */
 .fv-staff{left:-0.5%;bottom:0;height:56%;width:auto;z-index:6;filter:drop-shadow(.3em .5em 1em rgba(0,0,0,.35));pointer-events:none}
@@ -356,12 +356,12 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
   .fv-worry{width:auto}
   .fv-worry .w{font-size:clamp(20px,6vw,24px);white-space:nowrap}
   .fv-label{width:auto;font-size:12.5px;text-align:right;margin-top:-6px}
-  .fv-cost-badge{width:78px;font-size:13.5px;margin-top:2px;transform:rotate(-8deg)}
+  .fv-cost-badge{width:84px;font-size:17px;line-height:1.15;margin-top:2px;transform:rotate(-8deg)}
   .fv-plan-name{width:auto}
   .fv-plan-name .row1{flex-wrap:wrap}
   .fv-plan-name .netlogo{height:54px}
-  .fv-plan-name .x{font-size:24px}
-  .fv-plan-name .spr{font-size:24px;padding:3px 14px}
+  .fv-plan-name .x{font-size:24px;margin-bottom:6px}
+  .fv-plan-name .spr{font-size:24px;padding:3px 14px;margin-bottom:0}
   .fv-plan-name .hyb{font-size:clamp(27px,8.4vw,33px);white-space:nowrap}
   .fv-staff{display:none}
   .fv-gwrap{width:auto}
@@ -438,7 +438,7 @@ section.cta .cta-in{position:relative;z-index:2;max-width:720px;margin:0 auto;pa
       <img class="main" src="images/fv-main.jpg" alt="パネル間に施工された草止めネット" fetchpriority="high">
       <span class="fv-cap fv-abs">施工イメージ</span>
       <div class="fv-inset fv-abs"><img src="images/fv-spray.jpg" alt="ネット施工箇所以外への除草剤散布作業"><span class="cap2">除草剤散布</span></div>
-      <div class="fv-netlabel fv-abs"><i></i><b>草止めネット</b></div>
+      <div class="fv-netlabel fv-abs"><b>草止めネット</b></div>
     </div>
     <h1 class="fv-worry fv-abs">
       <span class="w">「防草シートは高すぎる！」</span>
